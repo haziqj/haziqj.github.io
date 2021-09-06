@@ -1,12 +1,101 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Recent &amp; Upcoming Talks | Haziq Jamil</title><link>https://haziqj.github.io/event/</link><atom:link href="https://haziqj.github.io/event/index.xml" rel="self" type="application/rss+xml"/><description>Recent &amp; Upcoming Talks</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><copyright>© 2021 Haziq Jamil</copyright><image><url>https://haziqj.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url><title>Recent &amp; Upcoming Talks</title><link>https://haziqj.github.io/event/</link></image><item><title>Example Talk</title><link>https://haziqj.github.io/talk/example-talk/</link><pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/example-talk/</guid><description>&lt;div class="alert alert-note">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Recent &amp; Upcoming Talks | Haziq Jamil</title><link>https://haziqj.github.io/event/</link><atom:link href="https://haziqj.github.io/event/index.xml" rel="self" type="application/rss+xml"/><description>Recent &amp; Upcoming Talks</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><copyright>© 2021 Haziq Jamil</copyright><image><url>https://haziqj.github.io/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png</url><title>Recent &amp; Upcoming Talks</title><link>https://haziqj.github.io/event/</link></image><item><title>A latent variable model for maximal performance testing with dropouts for military applications</title><link>https://haziqj.github.io/talk/a-latent-variable-model-for-maximal-performance-testing-with-dropouts-for-military-applications/</link><pubDate>Thu, 19 Nov 2020 14:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/a-latent-variable-model-for-maximal-performance-testing-with-dropouts-for-military-applications/</guid><description>&lt;h2 id="links">Links&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://rpsychologist.com/d3/bayes/" target="_blank" rel="noopener">An interactive visualisation of Bayesian inference&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/chi-feng/mcmc-demo" target="_blank" rel="noopener">MCMC demo&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="references">References&lt;/h2>
+&lt;ul>
+&lt;li>Bollen, K. A. (1989). &lt;em>Structural Equations with Latent Variables. John Wiley &amp;amp; Sons.&lt;/em> ISBN: 978-0-471-01171-2. DOI: &lt;a href="https://doi.org/10.1002/9781118619179" target="_blank" rel="noopener">10.1002/9781118619179&lt;/a>.&lt;/li>
+&lt;li>Denwood, M. (2016). &lt;em>runjags: An R Package Providing Interface Utilities, Model Templates, Parallel Computing Methods and Additional Distributions for MCMC Models in JAGS.&lt;/em> Journal of Statistical Software 71.9, pp. 1–25. DOI: &lt;a href="https://doi.org/10.18637/jss.v071.i09" target="_blank" rel="noopener">10.18637/jss.v071.i09&lt;/a>.&lt;/li>
+&lt;li>Edwards, J. R. and R. P. Bagozzi (2000). &lt;em>On the nature and direction of relationships between constructs and measures.&lt;/em> Psychological methods 5.2, p. 155.&lt;/li>
+&lt;li>Hafez, M. S., I. Moustaki, and J. Kuha (2015). &lt;em>Analysis of multivariate longitudinal data subject to nonrandom dropout.&lt;/em> Structural Equation Modeling: A Multidisciplinary Journal 22.2, pp. 193–201.&lt;/li>
+&lt;li>Kruschke, J. K. (2014). &lt;em>Doing Bayesian Data Analysis: A tutorial with R, JAGS, and Stan.&lt;/em> Second Edition. Boston: Academic Press. ISBN: 978-0-12-405888-0.&lt;/li>
+&lt;li>Rabe-Hesketh, S. and A. Skrondal (2008). &lt;em>Multilevel and longitudinal modeling using Stata.&lt;/em> STATA press.&lt;/li>
+&lt;/ul>
+&lt;h2 id="sample-code-in-jags">Sample code in JAGS&lt;/h2>
+&lt;pre>&lt;code class="language-r">model{
+for (i in 1:N) {
+for (k in 1:p_phy) { # Physical
+y_phy[i,k] ~ dnorm(a_phy[k] + b_phy[k] * Phy[i], 1/v_phy[k])
+}
+for (k in 1:p_cgn) { # Cognitive
+y_cgn[i,k] ~ dnorm(a_cgn[k] + b_cgn[k] * Cgn[i], 1/v_cgn[k])
+}
+for (k in 1:p_cmb) { # Combatant
+y_cmb[i,k] ~ dnorm(a_cmb[k] + b_cmb[k] * Cmb[i], 1/v_cmb[k])
+}
+Phy[i] ~ dnorm(a_Phy + b_Phy * Abl[i], 1/v_Phy)
+Cgn[i] ~ dnorm(a_Cgn + b_Cgn * Abl[i], 1/v_Cgn)
+Cmb[i] ~ dnorm(a_Cmb + b_Cmb * Abl[i], 1/v_Cmb)
+Abl[i] ~ dnorm(a_Abl, 1/v_Abl)
+}
+# Priors ---------------------------------------------------------------------
+a_phy[1] ~ dnorm(0,1e-3)
+b_phy[1] &amp;lt;- 1
+for(k in 2:p_phy) {
+a_phy[k] ~ dnorm(0,1e-3)
+b_phy[k] ~ dnorm(0,1e-2)
+}
+for(k in 1:p_phy) {
+sd_phy[k] ~ dgamma(1,.5)
+v_phy[k] &amp;lt;- pow(sd_phy[k],2)
+}
+a_cgn[1] ~ dnorm(0,1e-3)
+b_cgn[1] &amp;lt;- 1
+for(k in 2:p_cgn) {
+a_cgn[k] ~ dnorm(0,1e-3)
+b_cgn[k] ~ dnorm(0,1e-2)
+}
+for(k in 1:p_cgn) {
+sd_cgn[k] ~ dgamma(1,.5)
+v_cgn[k] &amp;lt;- pow(sd_cgn[k],2)
+}
+a_cmb[1] ~ dnorm(0,1e-3)
+b_cmb[1] &amp;lt;- 1
+for(k in 2:p_cmb) {
+a_cmb[k] ~ dnorm(0,1e-3)
+b_cmb[k] ~ dnorm(0,1e-2)
+}
+for(k in 1:p_cmb) {
+sd_cmb[k] ~ dgamma(1,.5)
+v_cmb[k] &amp;lt;- pow(sd_cmb[k],2)
+}
+a_Phy &amp;lt;- 0
+a_Cgn &amp;lt;- 0
+a_Cmb &amp;lt;- 0
+a_Abl &amp;lt;- 0
+b_Phy &amp;lt;- 1
+b_Cgn ~ dnorm(0,1e-2)
+b_Cmb ~ dnorm(0,1e-2)
+sd_Phy ~ dgamma(1,.5)
+v_Phy &amp;lt;- pow(sd_Phy,2)
+sd_Cgn ~ dgamma(1,.5)
+v_Cgn &amp;lt;- pow(sd_Cgn,2)
+sd_Cmb ~ dgamma(1,.5)
+v_Cmb &amp;lt;- pow(sd_Cmb,2)
+sd_Abl ~ dgamma(1,.5)
+v_Abl &amp;lt;- pow(sd_Abl,2)
+}
+&lt;/code>&lt;/pre></description></item><item><title>Investigating the effect of load carriage on soldiers’ performances using structural equation models</title><link>https://haziqj.github.io/talk/investigating-the-effect-of-load-carriage-on-soldiers-performances-using-structural-equation-models/</link><pubDate>Thu, 28 May 2020 13:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/investigating-the-effect-of-load-carriage-on-soldiers-performances-using-structural-equation-models/</guid><description/></item><item><title>Bayesian Variable Selection for Linear Models</title><link>https://haziqj.github.io/talk/bayesian-variable-selection-for-linear-models/</link><pubDate>Wed, 13 Nov 2019 14:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/bayesian-variable-selection-for-linear-models/</guid><description/></item><item><title>Misconceptions in Demography</title><link>https://haziqj.github.io/talk/misconceptions-in-demography/</link><pubDate>Fri, 25 Jan 2019 09:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/misconceptions-in-demography/</guid><description/></item><item><title>A Brief Guide to Variational Inference</title><link>https://haziqj.github.io/talk/a-brief-guide-to-variational-inference/</link><pubDate>Tue, 04 Dec 2018 14:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/a-brief-guide-to-variational-inference/</guid><description>&lt;h3 id="variational-inference-for-mixture-of-gaussians">Variational Inference for Mixture of Gaussians&lt;/h3>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://haziqj.github.io/img/var-eg2.gif" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p></description></item><item><title>Binary and Multinomial Regression using Fisher Information Covariance Kernels (I-priors)</title><link>https://haziqj.github.io/talk/binary-and-multinomial-regression-using-fisher-information-covariance-kernels-i-priors/</link><pubDate>Tue, 27 Mar 2018 12:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/binary-and-multinomial-regression-using-fisher-information-covariance-kernels-i-priors/</guid><description>&lt;h3 id="spatio-temporal-modelling-of-bovine-tuberculosis">Spatio-temporal modelling of bovine tuberculosis&lt;/h3>
+&lt;p>Prediction of probability surface plots over time.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://haziqj.github.io/img/btb.gif" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p></description></item><item><title>A Beginner's Guide to Variational Inference</title><link>https://haziqj.github.io/talk/a-beginners-guide-to-variational-inference/</link><pubDate>Thu, 01 Feb 2018 12:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/a-beginners-guide-to-variational-inference/</guid><description/></item><item><title>Regression Modelling with I-Priors</title><link>https://haziqj.github.io/talk/regression-modelling-with-i-priors/</link><pubDate>Tue, 18 Jul 2017 13:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/regression-modelling-with-i-priors/</guid><description/></item><item><title>Binary probit regression with I-priors</title><link>https://haziqj.github.io/talk/binary-probit-regression-with-i-priors/</link><pubDate>Mon, 08 May 2017 12:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/binary-probit-regression-with-i-priors/</guid><description>&lt;!-- &lt;div class="alert alert-note">
 &lt;div>
 Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in slides feature.
 &lt;/div>
 &lt;/div>
-&lt;p>Slides can be added in a few ways:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Create&lt;/strong> slides using Wowchemy&amp;rsquo;s &lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">&lt;em>Slides&lt;/em>&lt;/a> feature and link using &lt;code>slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
-&lt;li>&lt;strong>Upload&lt;/strong> an existing slide deck to &lt;code>static/&lt;/code> and link using &lt;code>url_slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
-&lt;li>&lt;strong>Embed&lt;/strong> your slides (e.g. Google Slides) or presentation video on this page using &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">shortcodes&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item></channel></rss>
+Slides can be added in a few ways:
+- **Create** slides using Wowchemy's [*Slides*](https://wowchemy.com/docs/managing-content/#create-slides) feature and link using `slides` parameter in the front matter of the talk file
+- **Upload** an existing slide deck to `static/` and link using `url_slides` parameter in the front matter of the talk file
+- **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://wowchemy.com/docs/writing-markdown-latex/).
+Further event details, including [page elements](https://wowchemy.com/docs/writing-markdown-latex/) such as image galleries, can be added to the body of this page. --></description></item><item><title>I-priors in Bayesian Variable Selection: From Reproducing Kernel Hilbert Spaces to Hamiltonian Monte Carlo</title><link>https://haziqj.github.io/talk/i-priors-in-bayesian-variable-selection-from-reproducing-kernel-hilbert-spaces-to-hamiltonian-monte-carlo/</link><pubDate>Thu, 03 Nov 2016 12:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/i-priors-in-bayesian-variable-selection-from-reproducing-kernel-hilbert-spaces-to-hamiltonian-monte-carlo/</guid><description/></item><item><title>Two-stage Bayesian variable selection for linear models using I-priors</title><link>https://haziqj.github.io/talk/two-stage-bayesian-variable-selection-for-linear-models-using-i-priors/</link><pubDate>Wed, 18 Nov 2015 12:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/two-stage-bayesian-variable-selection-for-linear-models-using-i-priors/</guid><description/></item><item><title>Regression Modelling using I-Priors</title><link>https://haziqj.github.io/talk/regression-modelling-using-i-priors/</link><pubDate>Tue, 19 May 2015 12:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/regression-modelling-using-i-priors/</guid><description/></item></channel></rss>

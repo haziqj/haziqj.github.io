@@ -1,15 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Haziq Jamil</title><link>https://haziqj.github.io/</link><atom:link href="https://haziqj.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Haziq Jamil</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><copyright>© 2021 Haziq Jamil</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate><image><url>https://haziqj.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url><title>Haziq Jamil</title><link>https://haziqj.github.io/</link></image><item><title>Example Talk</title><link>https://haziqj.github.io/talk/example-talk/</link><pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/example-talk/</guid><description>&lt;div class="alert alert-note">
-&lt;div>
-Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in slides feature.
-&lt;/div>
-&lt;/div>
-&lt;p>Slides can be added in a few ways:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Create&lt;/strong> slides using Wowchemy&amp;rsquo;s &lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">&lt;em>Slides&lt;/em>&lt;/a> feature and link using &lt;code>slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
-&lt;li>&lt;strong>Upload&lt;/strong> an existing slide deck to &lt;code>static/&lt;/code> and link using &lt;code>url_slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
-&lt;li>&lt;strong>Embed&lt;/strong> your slides (e.g. Google Slides) or presentation video on this page using &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">shortcodes&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Welcome to Wowchemy, the website builder for Hugo</title><link>https://haziqj.github.io/post/getting-started/</link><pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/post/getting-started/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Haziq Jamil</title><link>https://haziqj.github.io/</link><atom:link href="https://haziqj.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Haziq Jamil</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><copyright>© 2021 Haziq Jamil</copyright><lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate><image><url>https://haziqj.github.io/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png</url><title>Haziq Jamil</title><link>https://haziqj.github.io/</link></image><item><title>Welcome to Wowchemy, the website builder for Hugo</title><link>https://haziqj.github.io/post/getting-started/</link><pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/post/getting-started/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
 &lt;ol>
 &lt;li>The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li>
 &lt;li>The template can be modified and customised to suit your needs. It&amp;rsquo;s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong>no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong> and having &lt;strong>flexibility to later add even deeper personalization with HTML and CSS&lt;/strong>&lt;/li>
@@ -63,7 +52,85 @@ The template is mobile first with a responsive design to ensure that your site l
 &lt;p>&lt;a href="https://wowchemy.com/docs/customization" target="_blank" rel="noopener">Choose a stunning &lt;strong>theme&lt;/strong> and &lt;strong>font&lt;/strong>&lt;/a> for your site. Themes are fully customizable.&lt;/p>
 &lt;h2 id="license">License&lt;/h2>
 &lt;p>Copyright 2016-present &lt;a href="https://georgecushen.com" target="_blank" rel="noopener">George Cushen&lt;/a>.&lt;/p>
-&lt;p>Released under the &lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/blob/master/LICENSE.md" target="_blank" rel="noopener">MIT&lt;/a> license.&lt;/p></description></item><item><title>Slides</title><link>https://haziqj.github.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy">Create slides in Markdown with Wowchemy&lt;/h1>
+&lt;p>Released under the &lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/blob/master/LICENSE.md" target="_blank" rel="noopener">MIT&lt;/a> license.&lt;/p></description></item><item><title>A latent variable model for maximal performance testing with dropouts for military applications</title><link>https://haziqj.github.io/talk/a-latent-variable-model-for-maximal-performance-testing-with-dropouts-for-military-applications/</link><pubDate>Thu, 19 Nov 2020 14:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/a-latent-variable-model-for-maximal-performance-testing-with-dropouts-for-military-applications/</guid><description>&lt;h2 id="links">Links&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://rpsychologist.com/d3/bayes/" target="_blank" rel="noopener">An interactive visualisation of Bayesian inference&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/chi-feng/mcmc-demo" target="_blank" rel="noopener">MCMC demo&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="references">References&lt;/h2>
+&lt;ul>
+&lt;li>Bollen, K. A. (1989). &lt;em>Structural Equations with Latent Variables. John Wiley &amp;amp; Sons.&lt;/em> ISBN: 978-0-471-01171-2. DOI: &lt;a href="https://doi.org/10.1002/9781118619179" target="_blank" rel="noopener">10.1002/9781118619179&lt;/a>.&lt;/li>
+&lt;li>Denwood, M. (2016). &lt;em>runjags: An R Package Providing Interface Utilities, Model Templates, Parallel Computing Methods and Additional Distributions for MCMC Models in JAGS.&lt;/em> Journal of Statistical Software 71.9, pp. 1–25. DOI: &lt;a href="https://doi.org/10.18637/jss.v071.i09" target="_blank" rel="noopener">10.18637/jss.v071.i09&lt;/a>.&lt;/li>
+&lt;li>Edwards, J. R. and R. P. Bagozzi (2000). &lt;em>On the nature and direction of relationships between constructs and measures.&lt;/em> Psychological methods 5.2, p. 155.&lt;/li>
+&lt;li>Hafez, M. S., I. Moustaki, and J. Kuha (2015). &lt;em>Analysis of multivariate longitudinal data subject to nonrandom dropout.&lt;/em> Structural Equation Modeling: A Multidisciplinary Journal 22.2, pp. 193–201.&lt;/li>
+&lt;li>Kruschke, J. K. (2014). &lt;em>Doing Bayesian Data Analysis: A tutorial with R, JAGS, and Stan.&lt;/em> Second Edition. Boston: Academic Press. ISBN: 978-0-12-405888-0.&lt;/li>
+&lt;li>Rabe-Hesketh, S. and A. Skrondal (2008). &lt;em>Multilevel and longitudinal modeling using Stata.&lt;/em> STATA press.&lt;/li>
+&lt;/ul>
+&lt;h2 id="sample-code-in-jags">Sample code in JAGS&lt;/h2>
+&lt;pre>&lt;code class="language-r">model{
+for (i in 1:N) {
+for (k in 1:p_phy) { # Physical
+y_phy[i,k] ~ dnorm(a_phy[k] + b_phy[k] * Phy[i], 1/v_phy[k])
+}
+for (k in 1:p_cgn) { # Cognitive
+y_cgn[i,k] ~ dnorm(a_cgn[k] + b_cgn[k] * Cgn[i], 1/v_cgn[k])
+}
+for (k in 1:p_cmb) { # Combatant
+y_cmb[i,k] ~ dnorm(a_cmb[k] + b_cmb[k] * Cmb[i], 1/v_cmb[k])
+}
+Phy[i] ~ dnorm(a_Phy + b_Phy * Abl[i], 1/v_Phy)
+Cgn[i] ~ dnorm(a_Cgn + b_Cgn * Abl[i], 1/v_Cgn)
+Cmb[i] ~ dnorm(a_Cmb + b_Cmb * Abl[i], 1/v_Cmb)
+Abl[i] ~ dnorm(a_Abl, 1/v_Abl)
+}
+# Priors ---------------------------------------------------------------------
+a_phy[1] ~ dnorm(0,1e-3)
+b_phy[1] &amp;lt;- 1
+for(k in 2:p_phy) {
+a_phy[k] ~ dnorm(0,1e-3)
+b_phy[k] ~ dnorm(0,1e-2)
+}
+for(k in 1:p_phy) {
+sd_phy[k] ~ dgamma(1,.5)
+v_phy[k] &amp;lt;- pow(sd_phy[k],2)
+}
+a_cgn[1] ~ dnorm(0,1e-3)
+b_cgn[1] &amp;lt;- 1
+for(k in 2:p_cgn) {
+a_cgn[k] ~ dnorm(0,1e-3)
+b_cgn[k] ~ dnorm(0,1e-2)
+}
+for(k in 1:p_cgn) {
+sd_cgn[k] ~ dgamma(1,.5)
+v_cgn[k] &amp;lt;- pow(sd_cgn[k],2)
+}
+a_cmb[1] ~ dnorm(0,1e-3)
+b_cmb[1] &amp;lt;- 1
+for(k in 2:p_cmb) {
+a_cmb[k] ~ dnorm(0,1e-3)
+b_cmb[k] ~ dnorm(0,1e-2)
+}
+for(k in 1:p_cmb) {
+sd_cmb[k] ~ dgamma(1,.5)
+v_cmb[k] &amp;lt;- pow(sd_cmb[k],2)
+}
+a_Phy &amp;lt;- 0
+a_Cgn &amp;lt;- 0
+a_Cmb &amp;lt;- 0
+a_Abl &amp;lt;- 0
+b_Phy &amp;lt;- 1
+b_Cgn ~ dnorm(0,1e-2)
+b_Cmb ~ dnorm(0,1e-2)
+sd_Phy ~ dgamma(1,.5)
+v_Phy &amp;lt;- pow(sd_Phy,2)
+sd_Cgn ~ dgamma(1,.5)
+v_Cgn &amp;lt;- pow(sd_Cgn,2)
+sd_Cmb ~ dgamma(1,.5)
+v_Cmb &amp;lt;- pow(sd_Cmb,2)
+sd_Abl ~ dgamma(1,.5)
+v_Abl &amp;lt;- pow(sd_Abl,2)
+}
+&lt;/code>&lt;/pre></description></item><item><title>Investigating the effect of load carriage on soldiers’ performances using structural equation models</title><link>https://haziqj.github.io/talk/investigating-the-effect-of-load-carriage-on-soldiers-performances-using-structural-equation-models/</link><pubDate>Thu, 28 May 2020 13:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/investigating-the-effect-of-load-carriage-on-soldiers-performances-using-structural-equation-models/</guid><description/></item><item><title>Statistical Tables</title><link>https://haziqj.github.io/project/stat-tables/</link><pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/project/stat-tables/</guid><description/></item><item><title>Bayesian Variable Selection for Linear Models</title><link>https://haziqj.github.io/talk/bayesian-variable-selection-for-linear-models/</link><pubDate>Wed, 13 Nov 2019 14:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/bayesian-variable-selection-for-linear-models/</guid><description/></item><item><title>Slides</title><link>https://haziqj.github.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy">Create slides in Markdown with Wowchemy&lt;/h1>
 &lt;p>&lt;a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy&lt;/a> | &lt;a href="https://owchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h2 id="features">Features&lt;/h2>
@@ -178,11 +245,33 @@ color: navy;
 &lt;hr>
 &lt;h1 id="questions">Questions?&lt;/h1>
 &lt;p>&lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/discussions" target="_blank" rel="noopener">Ask&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title>Example Project</title><link>https://haziqj.github.io/project/example/</link><pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/project/example/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p>
-&lt;p>Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p>
-&lt;p>Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p>
-&lt;p>Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p>
-&lt;p>Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p></description></item><item><title>An example conference paper</title><link>https://haziqj.github.io/publication/example/</link><pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/publication/example/</guid><description>&lt;div class="alert alert-note">
+&lt;p>&lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title>Misconceptions in Demography</title><link>https://haziqj.github.io/talk/misconceptions-in-demography/</link><pubDate>Fri, 25 Jan 2019 09:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/misconceptions-in-demography/</guid><description/></item><item><title>A Brief Guide to Variational Inference</title><link>https://haziqj.github.io/talk/a-brief-guide-to-variational-inference/</link><pubDate>Tue, 04 Dec 2018 14:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/a-brief-guide-to-variational-inference/</guid><description>&lt;h3 id="variational-inference-for-mixture-of-gaussians">Variational Inference for Mixture of Gaussians&lt;/h3>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://haziqj.github.io/img/var-eg2.gif" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p></description></item><item><title>R/iprobit</title><link>https://haziqj.github.io/project/r-iprobit/</link><pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/project/r-iprobit/</guid><description/></item><item><title>Binary and Multinomial Regression using Fisher Information Covariance Kernels (I-priors)</title><link>https://haziqj.github.io/talk/binary-and-multinomial-regression-using-fisher-information-covariance-kernels-i-priors/</link><pubDate>Tue, 27 Mar 2018 12:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/binary-and-multinomial-regression-using-fisher-information-covariance-kernels-i-priors/</guid><description>&lt;h3 id="spatio-temporal-modelling-of-bovine-tuberculosis">Spatio-temporal modelling of bovine tuberculosis&lt;/h3>
+&lt;p>Prediction of probability surface plots over time.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://haziqj.github.io/img/btb.gif" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p></description></item><item><title>A Beginner's Guide to Variational Inference</title><link>https://haziqj.github.io/talk/a-beginners-guide-to-variational-inference/</link><pubDate>Thu, 01 Feb 2018 12:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/a-beginners-guide-to-variational-inference/</guid><description/></item><item><title>Regression Modelling with I-Priors</title><link>https://haziqj.github.io/talk/regression-modelling-with-i-priors/</link><pubDate>Tue, 18 Jul 2017 13:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/regression-modelling-with-i-priors/</guid><description/></item><item><title>Binary probit regression with I-priors</title><link>https://haziqj.github.io/talk/binary-probit-regression-with-i-priors/</link><pubDate>Mon, 08 May 2017 12:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/binary-probit-regression-with-i-priors/</guid><description>&lt;!-- &lt;div class="alert alert-note">
+&lt;div>
+Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in slides feature.
+&lt;/div>
+&lt;/div>
+Slides can be added in a few ways:
+- **Create** slides using Wowchemy's [*Slides*](https://wowchemy.com/docs/managing-content/#create-slides) feature and link using `slides` parameter in the front matter of the talk file
+- **Upload** an existing slide deck to `static/` and link using `url_slides` parameter in the front matter of the talk file
+- **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://wowchemy.com/docs/writing-markdown-latex/).
+Further event details, including [page elements](https://wowchemy.com/docs/writing-markdown-latex/) such as image galleries, can be added to the body of this page. --></description></item><item><title>MMN Brunei quantitative text analysis</title><link>https://haziqj.github.io/project/mmn/</link><pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/project/mmn/</guid><description/></item><item><title>I-priors in Bayesian Variable Selection: From Reproducing Kernel Hilbert Spaces to Hamiltonian Monte Carlo</title><link>https://haziqj.github.io/talk/i-priors-in-bayesian-variable-selection-from-reproducing-kernel-hilbert-spaces-to-hamiltonian-monte-carlo/</link><pubDate>Thu, 03 Nov 2016 12:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/i-priors-in-bayesian-variable-selection-from-reproducing-kernel-hilbert-spaces-to-hamiltonian-monte-carlo/</guid><description/></item><item><title>Hamiltonian Monte Carlo explainer</title><link>https://haziqj.github.io/project/hmc-shiny/</link><pubDate>Thu, 03 Nov 2016 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/project/hmc-shiny/</guid><description>&lt;p>I created two shiny apps to explain Hamiltonian Monte Carlo:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://haziqj.shinyapps.io/hmc1/" target="_blank" rel="noopener">https://haziqj.shinyapps.io/hmc1/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://haziqj.shinyapps.io/hmc2/" target="_blank" rel="noopener">https://haziqj.shinyapps.io/hmc2/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>R/ipriorBVS</title><link>https://haziqj.github.io/project/r-ipriorbvs/</link><pubDate>Sun, 28 Aug 2016 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/project/r-ipriorbvs/</guid><description/></item><item><title>R/iprior</title><link>https://haziqj.github.io/project/r-iprior/</link><pubDate>Fri, 19 Aug 2016 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/project/r-iprior/</guid><description/></item><item><title>My PhD Project</title><link>https://haziqj.github.io/project/my-phd/</link><pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/project/my-phd/</guid><description/></item><item><title>Two-stage Bayesian variable selection for linear models using I-priors</title><link>https://haziqj.github.io/talk/two-stage-bayesian-variable-selection-for-linear-models-using-i-priors/</link><pubDate>Wed, 18 Nov 2015 12:30:00 +0000</pubDate><guid>https://haziqj.github.io/talk/two-stage-bayesian-variable-selection-for-linear-models-using-i-priors/</guid><description/></item><item><title>Regression Modelling using I-Priors</title><link>https://haziqj.github.io/talk/regression-modelling-using-i-priors/</link><pubDate>Tue, 19 May 2015 12:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/regression-modelling-using-i-priors/</guid><description/></item><item><title>An example conference paper</title><link>https://haziqj.github.io/publication/example/</link><pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/publication/example/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
 Click the &lt;em>Cite&lt;/em> button above to demo the feature to enable visitors to import publication metadata into their reference management software.
 &lt;/div>
@@ -192,7 +281,7 @@ Click the &lt;em>Cite&lt;/em> button above to demo the feature to enable visitor
 Create your slides in Markdown - click the &lt;em>Slides&lt;/em> button to check out the example.
 &lt;/div>
 &lt;/div>
-&lt;p>Supplementary notes can be added here, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">code, math, and images&lt;/a>.&lt;/p></description></item><item><title/><link>https://haziqj.github.io/admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/admin/</guid><description/></item><item><title>Book an appointment</title><link>https://haziqj.github.io/appointment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/appointment/</guid><description>&lt;p>If the scheduling tool does not load, follow this &lt;a href="https://calendly.com/haziqj" target="_blank" rel="noopener">link&lt;/a> to my Calendly scheduling page.&lt;/p>
+&lt;p>Supplementary notes can be added here, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">code, math, and images&lt;/a>.&lt;/p></description></item><item><title/><link>https://haziqj.github.io/admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/admin/</guid><description/></item><item><title/><link>https://haziqj.github.io/project/r-diagacc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/project/r-diagacc/</guid><description/></item><item><title>Book an appointment</title><link>https://haziqj.github.io/appointment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/appointment/</guid><description>&lt;p>If the scheduling tool does not load, follow this &lt;a href="https://calendly.com/haziqj" target="_blank" rel="noopener">link&lt;/a> to my Calendly scheduling page.&lt;/p>
 &lt;!-- &lt;html lang="en-US">
 &lt;head>
 &lt;meta charset="UTF-8">
