@@ -76,4 +76,15 @@ v_Cmb &amp;lt;- pow(sd_Cmb,2)
 sd_Abl ~ dgamma(1,.5)
 v_Abl &amp;lt;- pow(sd_Abl,2)
 }
-&lt;/code>&lt;/pre></description></item><item><title>Investigating the effect of load carriage on soldiers’ performances using structural equation models</title><link>https://haziqj.github.io/talk/investigating-the-effect-of-load-carriage-on-soldiers-performances-using-structural-equation-models/</link><pubDate>Thu, 28 May 2020 13:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/investigating-the-effect-of-load-carriage-on-soldiers-performances-using-structural-equation-models/</guid><description/></item></channel></rss>
+&lt;/code>&lt;/pre></description></item><item><title>Investigating the effect of load carriage on soldiers’ performances using structural equation models</title><link>https://haziqj.github.io/talk/investigating-the-effect-of-load-carriage-on-soldiers-performances-using-structural-equation-models/</link><pubDate>Thu, 28 May 2020 13:00:00 +0000</pubDate><guid>https://haziqj.github.io/talk/investigating-the-effect-of-load-carriage-on-soldiers-performances-using-structural-equation-models/</guid><description/></item><item><title>Scoring individual abilities using multilevel latent variable models</title><link>https://haziqj.github.io/future-project/latent-physical/</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/future-project/latent-physical/</guid><description>&lt;p>Often, key constructs of interest remain elusive in a quantitative study because they are impossible to measure directly.
+Examples from social science studies include individuals' intelligence quotient (IQ), or political tendencies (left or right).
+However, under a reflective measurement theory, we can propose that these constructs influence the outcome of several tests which can be measured directly (e.g., IQ can be measured by appropriate IQ tests, and political tendencies by appropriate survey questions).&lt;/p>
+&lt;p>Taking this cue from the social sciences, it would be interesting to see this type of methodology being applied to sports and fitness.
+Spefically, this study comes from a performance optimisation standpoint.
+Under what conditions do athletes perform best?
+Athletes' performance can be considered to be latent in nature, but several test items can be constructed to measure the latent variable indirectly.&lt;/p>
+&lt;p>It would also be interesting to construct a non-parametric relationship between several explanatory variables and the latent variable of interest in the structural part of the model.
+Doing so would allow for better flexibility and predictive abilities.
+One idea would be to include a Gaussian process regression (GPR) in the structural equation model.&lt;/p>
+&lt;p>This project can be applied in nature, but there is also substantive scope to look into methodology.
+For instance, a writeup of the estimation of such models when there is a GPR would certainly be noteworthy.&lt;/p></description></item></channel></rss>

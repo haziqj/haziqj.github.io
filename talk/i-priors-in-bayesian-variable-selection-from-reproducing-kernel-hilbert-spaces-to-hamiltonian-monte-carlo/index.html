@@ -30,7 +30,7 @@
 <meta property="og:description" content="I-priors are a class of objective priors for regression functions which makes use of its Fisher information in a function space framework. Currently, I am exploring the use of I-priors in Bayesian variable selection. My talk is a collection of ideas and methods that I picked up along the way in researching my work, in the hopes that it might be of interest and some use in the areas you are working on: 1) Estimation of I-prior models using likelihood methods; 2) The R/iprior package for fitting I-prior models; 3) Shrinkage properties of I-priors and how they link to L2 penalties with individual shrinkage parameters (and equivalently, individual variance hyper-parameters in a Bayesian setting); 4) Estimation of I-prior models in a fully-Bayes setting, with particular interest in the scale parameters; 5) Using Hamiltonian Monte Carlo to obtain better quality MCMC chains for the Bayesian I-prior model. I will also share some information on useful tools and software for reproducible research that I came across during my work, including Shiny apps, GitHub, RStudio (for package development), knitr, and Stan."><meta property="og:image" content="https://haziqj.github.io/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png">
 <meta property="twitter:image" content="https://haziqj.github.io/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-gb">
 <meta property="article:published_time" content="2017-01-01T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-09-07T00:02:24+08:00">
+<meta property="article:modified_time" content="2021-09-07T11:01:13+08:00">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"Event","mainEntityOfPage":{"@type":"WebPage","@id":"https://haziqj.github.io/talk/i-priors-in-bayesian-variable-selection-from-reproducing-kernel-hilbert-spaces-to-hamiltonian-monte-carlo/"},"name":"I-priors in Bayesian Variable Selection: From Reproducing Kernel Hilbert Spaces to Hamiltonian Monte Carlo","location":{"@type":"Place","name":"LSE, London, United Kingdom"},"startDate":"2016-11-03T12:30:00Z","endDate":"2016-11-03T14:00:00Z","performer":{"@type":"Person","name":"Haziq Jamil"},"description":"I-priors are a class of objective priors for regression functions which makes use of its Fisher information in a function space framework. Currently, I am exploring the use of I-priors in Bayesian variable selection. My talk is a collection of ideas and methods that I picked up along the way in researching my work, in the hopes that it might be of interest and some use in the areas you are working on: 1) Estimation of I-prior models using likelihood methods; 2) The R/iprior package for fitting I-prior models; 3) Shrinkage properties of I-priors and how they link to L2 penalties with individual shrinkage parameters (and equivalently, individual variance hyper-parameters in a Bayesian setting); 4) Estimation of I-prior models in a fully-Bayes setting, with particular interest in the scale parameters; 5) Using Hamiltonian Monte Carlo to obtain better quality MCMC chains for the Bayesian I-prior model. I will also share some information on useful tools and software for reproducible research that I came across during my work, including Shiny apps, GitHub, RStudio (for package development), knitr, and Stan."}</script>
 <title>I-priors in Bayesian Variable Selection: From Reproducing Kernel Hilbert Spaces to Hamiltonian Monte Carlo | Haziq Jamil</title>
 </head>
@@ -121,19 +121,19 @@
 <h1>I-priors in Bayesian Variable Selection: From Reproducing Kernel Hilbert Spaces to Hamiltonian Monte Carlo</h1>
 <div class=article-metadata>
 <div>
-<span>
+<span class=author-highlighted>
 Haziq Jamil</span>
 </div>
 </div>
 <div class="btn-links mb-3">
-<a class="btn btn-outline-primary btn-page-header" href=/files/soc-stat-meet-handout.pdf target=_blank rel=noopener>
-PDF
-</a>
 <a class="btn btn-outline-primary btn-page-header" href=https://github.com/haziqjamil/soc-stat-meet target=_blank rel=noopener>
 Code
 </a>
 <a class="btn btn-outline-primary btn-page-header" href=/project/my-phd/>
 Project
+</a>
+<a class="btn btn-outline-primary btn-page-header" href=/talk/i-priors-in-bayesian-variable-selection-from-reproducing-kernel-hilbert-spaces-to-hamiltonian-monte-carlo/soc-stat-meet-handout.pdf target=_blank rel=noopener>
+Slides
 </a>
 </div>
 </div>
@@ -218,6 +218,46 @@ LSE Social Statistics Group Meetings
 </a>
 </li>
 </ul>
+</div>
+<div class="media author-card content-widget-hr">
+<a href=https://haziqj.github.io/><img class="avatar mr-3 avatar-circle" src=/authors/haziqj/avatar_hu662a60a1947115ae66d33ead0d455e94_1342460_270x270_fill_lanczos_center_3.png alt="Haziq Jamil"></a>
+<div class=media-body>
+<h5 class=card-title><a href=https://haziqj.github.io/>Haziq Jamil</a></h5>
+<h6 class=card-subtitle>Assistant Professor in Statistics</h6>
+<p class=card-text>My research interests include statistical theory, methods and computation, with applications towards the social sciences.</p>
+<ul class=network-icon aria-hidden=true>
+<li>
+<a href="https://scholar.google.com/citations?user=3CL0zhUAAAAJ&hl=en" target=_blank rel=noopener>
+<i class="ai ai-google-scholar-square"></i>
+</a>
+</li>
+<li>
+<a href="https://www.scopus.com/authid/detail.uri?authorId=57219527445" target=_blank rel=noopener>
+<i class="fab fa-stripe-s"></i>
+</a>
+</li>
+<li>
+<a href=https://www.researchgate.net/profile/Haziq-Jamil-2 target=_blank rel=noopener>
+<i class="ai ai-researchgate-square"></i>
+</a>
+</li>
+<li>
+<a href=https://orcid.org/0000-0003-3298-1010 target=_blank rel=noopener>
+<i class="ai ai-orcid"></i>
+</a>
+</li>
+<li>
+<a href=https://github.com/haziqj target=_blank rel=noopener>
+<i class="fab fa-github"></i>
+</a>
+</li>
+<li>
+<a href=https://www.linkedin.com/in/haziqjamil target=_blank rel=noopener>
+<i class="fab fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</div>
 </div>
 <div class="article-widget content-widget-hr">
 <h3>Related</h3>

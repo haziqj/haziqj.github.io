@@ -23,15 +23,15 @@
 <link rel=icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_32x32_fill_lanczos_center_3.png>
 <link rel=apple-touch-icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_180x180_fill_lanczos_center_3.png>
 <link rel=canonical href=https://haziqj.github.io/talk/a-brief-guide-to-variational-inference/>
-<meta property="twitter:card" content="summary">
+<meta property="twitter:card" content="summary_large_image">
 <meta property="og:site_name" content="Haziq Jamil">
 <meta property="og:url" content="https://haziqj.github.io/talk/a-brief-guide-to-variational-inference/">
 <meta property="og:title" content="A Brief Guide to Variational Inference | Haziq Jamil">
-<meta property="og:description" content="The fitting of complex statistical models that consists of latent or nuisance variables, in addition to various parameters to be estimated, likely involves overcoming an intractable integral. For instance, calculating the likelihood of such models require marginalising over the latent variables, and this may prove to be difficult computationally, either due to dimensionality or model design. Variational inference, or variational Bayes as it is also known, offers an efficient alternative to Markov chain Monte Carlo methods, the Laplace approximation, and quadrature methods. Rooted in Bayesian inference and popularised in machine learning, the main idea is to overcome the difficulties faced by working with “easy” density functions in lieu of the true posterior distribution. The approximating density function is chosen so as to minimise the (reverse) Kullback-Leilber divergence between them. The topics that will be discussed are mean-field distributions, the coordinate ascent algorithm, and approximation properties, with an example following. The hope is that the audience will gain a basic understanding of the method to possibly spur on further research and applications in their respective work."><meta property="og:image" content="https://haziqj.github.io/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png">
-<meta property="twitter:image" content="https://haziqj.github.io/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-gb">
+<meta property="og:description" content="The fitting of complex statistical models that consists of latent or nuisance variables, in addition to various parameters to be estimated, likely involves overcoming an intractable integral. For instance, calculating the likelihood of such models require marginalising over the latent variables, and this may prove to be difficult computationally, either due to dimensionality or model design. Variational inference, or variational Bayes as it is also known, offers an efficient alternative to Markov chain Monte Carlo methods, the Laplace approximation, and quadrature methods. Rooted in Bayesian inference and popularised in machine learning, the main idea is to overcome the difficulties faced by working with “easy” density functions in lieu of the true posterior distribution. The approximating density function is chosen so as to minimise the (reverse) Kullback-Leilber divergence between them. The topics that will be discussed are mean-field distributions, the coordinate ascent algorithm, and approximation properties, with an example following. The hope is that the audience will gain a basic understanding of the method to possibly spur on further research and applications in their respective work."><meta property="og:image" content="https://haziqj.github.io/talk/a-brief-guide-to-variational-inference/featured.gif">
+<meta property="twitter:image" content="https://haziqj.github.io/talk/a-brief-guide-to-variational-inference/featured.gif"><meta property="og:locale" content="en-gb">
 <meta property="article:published_time" content="2017-01-01T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-09-07T00:02:24+08:00">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Event","mainEntityOfPage":{"@type":"WebPage","@id":"https://haziqj.github.io/talk/a-brief-guide-to-variational-inference/"},"name":"A Brief Guide to Variational Inference","location":{"@type":"Place","name":"Faculty of Science, UBD, Brunei"},"startDate":"2018-12-04T14:30:00Z","endDate":"2018-02-01T15:00:00Z","performer":{"@type":"Person","name":"Haziq Jamil"},"description":"The fitting of complex statistical models that consists of latent or nuisance variables, in addition to various parameters to be estimated, likely involves overcoming an intractable integral. For instance, calculating the likelihood of such models require marginalising over the latent variables, and this may prove to be difficult computationally, either due to dimensionality or model design. Variational inference, or variational Bayes as it is also known, offers an efficient alternative to Markov chain Monte Carlo methods, the Laplace approximation, and quadrature methods. Rooted in Bayesian inference and popularised in machine learning, the main idea is to overcome the difficulties faced by working with “easy” density functions in lieu of the true posterior distribution. The approximating density function is chosen so as to minimise the (reverse) Kullback-Leilber divergence between them. The topics that will be discussed are mean-field distributions, the coordinate ascent algorithm, and approximation properties, with an example following. The hope is that the audience will gain a basic understanding of the method to possibly spur on further research and applications in their respective work."}</script>
+<meta property="article:modified_time" content="2021-09-07T11:01:13+08:00">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Event","mainEntityOfPage":{"@type":"WebPage","@id":"https://haziqj.github.io/talk/a-brief-guide-to-variational-inference/"},"name":"A Brief Guide to Variational Inference","location":{"@type":"Place","name":"Faculty of Science, UBD, Brunei"},"image":["https://haziqj.github.io/talk/a-brief-guide-to-variational-inference/featured.gif"],"startDate":"2018-12-04T14:30:00Z","endDate":"2018-02-01T15:00:00Z","performer":{"@type":"Person","name":"Haziq Jamil"},"description":"The fitting of complex statistical models that consists of latent or nuisance variables, in addition to various parameters to be estimated, likely involves overcoming an intractable integral. For instance, calculating the likelihood of such models require marginalising over the latent variables, and this may prove to be difficult computationally, either due to dimensionality or model design. Variational inference, or variational Bayes as it is also known, offers an efficient alternative to Markov chain Monte Carlo methods, the Laplace approximation, and quadrature methods. Rooted in Bayesian inference and popularised in machine learning, the main idea is to overcome the difficulties faced by working with “easy” density functions in lieu of the true posterior distribution. The approximating density function is chosen so as to minimise the (reverse) Kullback-Leilber divergence between them. The topics that will be discussed are mean-field distributions, the coordinate ascent algorithm, and approximation properties, with an example following. The hope is that the audience will gain a basic understanding of the method to possibly spur on further research and applications in their respective work."}</script>
 <title>A Brief Guide to Variational Inference | Haziq Jamil</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=d0bd5ea4ad97ae9b9fb40438b317771a>
@@ -121,14 +121,19 @@
 <h1>A Brief Guide to Variational Inference</h1>
 <div class=article-metadata>
 <div>
-<span>
+<span class=author-highlighted>
 Haziq Jamil</span>
 </div>
 </div>
 <div class="btn-links mb-3">
-<a class="btn btn-outline-primary btn-page-header" href=/files/ubd-bgtvi.pdf target=_blank rel=noopener>
+<a class="btn btn-outline-primary btn-page-header" href=/talk/a-brief-guide-to-variational-inference/ubd-bgtvi-slides.pdf target=_blank rel=noopener>
 Slides
 </a>
+</div>
+</div>
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style=max-width:550px;max-height:366px>
+<div style=position:relative>
+<img src=/talk/a-brief-guide-to-variational-inference/featured.gif alt class=featured-image>
 </div>
 </div>
 <div class=article-container>
@@ -173,13 +178,6 @@ FOS Research Seminar
 <div class="d-md-none space-below"></div>
 <div class=space-below></div>
 <div class=article-style>
-<h3 id=variational-inference-for-mixture-of-gaussians>Variational Inference for Mixture of Gaussians</h3>
-<p>
-<figure>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=/img/var-eg2.gif alt loading=lazy data-zoomable></div>
-</div></figure>
-</p>
 </div>
 <div class=article-tags>
 <a class="badge badge-light" href=/tag/variational-inference/>Variational Inference</a>
@@ -217,6 +215,46 @@ FOS Research Seminar
 </a>
 </li>
 </ul>
+</div>
+<div class="media author-card content-widget-hr">
+<a href=https://haziqj.github.io/><img class="avatar mr-3 avatar-circle" src=/authors/haziqj/avatar_hu662a60a1947115ae66d33ead0d455e94_1342460_270x270_fill_lanczos_center_3.png alt="Haziq Jamil"></a>
+<div class=media-body>
+<h5 class=card-title><a href=https://haziqj.github.io/>Haziq Jamil</a></h5>
+<h6 class=card-subtitle>Assistant Professor in Statistics</h6>
+<p class=card-text>My research interests include statistical theory, methods and computation, with applications towards the social sciences.</p>
+<ul class=network-icon aria-hidden=true>
+<li>
+<a href="https://scholar.google.com/citations?user=3CL0zhUAAAAJ&hl=en" target=_blank rel=noopener>
+<i class="ai ai-google-scholar-square"></i>
+</a>
+</li>
+<li>
+<a href="https://www.scopus.com/authid/detail.uri?authorId=57219527445" target=_blank rel=noopener>
+<i class="fab fa-stripe-s"></i>
+</a>
+</li>
+<li>
+<a href=https://www.researchgate.net/profile/Haziq-Jamil-2 target=_blank rel=noopener>
+<i class="ai ai-researchgate-square"></i>
+</a>
+</li>
+<li>
+<a href=https://orcid.org/0000-0003-3298-1010 target=_blank rel=noopener>
+<i class="ai ai-orcid"></i>
+</a>
+</li>
+<li>
+<a href=https://github.com/haziqj target=_blank rel=noopener>
+<i class="fab fa-github"></i>
+</a>
+</li>
+<li>
+<a href=https://www.linkedin.com/in/haziqjamil target=_blank rel=noopener>
+<i class="fab fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</div>
 </div>
 <div class="article-widget content-widget-hr">
 <h3>Related</h3>
