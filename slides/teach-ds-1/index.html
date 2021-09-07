@@ -1,0 +1,511 @@
+<!doctype html><html lang=en-gb>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=generator content="Wowchemy 5.3.0 for Hugo">
+<link rel=manifest href=/index.webmanifest>
+<link rel=icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_32x32_fill_lanczos_center_3.png>
+<link rel=apple-touch-icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_192x192_fill_lanczos_center_3.png>
+<link rel=canonical href=https://haziqj.github.io/slides/teach-ds-1/>
+<title>Introductory Data Science using R | Haziq Jamil</title>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/white.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css crossorigin=anonymous id=highlight-theme>
+<link rel=stylesheet href=/css/reveal_custom.min.css>
+</head>
+<body>
+<div class=reveal>
+<div class=slides>
+<section>
+<h1 id=introductory-data-science-using-r>Introductory Data Science using R</h1>
+<p>Lecture 1: The Data Science Framework</p>
+</section>
+<section>
+<h2 id=admin>Admin</h2>
+<ul>
+<li>Content available at <a href=https://haziqj.ml/teaching target=_blank rel=noopener>https://haziqj.ml/teaching</a></li>
+<li>4 x 2hr lectures</li>
+<li>10min break on the hour</li>
+<li>Ask questions as we go along</li>
+</ul>
+</section>
+<section>
+<h2 id=structure>Structure</h2>
+<ul>
+<li>Lecture 1: The data science framework</li>
+<li>Lecture 2: Using <code>R</code></li>
+<li>Lecture 3: Data science with <code>R</code></li>
+<li>Lecture 4: Exploratory analysis of <a href=http://kiva.org target=_blank rel=noopener>Kiva.org</a> data</li>
+</ul>
+</section>
+<section>
+<p>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img alt srcset="/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_863f45dcad49a241872073492c05a206.jpg 400w,
+/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_3f56d9ab3dd142ef89f1578a720477b5.jpg 760w,
+/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_1200x1200_fit_q75_lanczos.jpg 1200w" src=/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_863f45dcad49a241872073492c05a206.jpg width=378 height=550 loading=lazy data-zoomable></div>
+</div></figure>
+</p>
+<aside class=notes>
+The scientific method is an empirical method of acquiring knowledge that has characterized the development of science since at least the 17th century. It involves careful observation, applying rigorous skepticism about what is observed, given that cognitive assumptions can distort how one interprets the observation. It involves formulating hypotheses, via induction, based on such observations; experimental and measurement-based testing of deductions drawn from the hypotheses; and refinement (or elimination) of the hypotheses based on the experimental findings. These are principles of the scientific method, as distinguished from a definitive series of steps applicable to all scientific enterprises
+</aside>
+</section>
+<section>
+<h2 id=the-scientific-inquiry>The scientific inquiry</h2>
+<p>data + model &mdash;> understand</p>
+<ul>
+<li>Not new, arises in many fields
+<ul>
+<li>Natural sciences</li>
+<li>Econometrics</li>
+<li>Psychology</li>
+<li>Sociology</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+<aside class=notes>
+<ul>
+<li>From a data science perspective, we are interested in the numerical aspects.</li>
+<li>qualitative vs quantitative</li>
+<li>It really is not new. Examples?</li>
+</ul>
+</aside>
+</section>
+<section>
+<p><img src=piazzi-1.png height=450></p>
+<p>Giuseppe Piazzi&rsquo;s observations in the Monatliche Correspondenz, September 1801.</p>
+<aside class=notes>
+<ul>
+<li>18th century</li>
+<li>Collected data on position of a celestial object. Data and model show that the object did not behave like it was supposed to. Announced it as a comet but really was a planet.</li>
+</ul>
+</aside>
+</section>
+<section>
+<p><img src=rct.png height=450></p>
+<ul>
+<li>Design of experiments; randomised control trials.</li>
+<li>Sir Ronald Fisher (1890&ndash;1962).</li>
+</ul>
+<aside class=notes>
+<ul>
+<li>Fisher credited with the methods to analyze these types of data sets</li>
+<li>ANOVA</li>
+<li>Note the deliberate intent of collecting data for this specific purpose</li>
+<li>c.f. surveys</li>
+</ul>
+</aside>
+</section>
+<section>
+<p><img src=big-data-1.jpeg height=450></p>
+<p>Data is now available by happenstance, and not just collected by design.</p>
+</section>
+<section>
+<h2 id=big-data>Big Data</h2>
+<p>The more we measure, the more we don&rsquo;t understand</p>
+<ul>
+<li>Breadth vs depth paradox; Big p Small n; The curse of dimensionality</li>
+<li>&ldquo;Data first&rdquo; paradigm</li>
+<li>Ethics; privacy</li>
+</ul>
+<aside class=notes>
+<ul>
+<li>Data collected was manageable and intended. E.g. surveys</li>
+<li>Computing power</li>
+<li>Able to quantify greater degree the actions of individuals, but less able to characterize society</li>
+<li>Data comes after the question. Often do not have the luxury of tailoring what data is collected. Fundamental statistics issues surrounding data are thrown out the window: precision and accuracy. bias in data.</li>
+</ul>
+</aside>
+</section>
+<section>
+<p><code>define: Data Science</code></p>
+<p><em>The &ldquo;concept to unify statistics, data analysis, machine learning and their related methods&rdquo; in order to &ldquo;understand and analyze actual phenomena&rdquo; with data.</em></p>
+<ul>
+<li>Multi-displinary field</li>
+<li>Goal: extract knowledge and insights from structured and unstructured data</li>
+</ul>
+<aside class=notes>
+<ul>
+<li>In essence, need a systematic way of dealing with data. Need to combine knowledge from various fields. While every field was working in silos, they specialised in their own thing.</li>
+<li>Data science unites the fields of stats/maths and computer science to make data actionable.</li>
+</ul>
+</aside>
+</section>
+<section>
+<p><img src=data-science-venn.png height=600></p>
+</section>
+<section>
+<h3 id=examples-of-data-science-problems>Examples of Data Science problems</h3>
+<p>Real-world problems from the <a href=https://www.turing.ac.uk target=_blank rel=noopener>Alan Turing Institute</a></p>
+<ul>
+<li>Real-time jammer detection, identification and localization in 3G and 4G networks</li>
+<li>Automated matching of businesses to government contract opportunities</li>
+<li>Using real-world data to advance air traffic control</li>
+<li>Personalised lung cancer treatment modelling using electronic health records and genomics</li>
+</ul>
+<aside class=notes>
+<ul>
+<li>ATI is the national institute for data science and artificial intelligence.</li>
+<li>interesting to ponder, why was it named after Alan Turing, the comuting pioneer?</li>
+</ul>
+</aside>
+</section>
+<section>
+<h3 id=examples-of-data-science-problems-1>Examples of Data Science problems</h3>
+<p>Real-world problems from the <a href=https://www.turing.ac.uk target=_blank rel=noopener>Alan Turing Institute</a></p>
+<ul>
+<li>Identify potential drivers of engaging in extremism</li>
+<li>News feed analysis to help understand global instability</li>
+<li>Improved strength training using smart gym equipment data</li>
+</ul>
+</section>
+<section>
+<p><img src=data-science-1.png height=550></p>
+</section>
+<section>
+<h2 id=scope-exploratory>Scope: Exploratory</h2>
+<p>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img alt srcset="/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_190026d8e0708e5a591e1e747dcf4203.png 400w,
+/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_f332c0c439229b600781d578c74ca7c3.png 760w,
+/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_1200x1200_fit_lanczos_3.png 1200w" src=/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_190026d8e0708e5a591e1e747dcf4203.png width=517 height=190 loading=lazy data-zoomable></div>
+</div></figure>
+</p>
+<ul>
+<li>Focus on <em>transform</em> and <em>visualise</em></li>
+<li>Modelling requires a specific skill set (Stats or ML)</li>
+<li>GOAL: Generate many promising leads that you can later explore in more depth</li>
+</ul>
+</section>
+<section>
+<h3 id=machine-learning-vs-statistics>Machine Learning vs Statistics</h3>
+<p><strong>Statistics</strong> aims to turn humans into robots.</p>
+<ul>
+<li>Concept of &ldquo;statistical proof&rdquo;</li>
+<li>Often interest is <em>inference</em></li>
+</ul>
+<p><strong>Machine learning</strong> aims to turn robots into humans.</p>
+<ul>
+<li>Make sense of patterns from big data</li>
+<li>Often interest is <em>prediction</em></li>
+</ul>
+<aside class=notes>
+<ul>
+<li>Statistics aims to remove the bias of humans when perceiving patterns in data sets. Learn not to be conned; when someone tells you it is such, need proof.</li>
+<li>Stats: How big is big, and is it enough?</li>
+<li>Measuring effects. Important question: causality?</li>
+<li>On the other hand ML or AI aims to equip computers with human skills: image understanding, speech recognition, natural language processing, etc.</li>
+<li>Kind of &ldquo;reverse engineering&rdquo; of world processes based on data that is observed.</li>
+<li>Generate large labelled data sets from humans. Train models.</li>
+<li>Interesting note: programming language also speaks as to what your background is. R for stats, Python for ML.</li>
+</ul>
+</aside>
+</section>
+<section>
+<h3 id=data-quality-and-readiness>Data Quality and Readiness</h3>
+<p>There&rsquo;s a sea of data, but most of it is undrinkable</p>
+<p><img src=drink-sea-water.jpg height=300></p>
+<p>Data neglect: data cleaning is tedious and complex</p>
+</section>
+<section>
+<h3 id=80-20-rule-of-data-science>80-20 rule of Data Science</h3>
+<ul>
+<li>Most time is spent cleaning up data</li>
+<li>Affectionally called data &ldquo;wrangling&rdquo;</li>
+<li>[TBA] <a href=http://inverseprobability.com/2017/01/12/data-readiness-levels target=_blank rel=noopener>Data Readiness levels</a> (Bands A, B and C)</li>
+</ul>
+<aside class=notes>
+<ul>
+<li>So much for the world&rsquo;s most sexiest job of the 21st century! according to business harvard review 2012.</li>
+<li>Company hires ML, software engineers, but not data cleaners!</li>
+<li>The importance of data is hard to overstate.</li>
+</ul>
+</aside>
+</section>
+<section>
+<h3 id=types-of-data>Types of data</h3>
+<ol>
+<li>Structured data
+<ul>
+<li>Data is in a nicely organised repository</li>
+<li>E.g. Tables, matrices, etc.</li>
+</ul>
+</li>
+<li>Unstructured data
+<ul>
+<li>Information does not have a predefined data model</li>
+<li>E.g. images, colours, text, sound, etc.</li>
+</ul>
+</li>
+</ol>
+</section>
+<section>
+<h3 id=types-of-data-1>Types of data</h3>
+<ol>
+<li>Continuous data
+<ul>
+<li>Measurements are taken on a continuous scale e.g. height, weight, temperature, GDP, distance, etc.</li>
+<li>Usually arises from physical experiments</li>
+</ul>
+</li>
+<li>Discrete data
+<ul>
+<li>Measurements which can only take certain values e.g. sex, survey responses (Likert scales), occupation, ratings, ranks, etc.</li>
+<li>Usually arises in social sciences</li>
+</ul>
+</li>
+</ol>
+</section>
+<section>
+<h3 id=types-of-data-2>Types of data</h3>
+<table>
+<thead>
+<tr>
+<th>Treatment</th>
+<th>Continuous Data</th>
+<th>Categorical Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Import class</td>
+<td><code>numeric</code></td>
+<td><code>factor</code>, <code>ordinal</code></td>
+</tr>
+<tr>
+<td>Visualise</td>
+<td>Histograms, density plots, scatter plot, box & whisker plot, pie charts</td>
+<td>Bar plots,</td>
+</tr>
+<tr>
+<td>Summarise</td>
+<td>5-point summaries</td>
+<td>Frequency tables</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h3 id=exploratory-data-analysis>Exploratory Data Analysis</h3>
+<ol>
+<li>
+<p>Generate questions about your data.</p>
+</li>
+<li>
+<p>Search for answers by visualising, transforming, and modelling your data.</p>
+</li>
+<li>
+<p>Use what you learn to refine your questions and/or generate new questions.</p>
+</li>
+</ol>
+<p>More on this later&mldr;</p>
+</section>
+<section>
+<h3 id=modelling>Modelling</h3>
+<p>$$y_i = \alpha + \beta x_i + \epsilon_i$$
+$$\epsilon_i \sim \text{N}(0,\sigma^2)$$</p>
+<ul>
+<li>EDA does not help in providing statistical proof, nor give predictions</li>
+<li>To do this, engage in statistical or ML models</li>
+<li>Many types of models, depending on what question you want answered</li>
+</ul>
+</section>
+<section>
+<h3 id=the-r-programming-language>The R programming language</h3>
+<p><code>R</code> is a language and environment for statistical computing and graphics <a href=https://www.r-project.org/about.html target=_blank rel=noopener>https://www.r-project.org/about.html</a></p>
+<ul>
+<li>It is free and open source</li>
+<li>Runs everywhere</li>
+<li>Supports extensions</li>
+<li>Engaging community</li>
+<li>Links to other languages</li>
+</ul>
+</section>
+<section>
+<p>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img alt srcset="/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_84380fa0eed6900255d8097bedc03296.jpg 400w,
+/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_ac19f0d423fc584e0430e04e1cbdd4a2.jpg 760w,
+/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_1200x1200_fit_q75_lanczos.jpg 1200w" src=/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_84380fa0eed6900255d8097bedc03296.jpg width=760 height=449 loading=lazy data-zoomable></div>
+</div></figure>
+</p>
+</section>
+<section>
+<h3 id=ggplot2-in-r><code>ggplot2</code> in R</h3>
+<p>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img alt srcset="/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_9a5861e154fb5e8a976bba8d6acddec3.png 400w,
+/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_256873e3bb6d3d9eccb2181766ed2d8d.png 760w,
+/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_1200x1200_fit_lanczos_3.png 1200w" src=/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_9a5861e154fb5e8a976bba8d6acddec3.png width=720 height=445 loading=lazy data-zoomable></div>
+</div></figure>
+</p>
+</section>
+<section>
+<h3 id=ggplot2-in-r-1><code>ggplot2</code> in R</h3>
+<p>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img alt srcset="/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_dff59f346431a74ce36e50b1b461b49b.png 400w,
+/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_1f84e09ea7c68db032e277337b47f0f0.png 760w,
+/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_1200x1200_fit_lanczos_3.png 1200w" src=/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_dff59f346431a74ce36e50b1b461b49b.png width=672 height=480 loading=lazy data-zoomable></div>
+</div></figure>
+</p>
+</section>
+<section>
+<h3 id=ggplot2-in-r-2><code>ggplot2</code> in R</h3>
+<p>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img alt src=/slides/teach-ds-1/ggplot2-3.gif loading=lazy data-zoomable></div>
+</div></figure>
+</p>
+</section>
+<section>
+<h2 id=kivaorghttpkivaorg-data-set><a href=http://kiva.org target=_blank rel=noopener>Kiva.org</a> data set</h2>
+<p><a href=https://www.kaggle.com/kiva/data-science-for-good-kiva-crowdfunding#kiva_loans.csv target=_blank rel=noopener>https://www.kaggle.com/kiva/data-science-for-good-kiva-crowdfunding#kiva_loans.csv</a></p>
+</section>
+<section>
+<h2 id=exercise>Exercise</h2>
+<ul>
+<li>What exploratory analyses would you conduct on this data set?</li>
+<li>What other data do you need to supplement your analyses?</li>
+<li>What questions do you aim to answer?</li>
+</ul>
+</section>
+<section>
+<h2 id=end-of-lecture-1>End of Lecture 1</h2>
+<p>Questions?</p>
+</section>
+<section>
+<h1 id=supplementary-material>Supplementary material</h1>
+</section>
+<section>
+<h2 id=inference-vs-prediction>Inference vs Prediction</h2>
+<p><img src=ml-stats-1.png height=400></p>
+<p>Source: <a href=https://www.datascienceblog.net/post/commentary/inference-vs-prediction/ target=_blank rel=noopener>datascienceblog.com</a></p>
+<aside class=notes>
+<ul>
+<li>Inference: Use the model to learn about the data generation process.</li>
+<li>Prediction: Use the model to predict the outcomes for new data points.</li>
+</ul>
+</aside>
+</section>
+<section>
+<h2 id=model-interpretability>Model interpretability</h2>
+<ul>
+<li>Model interpretability is necessary for inference</li>
+<li>In a nutshell, a model is interpretable if we can &ldquo;see&rdquo; how the model generates its estimates</li>
+<li>c.f. Blackboxes</li>
+<li>Interpretable models often uses simplified assumptions</li>
+</ul>
+<aside class=notes>
+<ul>
+<li>Inference: Use the model to learn about the data generation process.</li>
+<li>Prediction: Use the model to predict the outcomes for new data points.</li>
+</ul>
+</aside>
+</section>
+<section>
+<h2 id=model-complexity>Model complexity</h2>
+<ul>
+<li>A complex model is often better at prediction tasks</li>
+<li>&ldquo;More parameters to tune&rdquo;</li>
+<li>However, model interpretability suffers</li>
+</ul>
+</section>
+<section>
+<h3 id=bias-variance-tradeoff>Bias-Variance tradeoff</h3>
+<p><img src=bias-variance.png height=400></p>
+<p>$$
+E[f(x) - \hat f (x)]^2 = \text{Bias}^2[\hat f(x)] + \text{Var}[\hat f(x)] + \sigma^2
+$$</p>
+<aside class=notes>
+<ul>
+<li>Bias: How close to the truth</li>
+<li>Variance: How varied the predictions will be under a new data set</li>
+</ul>
+</aside>
+</section>
+<section>
+<h3 id=linear-regression>Linear regression</h3>
+<p><img src=efw.png height=450></p>
+<p>Economic freedom = 2.6 + 0.6 Trade</p>
+<aside class=notes>
+<ul>
+<li>Trade: tariffs, regulatory trade barriers, black market, control movement of capital and people, trade</li>
+</ul>
+</aside>
+</section>
+<section>
+<h3 id=neural-networks>Neural networks</h3>
+<p><img src=neural-network.gif height=450></p>
+<p>Source: <a href=https://towardsdatascience.com/everything-you-need-to-know-about-neural-networks-and-backpropagation-machine-learning-made-easy-e5285bc2be3a target=_blank rel=noopener>towardsdatascience.com</a></p>
+</section>
+<section>
+<h3 id=survey-methodology>Survey Methodology</h3>
+<p><img src=survey-methodology.png height=450></p>
+<p>Source: Groves et al. (2009)</p>
+</section>
+<section>
+<h3 id=three-populations>Three populations</h3>
+<p><img src=sampling-frame.png height=450></p>
+</section>
+<section>
+<h3 id=sampling-design-for-bsa-survey>Sampling design for BSA survey</h3>
+<ul>
+<li>Target: Adults aged 18 or over in GB</li>
+<li>Survey: Private households south of the Caledonian Canal</li>
+<li>Frame: Addresses in the Postcode address file</li>
+</ul>
+<p>Multistage design:</p>
+<ul>
+<li>Stratify by postcode sectors</li>
+<li>Simple random sampling of addresses</li>
+<li>Simple random sampling of individuals</li>
+</ul>
+<p>From 60mil people, obtained 3,297 respondents in final sample.</p>
+<aside class=notes>
+<ul>
+<li>What is random? Not predetermined</li>
+<li>Everyone should be able to be sampled with positive probability</li>
+<li>Unbiased</li>
+</ul>
+</aside>
+</section>
+<section>
+<h3 id=see-also>See also</h3>
+<ul>
+<li><a href=https://www.surveymonkey.com/mp/sample-size-calculator/ target=_blank rel=noopener>https://www.surveymonkey.com/mp/sample-size-calculator/</a></li>
+<li><a href=http://www.bsa.natcen.ac.uk/latest-report/british-social-attitudes-30/technical-details.aspx target=_blank rel=noopener>http://www.bsa.natcen.ac.uk/latest-report/british-social-attitudes-30/technical-details.aspx</a></li>
+</ul>
+</section>
+<section>
+<h3 id=data-readiness>Data Readiness</h3>
+<ul>
+<li>Band C: Hearsday data. Is it really available? Has it actually been recorded? Format: PDF, log books, etc.</li>
+<li>Band B: Ready for exploratory analysis, visualisations. Missing values, anomalies, &mldr;</li>
+<li>Band A: Ready for ML/Stats models.</li>
+</ul>
+</section>
+<blockquote>
+</blockquote>
+</section>
+</div>
+</div>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.js integrity="sha512-Xu/cezKABTI81MGnaBm64vdiS7XkttHeYGOgr2Mdga0bTplSBGongLq2lhK2HwL79wefKM0u4uTCLD0ha1sRzQ==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js integrity="sha512-eZZqO4ECmVvGhCt+6VZ7ian2bCu4S6yrjSFH9fXLY1zTokpAWsxAxQwM4x6+7G+G4ha5tFIe0jY0XjpBUqS49Q==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js integrity="sha512-NA5UCab7xDKQPXGsmIp8iEuId5BAKGPiqHZsZQcBuySfp1n3dZrwBDKpPNL23Db5upay1nULxU14JV1ggFOD2A==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js integrity="sha512-FYeeQscKqibmYKr0+nE2+fN5prBsFwgjsBVwkrA88O6mN2+ai6EvRkSi6txuhXlWsyK1MUfoV+94+q6HLouJSQ==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/search/search.min.js integrity="sha512-2yh3Y2gEdboEnZb9d0QZP05N3e0jTkcjhbG9xYL97mbnZ53IXzF5R2TCTmSrtuspDyJ5FWBSh+8izjiGjVdLWw==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/math/math.min.js integrity="sha512-FUzQmRJDLL111zqJg/vN1YzQFQtZNWfBH2VaOiv30dXRXgaTRn3F/Ibda92klSAVjfz3Q9UqS88R4RF4Ip01fQ==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/zoom/zoom.min.js integrity="sha512-zPYOPjR7Hg9BPUYkfNlvVtrC37QlYwq/7mI42VTuXKTcNBp7QvMfuqUTMesOf74OrZ3AEdxJGndGSrJG9O2j5Q==" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/plugin.js integrity="sha256-M6JwAjnRAWmi+sbXURR/yAhWZKYhAw7YXnnLvIxrdGs=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js integrity="sha256-l14dklFcW5mWar6w/9KaW0fWVerf3mYr7Wt0+rXzFAA=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.css integrity="sha256-0fU8HKLaTjgzfaV9CgSqbsN8ilA3zo6zK1M6rlgULd8=" crossorigin=anonymous>
+<script src=/js/wowchemy-slides.js></script>
+</body>
+</html>

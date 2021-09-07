@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides | Haziq Jamil</title><link>https://haziqj.github.io/slides/</link><atom:link href="https://haziqj.github.io/slides/index.xml" rel="self" type="application/rss+xml"/><description>Slides</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><copyright>© 2021 Haziq Jamil</copyright><lastBuildDate>Tue, 09 Jul 2019 00:00:00 +0000</lastBuildDate><item><title>Introductory Data Science using R</title><link>https://haziqj.github.io/slides/teach-ds-1/</link><pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/slides/teach-ds-1/</guid><description>&lt;h1 id="introductory-data-science-using-r">Introductory Data Science using R&lt;/h1>
+&lt;p>Lecture 1: The Data Science Framework&lt;/p>
+&lt;hr>
+&lt;h2 id="admin">Admin&lt;/h2>
+&lt;ul>
+&lt;li>Content available at &lt;a href="https://haziqj.ml/teaching" target="_blank" rel="noopener">https://haziqj.ml/teaching&lt;/a>&lt;/li>
+&lt;li>4 x 2hr lectures&lt;/li>
+&lt;li>10min break on the hour&lt;/li>
+&lt;li>Ask questions as we go along&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="structure">Structure&lt;/h2>
+&lt;ul>
+&lt;li>Lecture 1: The data science framework&lt;/li>
+&lt;li>Lecture 2: Using &lt;code>R&lt;/code>&lt;/li>
+&lt;li>Lecture 3: Data science with &lt;code>R&lt;/code>&lt;/li>
+&lt;li>Lecture 4: Exploratory analysis of &lt;a href="http://kiva.org" target="_blank" rel="noopener">Kiva.org&lt;/a> data&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_863f45dcad49a241872073492c05a206.jpg 400w,
+/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_3f56d9ab3dd142ef89f1578a720477b5.jpg 760w,
+/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_1200x1200_fit_q75_lanczos.jpg 1200w"
+src="https://haziqj.github.io/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_863f45dcad49a241872073492c05a206.jpg"
+width="378"
+height="550"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;aside class="notes">
+The scientific method is an empirical method of acquiring knowledge that has characterized the development of science since at least the 17th century. It involves careful observation, applying rigorous skepticism about what is observed, given that cognitive assumptions can distort how one interprets the observation. It involves formulating hypotheses, via induction, based on such observations; experimental and measurement-based testing of deductions drawn from the hypotheses; and refinement (or elimination) of the hypotheses based on the experimental findings. These are principles of the scientific method, as distinguished from a definitive series of steps applicable to all scientific enterprises
+&lt;/aside>
+&lt;hr>
+&lt;h2 id="the-scientific-inquiry">The scientific inquiry&lt;/h2>
+&lt;p>data + model &amp;mdash;&amp;gt; understand&lt;/p>
+&lt;ul>
+&lt;li>Not new, arises in many fields
+&lt;ul>
+&lt;li>Natural sciences&lt;/li>
+&lt;li>Econometrics&lt;/li>
+&lt;li>Psychology&lt;/li>
+&lt;li>Sociology&lt;/li>
+&lt;li>etc.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>From a data science perspective, we are interested in the numerical aspects.&lt;/li>
+&lt;li>qualitative vs quantitative&lt;/li>
+&lt;li>It really is not new. Examples?&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;p>&lt;img src="piazzi-1.png" height="450" />&lt;/p>
+&lt;p>Giuseppe Piazzi&amp;rsquo;s observations in the Monatliche Correspondenz, September 1801.&lt;/p>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>18th century&lt;/li>
+&lt;li>Collected data on position of a celestial object. Data and model show that the object did not behave like it was supposed to. Announced it as a comet but really was a planet.&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;p>&lt;img src="rct.png" height="450" />&lt;/p>
+&lt;ul>
+&lt;li>Design of experiments; randomised control trials.&lt;/li>
+&lt;li>Sir Ronald Fisher (1890&amp;ndash;1962).&lt;/li>
+&lt;/ul>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>Fisher credited with the methods to analyze these types of data sets&lt;/li>
+&lt;li>ANOVA&lt;/li>
+&lt;li>Note the deliberate intent of collecting data for this specific purpose&lt;/li>
+&lt;li>c.f. surveys&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;p>&lt;img src="big-data-1.jpeg" height="450" />&lt;/p>
+&lt;p>Data is now available by happenstance, and not just collected by design.&lt;/p>
+&lt;hr>
+&lt;h2 id="big-data">Big Data&lt;/h2>
+&lt;p>The more we measure, the more we don&amp;rsquo;t understand&lt;/p>
+&lt;ul>
+&lt;li>Breadth vs depth paradox; Big p Small n; The curse of dimensionality&lt;/li>
+&lt;li>&amp;ldquo;Data first&amp;rdquo; paradigm&lt;/li>
+&lt;li>Ethics; privacy&lt;/li>
+&lt;/ul>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>Data collected was manageable and intended. E.g. surveys&lt;/li>
+&lt;li>Computing power&lt;/li>
+&lt;li>Able to quantify greater degree the actions of individuals, but less able to characterize society&lt;/li>
+&lt;li>Data comes after the question. Often do not have the luxury of tailoring what data is collected. Fundamental statistics issues surrounding data are thrown out the window: precision and accuracy. bias in data.&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;p>&lt;code>define: Data Science&lt;/code>&lt;/p>
+&lt;p>&lt;em>The &amp;ldquo;concept to unify statistics, data analysis, machine learning and their related methods&amp;rdquo; in order to &amp;ldquo;understand and analyze actual phenomena&amp;rdquo; with data.&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>Multi-displinary field&lt;/li>
+&lt;li>Goal: extract knowledge and insights from structured and unstructured data&lt;/li>
+&lt;/ul>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>In essence, need a systematic way of dealing with data. Need to combine knowledge from various fields. While every field was working in silos, they specialised in their own thing.&lt;/li>
+&lt;li>Data science unites the fields of stats/maths and computer science to make data actionable.&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;!-- ![](data-science-venn.png) -->
+&lt;p>&lt;img src="data-science-venn.png" height="600" />&lt;/p>
+&lt;hr>
+&lt;h3 id="examples-of-data-science-problems">Examples of Data Science problems&lt;/h3>
+&lt;p>Real-world problems from the &lt;a href="https://www.turing.ac.uk" target="_blank" rel="noopener">Alan Turing Institute&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Real-time jammer detection, identification and localization in 3G and 4G networks&lt;/li>
+&lt;li>Automated matching of businesses to government contract opportunities&lt;/li>
+&lt;li>Using real-world data to advance air traffic control&lt;/li>
+&lt;li>Personalised lung cancer treatment modelling using electronic health records and genomics&lt;/li>
+&lt;/ul>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>ATI is the national institute for data science and artificial intelligence.&lt;/li>
+&lt;li>interesting to ponder, why was it named after Alan Turing, the comuting pioneer?&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;h3 id="examples-of-data-science-problems-1">Examples of Data Science problems&lt;/h3>
+&lt;p>Real-world problems from the &lt;a href="https://www.turing.ac.uk" target="_blank" rel="noopener">Alan Turing Institute&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Identify potential drivers of engaging in extremism&lt;/li>
+&lt;li>News feed analysis to help understand global instability&lt;/li>
+&lt;li>Improved strength training using smart gym equipment data&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="data-science-1.png" height="550" />&lt;/p>
+&lt;hr>
+&lt;h2 id="scope-exploratory">Scope: Exploratory&lt;/h2>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_190026d8e0708e5a591e1e747dcf4203.png 400w,
+/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_f332c0c439229b600781d578c74ca7c3.png 760w,
+/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_1200x1200_fit_lanczos_3.png 1200w"
+src="https://haziqj.github.io/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_190026d8e0708e5a591e1e747dcf4203.png"
+width="517"
+height="190"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;ul>
+&lt;li>Focus on &lt;em>transform&lt;/em> and &lt;em>visualise&lt;/em>&lt;/li>
+&lt;li>Modelling requires a specific skill set (Stats or ML)&lt;/li>
+&lt;li>GOAL: Generate many promising leads that you can later explore in more depth&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="machine-learning-vs-statistics">Machine Learning vs Statistics&lt;/h3>
+&lt;p>&lt;strong>Statistics&lt;/strong> aims to turn humans into robots.&lt;/p>
+&lt;ul>
+&lt;li>Concept of &amp;ldquo;statistical proof&amp;rdquo;&lt;/li>
+&lt;li>Often interest is &lt;em>inference&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Machine learning&lt;/strong> aims to turn robots into humans.&lt;/p>
+&lt;ul>
+&lt;li>Make sense of patterns from big data&lt;/li>
+&lt;li>Often interest is &lt;em>prediction&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>Statistics aims to remove the bias of humans when perceiving patterns in data sets. Learn not to be conned; when someone tells you it is such, need proof.&lt;/li>
+&lt;li>Stats: How big is big, and is it enough?&lt;/li>
+&lt;li>Measuring effects. Important question: causality?&lt;/li>
+&lt;li>On the other hand ML or AI aims to equip computers with human skills: image understanding, speech recognition, natural language processing, etc.&lt;/li>
+&lt;li>Kind of &amp;ldquo;reverse engineering&amp;rdquo; of world processes based on data that is observed.&lt;/li>
+&lt;li>Generate large labelled data sets from humans. Train models.&lt;/li>
+&lt;li>Interesting note: programming language also speaks as to what your background is. R for stats, Python for ML.&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;h3 id="data-quality-and-readiness">Data Quality and Readiness&lt;/h3>
+&lt;p>There&amp;rsquo;s a sea of data, but most of it is undrinkable&lt;/p>
+&lt;p>&lt;img src="drink-sea-water.jpg" height="300" />&lt;/p>
+&lt;p>Data neglect: data cleaning is tedious and complex&lt;/p>
+&lt;hr>
+&lt;h3 id="80-20-rule-of-data-science">80-20 rule of Data Science&lt;/h3>
+&lt;ul>
+&lt;li>Most time is spent cleaning up data&lt;/li>
+&lt;li>Affectionally called data &amp;ldquo;wrangling&amp;rdquo;&lt;/li>
+&lt;li>[TBA] &lt;a href="http://inverseprobability.com/2017/01/12/data-readiness-levels" target="_blank" rel="noopener">Data Readiness levels&lt;/a> (Bands A, B and C)&lt;/li>
+&lt;/ul>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>So much for the world&amp;rsquo;s most sexiest job of the 21st century! according to business harvard review 2012.&lt;/li>
+&lt;li>Company hires ML, software engineers, but not data cleaners!&lt;/li>
+&lt;li>The importance of data is hard to overstate.&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;h3 id="types-of-data">Types of data&lt;/h3>
+&lt;ol>
+&lt;li>Structured data
+&lt;ul>
+&lt;li>Data is in a nicely organised repository&lt;/li>
+&lt;li>E.g. Tables, matrices, etc.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Unstructured data
+&lt;ul>
+&lt;li>Information does not have a predefined data model&lt;/li>
+&lt;li>E.g. images, colours, text, sound, etc.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="types-of-data-1">Types of data&lt;/h3>
+&lt;ol>
+&lt;li>Continuous data
+&lt;ul>
+&lt;li>Measurements are taken on a continuous scale e.g. height, weight, temperature, GDP, distance, etc.&lt;/li>
+&lt;li>Usually arises from physical experiments&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Discrete data
+&lt;ul>
+&lt;li>Measurements which can only take certain values e.g. sex, survey responses (Likert scales), occupation, ratings, ranks, etc.&lt;/li>
+&lt;li>Usually arises in social sciences&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="types-of-data-2">Types of data&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Treatment&lt;/th>
+&lt;th>Continuous Data&lt;/th>
+&lt;th>Categorical Data&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Import class&lt;/td>
+&lt;td>&lt;code>numeric&lt;/code>&lt;/td>
+&lt;td>&lt;code>factor&lt;/code>, &lt;code>ordinal&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Visualise&lt;/td>
+&lt;td>Histograms, density plots, scatter plot, box &amp;amp; whisker plot, pie charts&lt;/td>
+&lt;td>Bar plots,&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Summarise&lt;/td>
+&lt;td>5-point summaries&lt;/td>
+&lt;td>Frequency tables&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="exploratory-data-analysis">Exploratory Data Analysis&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Generate questions about your data.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Search for answers by visualising, transforming, and modelling your data.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Use what you learn to refine your questions and/or generate new questions.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>More on this later&amp;hellip;&lt;/p>
+&lt;hr>
+&lt;h3 id="modelling">Modelling&lt;/h3>
+&lt;p>$$y_i = \alpha + \beta x_i + \epsilon_i$$
+$$\epsilon_i \sim \text{N}(0,\sigma^2)$$&lt;/p>
+&lt;ul>
+&lt;li>EDA does not help in providing statistical proof, nor give predictions&lt;/li>
+&lt;li>To do this, engage in statistical or ML models&lt;/li>
+&lt;li>Many types of models, depending on what question you want answered&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="the-r-programming-language">The R programming language&lt;/h3>
+&lt;p>&lt;code>R&lt;/code> is a language and environment for statistical computing and graphics &lt;a href="https://www.r-project.org/about.html" target="_blank" rel="noopener">https://www.r-project.org/about.html&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>It is free and open source&lt;/li>
+&lt;li>Runs everywhere&lt;/li>
+&lt;li>Supports extensions&lt;/li>
+&lt;li>Engaging community&lt;/li>
+&lt;li>Links to other languages&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_84380fa0eed6900255d8097bedc03296.jpg 400w,
+/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_ac19f0d423fc584e0430e04e1cbdd4a2.jpg 760w,
+/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_1200x1200_fit_q75_lanczos.jpg 1200w"
+src="https://haziqj.github.io/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_84380fa0eed6900255d8097bedc03296.jpg"
+width="760"
+height="449"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;hr>
+&lt;h3 id="ggplot2-in-r">&lt;code>ggplot2&lt;/code> in R&lt;/h3>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_9a5861e154fb5e8a976bba8d6acddec3.png 400w,
+/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_256873e3bb6d3d9eccb2181766ed2d8d.png 760w,
+/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_1200x1200_fit_lanczos_3.png 1200w"
+src="https://haziqj.github.io/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_9a5861e154fb5e8a976bba8d6acddec3.png"
+width="720"
+height="445"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;hr>
+&lt;h3 id="ggplot2-in-r-1">&lt;code>ggplot2&lt;/code> in R&lt;/h3>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_dff59f346431a74ce36e50b1b461b49b.png 400w,
+/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_1f84e09ea7c68db032e277337b47f0f0.png 760w,
+/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_1200x1200_fit_lanczos_3.png 1200w"
+src="https://haziqj.github.io/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_dff59f346431a74ce36e50b1b461b49b.png"
+width="672"
+height="480"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;hr>
+&lt;h3 id="ggplot2-in-r-2">&lt;code>ggplot2&lt;/code> in R&lt;/h3>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt=""
+src="https://haziqj.github.io/slides/teach-ds-1/ggplot2-3.gif"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;hr>
+&lt;h2 id="kivaorghttpkivaorg-data-set">&lt;a href="http://kiva.org" target="_blank" rel="noopener">Kiva.org&lt;/a> data set&lt;/h2>
+&lt;p>&lt;a href="https://www.kaggle.com/kiva/data-science-for-good-kiva-crowdfunding#kiva_loans.csv" target="_blank" rel="noopener">https://www.kaggle.com/kiva/data-science-for-good-kiva-crowdfunding#kiva_loans.csv&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="exercise">Exercise&lt;/h2>
+&lt;ul>
+&lt;li>What exploratory analyses would you conduct on this data set?&lt;/li>
+&lt;li>What other data do you need to supplement your analyses?&lt;/li>
+&lt;li>What questions do you aim to answer?&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="end-of-lecture-1">End of Lecture 1&lt;/h2>
+&lt;p>Questions?&lt;/p>
+&lt;hr>
+&lt;h1 id="supplementary-material">Supplementary material&lt;/h1>
+&lt;hr>
+&lt;h2 id="inference-vs-prediction">Inference vs Prediction&lt;/h2>
+&lt;p>&lt;img src="ml-stats-1.png" height="400" />&lt;/p>
+&lt;p>Source: &lt;a href="https://www.datascienceblog.net/post/commentary/inference-vs-prediction/" target="_blank" rel="noopener">datascienceblog.com&lt;/a>&lt;/p>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>Inference: Use the model to learn about the data generation process.&lt;/li>
+&lt;li>Prediction: Use the model to predict the outcomes for new data points.&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;h2 id="model-interpretability">Model interpretability&lt;/h2>
+&lt;ul>
+&lt;li>Model interpretability is necessary for inference&lt;/li>
+&lt;li>In a nutshell, a model is interpretable if we can &amp;ldquo;see&amp;rdquo; how the model generates its estimates&lt;/li>
+&lt;li>c.f. Blackboxes&lt;/li>
+&lt;li>Interpretable models often uses simplified assumptions&lt;/li>
+&lt;/ul>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>Inference: Use the model to learn about the data generation process.&lt;/li>
+&lt;li>Prediction: Use the model to predict the outcomes for new data points.&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;h2 id="model-complexity">Model complexity&lt;/h2>
+&lt;ul>
+&lt;li>A complex model is often better at prediction tasks&lt;/li>
+&lt;li>&amp;ldquo;More parameters to tune&amp;rdquo;&lt;/li>
+&lt;li>However, model interpretability suffers&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="bias-variance-tradeoff">Bias-Variance tradeoff&lt;/h3>
+&lt;p>&lt;img src="bias-variance.png" height="400" />&lt;/p>
+&lt;p>$$
+E[f(x) - \hat f (x)]^2 = \text{Bias}^2[\hat f(x)] + \text{Var}[\hat f(x)] + \sigma^2
+$$&lt;/p>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>Bias: How close to the truth&lt;/li>
+&lt;li>Variance: How varied the predictions will be under a new data set&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;h3 id="linear-regression">Linear regression&lt;/h3>
+&lt;p>&lt;img src="efw.png" height="450" />&lt;/p>
+&lt;p>Economic freedom = 2.6 + 0.6 Trade&lt;/p>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>Trade: tariffs, regulatory trade barriers, black market, control movement of capital and people, trade&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;h3 id="neural-networks">Neural networks&lt;/h3>
+&lt;p>&lt;img src="neural-network.gif" height="450" />&lt;/p>
+&lt;p>Source: &lt;a href="https://towardsdatascience.com/everything-you-need-to-know-about-neural-networks-and-backpropagation-machine-learning-made-easy-e5285bc2be3a" target="_blank" rel="noopener">towardsdatascience.com&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="survey-methodology">Survey Methodology&lt;/h3>
+&lt;p>&lt;img src="survey-methodology.png" height="450" />&lt;/p>
+&lt;p>Source: Groves et al. (2009)&lt;/p>
+&lt;hr>
+&lt;h3 id="three-populations">Three populations&lt;/h3>
+&lt;p>&lt;img src="sampling-frame.png" height="450" />&lt;/p>
+&lt;hr>
+&lt;h3 id="sampling-design-for-bsa-survey">Sampling design for BSA survey&lt;/h3>
+&lt;ul>
+&lt;li>Target: Adults aged 18 or over in GB&lt;/li>
+&lt;li>Survey: Private households south of the Caledonian Canal&lt;/li>
+&lt;li>Frame: Addresses in the Postcode address file&lt;/li>
+&lt;/ul>
+&lt;p>Multistage design:&lt;/p>
+&lt;ul>
+&lt;li>Stratify by postcode sectors&lt;/li>
+&lt;li>Simple random sampling of addresses&lt;/li>
+&lt;li>Simple random sampling of individuals&lt;/li>
+&lt;/ul>
+&lt;p>From 60mil people, obtained 3,297 respondents in final sample.&lt;/p>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>What is random? Not predetermined&lt;/li>
+&lt;li>Everyone should be able to be sampled with positive probability&lt;/li>
+&lt;li>Unbiased&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;h3 id="see-also">See also&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://www.surveymonkey.com/mp/sample-size-calculator/" target="_blank" rel="noopener">https://www.surveymonkey.com/mp/sample-size-calculator/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://www.bsa.natcen.ac.uk/latest-report/british-social-attitudes-30/technical-details.aspx" target="_blank" rel="noopener">http://www.bsa.natcen.ac.uk/latest-report/british-social-attitudes-30/technical-details.aspx&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="data-readiness">Data Readiness&lt;/h3>
+&lt;ul>
+&lt;li>Band C: Hearsday data. Is it really available? Has it actually been recorded? Format: PDF, log books, etc.&lt;/li>
+&lt;li>Band B: Ready for exploratory analysis, visualisations. Missing values, anomalies, &amp;hellip;&lt;/li>
+&lt;li>Band A: Ready for ML/Stats models.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;!-- ---
+## Controls
+- Next: `Right Arrow` or `Space`
+- Previous: `Left Arrow`
+- Start: `Home`
+- Finish: `End`
+- Overview: `Esc`
+- Speaker notes: `S`
+- Fullscreen: `F`
+- Zoom: `Alt + Click`
+- [PDF Export](https://github.com/hakimel/reveal.js#pdf-export): `E`
+---
+## Code Highlighting
+Inline code: `variable`
+Code block:
+```python
+porridge = "blueberry"
+if porridge == "blueberry":
+print("Eating...")
+```
+---
+## Math
+In-line math: $x + y = z$
+Block math:
+$$
+f\left( x \right) = \;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$
+---
+## Fragments
+Make content appear incrementally
+```
+{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+```
+Press `Space` to play!
+&lt;span class="fragment " >
+One
+&lt;/span>
+&lt;span class="fragment " >
+**Two**
+&lt;/span>
+&lt;span class="fragment " >
+Three
+&lt;/span>
+---
+A fragment can accept two optional parameters:
+- `class`: use a custom style (requires definition in custom CSS)
+- `weight`: sets the order in which a fragment appears
+---
+## Speaker Notes
+Add speaker notes to your presentation
+```markdown
+{{% speaker_note %}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{% /speaker_note %}}
+```
+Press the `S` key to view the speaker notes!
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>Only the speaker can read these notes&lt;/li>
+&lt;li>Press &lt;code>S&lt;/code> key to view&lt;/li>
+&lt;/ul>
+&lt;/aside>
+---
+## Themes
+- black: Black background, white text, blue links (default)
+- white: White background, black text, blue links
+- league: Gray background, white text, blue links
+- beige: Beige background, dark text, brown links
+- sky: Blue background, thin dark text, blue links
+---
+- night: Black background, thick white text, orange links
+- serif: Cappuccino background, gray text, brown links
+- simple: White background, black text, blue links
+- solarized: Cream-colored background, dark green text, blue links
+---
+&lt;section data-noprocess data-shortcode-slide
+data-background-image="/img/boards.jpg"
+>
+## Custom Slide
+Customize the slide style and background
+```markdown
+{{&lt; slide background-image="/img/boards.jpg" >}}
+{{&lt; slide background-color="#0000FF" >}}
+{{&lt; slide class="my-style" >}}
+```
+---
+## Custom CSS Example
+Let's make headers navy colored.
+Create `assets/css/reveal_custom.css` with:
+```css
+.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+color: navy;
+}
+```
+---
+# Questions?
+[Ask](https://discourse.gohugo.io)
+[Documentation](https://sourcethemes.com/academic/docs/)
+-->&lt;blockquote>
+&lt;/blockquote></description></item><item><title>Getting started with R</title><link>https://haziqj.github.io/slides/teach-ds-2/</link><pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/slides/teach-ds-2/</guid><description>&lt;h1 id="introductory-data-science-using-r">Introductory Data Science using R&lt;/h1>
+&lt;p>R Exercise: The birthday problem&lt;/p>
+&lt;hr>
+&lt;p>In a room of 23 people, what is the probability that at least two people share the same birthday?&lt;/p>
+&lt;hr>
+&lt;h3 id="lets-count">Let&amp;rsquo;s count&lt;/h3>
+&lt;p>First, some assumptions:&lt;/p>
+&lt;ul>
+&lt;li>There are only 365 days in a year&lt;/li>
+&lt;li>Every day is equally likely to be a birthday&lt;/li>
+&lt;li>Everyone&amp;rsquo;s birthday is independent of each other&lt;/li>
+&lt;/ul>
+&lt;p>&lt;span class="fragment " >
+&lt;strong>Strategy:&lt;/strong> It&amp;rsquo;s easier to figure out the probability of the complementary event. $$P(A) = 1 - P(A^c)$$
+&lt;/span>&lt;/p>
+&lt;hr>
+&lt;h3 id="whats-the-complement">What&amp;rsquo;s the complement?&lt;/h3>
+&lt;ul>
+&lt;li>Let $A$ = At least two people share the same birthday&lt;/li>
+&lt;li>Then $A^c$ = Nobody shares any birthday (all birthdays are different)&lt;/li>
+&lt;li>Label the individuals from $1,\dots,23$&lt;/li>
+&lt;li>How many possible birthdays can person 1 have? 365 out of 365&lt;/li>
+&lt;li>How many possible birthdays can person 2 have? 364 out of 365&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="whats-the-complement-1">What&amp;rsquo;s the complement?&lt;/h3>
+&lt;ul>
+&lt;li>Since all events are independent,
+$$P(A^c) = \frac{365}{365} \times \frac{364}{365} \times \cdots \times \frac{365-23+1}{365}$$
+$$= \frac{365!}{(365-23)!365^{23}}$$&lt;/li>
+&lt;li>Thus,
+$$P(A) = 1 - \frac{365!}{(365-23)!365^{23}}$$&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="logarithms">Logarithms&lt;/h3>
+&lt;p>Factorials are often too large to compute and can cause memory overflow.
+Adopt the alternative formula&lt;/p>
+&lt;p>$$P(A) = 1 - \exp \big\{ \log(365!) - \log((365-23)!) $$
+$$- 23 \log 365 \big\}$$&lt;/p>
+&lt;hr>
+&lt;h3 id="write-this-in-r">Write this in R&lt;/h3>
+&lt;p>Functions that you need:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>factorial()&lt;/code> to compute factorials&lt;/li>
+&lt;li>&lt;code>lfactorial()&lt;/code> to compute log factorials&lt;/li>
+&lt;li>&lt;code>exp()&lt;/code> to compute exponentials&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="new-question">New question&lt;/h2>
+&lt;p>In a room of $x$ people, what is the probability that at least two people share the same birthday?&lt;/p>
+&lt;hr>
+&lt;h3 id="write-this-in-r-1">Write this in R&lt;/h3>
+&lt;p>Write a function that takes a positive integer &lt;code>x&lt;/code> and returns the probability that at least two people share the same birthday.&lt;/p>
+&lt;p>BONUS: Plot it!&lt;/p></description></item><item><title/><link>https://haziqj.github.io/slides/example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/slides/example/</guid><description/></item></channel></rss>
