@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides | Haziq Jamil</title><link>https://haziqj.github.io/slides/</link><atom:link href="https://haziqj.github.io/slides/index.xml" rel="self" type="application/rss+xml"/><description>Slides</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><copyright>© 2021 Haziq Jamil</copyright><lastBuildDate>Tue, 09 Jul 2019 00:00:00 +0000</lastBuildDate><item><title>Introductory Data Science using R</title><link>https://haziqj.github.io/slides/teach-ds-1/</link><pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/slides/teach-ds-1/</guid><description>&lt;h1 id="introductory-data-science-using-r">Introductory Data Science using R&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides | Haziq Jamil</title><link>https://haziqj.ml/slides/</link><atom:link href="https://haziqj.ml/slides/index.xml" rel="self" type="application/rss+xml"/><description>Slides</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><copyright>© 2021 Haziq Jamil</copyright><lastBuildDate>Tue, 09 Jul 2019 00:00:00 +0000</lastBuildDate><item><title>Introductory Data Science using R</title><link>https://haziqj.ml/slides/teach-ds-1/</link><pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate><guid>https://haziqj.ml/slides/teach-ds-1/</guid><description>&lt;h1 id="introductory-data-science-using-r">Introductory Data Science using R&lt;/h1>
 &lt;p>Lecture 1: The Data Science Framework&lt;/p>
 &lt;hr>
 &lt;h2 id="admin">Admin&lt;/h2>
@@ -24,7 +24,7 @@
 /slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_863f45dcad49a241872073492c05a206.jpg 400w,
 /slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_3f56d9ab3dd142ef89f1578a720477b5.jpg 760w,
 /slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_1200x1200_fit_q75_lanczos.jpg 1200w"
-src="https://haziqj.github.io/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_863f45dcad49a241872073492c05a206.jpg"
+src="https://haziqj.ml/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_863f45dcad49a241872073492c05a206.jpg"
 width="378"
 height="550"
 loading="lazy" data-zoomable />&lt;/div>
@@ -146,7 +146,7 @@ The scientific method is an empirical method of acquiring knowledge that has cha
 /slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_190026d8e0708e5a591e1e747dcf4203.png 400w,
 /slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_f332c0c439229b600781d578c74ca7c3.png 760w,
 /slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_1200x1200_fit_lanczos_3.png 1200w"
-src="https://haziqj.github.io/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_190026d8e0708e5a591e1e747dcf4203.png"
+src="https://haziqj.ml/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_190026d8e0708e5a591e1e747dcf4203.png"
 width="517"
 height="190"
 loading="lazy" data-zoomable />&lt;/div>
@@ -300,7 +300,7 @@ $$\epsilon_i \sim \text{N}(0,\sigma^2)$$&lt;/p>
 /slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_84380fa0eed6900255d8097bedc03296.jpg 400w,
 /slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_ac19f0d423fc584e0430e04e1cbdd4a2.jpg 760w,
 /slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_1200x1200_fit_q75_lanczos.jpg 1200w"
-src="https://haziqj.github.io/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_84380fa0eed6900255d8097bedc03296.jpg"
+src="https://haziqj.ml/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_84380fa0eed6900255d8097bedc03296.jpg"
 width="760"
 height="449"
 loading="lazy" data-zoomable />&lt;/div>
@@ -315,7 +315,7 @@ loading="lazy" data-zoomable />&lt;/div>
 /slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_9a5861e154fb5e8a976bba8d6acddec3.png 400w,
 /slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_256873e3bb6d3d9eccb2181766ed2d8d.png 760w,
 /slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_1200x1200_fit_lanczos_3.png 1200w"
-src="https://haziqj.github.io/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_9a5861e154fb5e8a976bba8d6acddec3.png"
+src="https://haziqj.ml/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_9a5861e154fb5e8a976bba8d6acddec3.png"
 width="720"
 height="445"
 loading="lazy" data-zoomable />&lt;/div>
@@ -330,7 +330,7 @@ loading="lazy" data-zoomable />&lt;/div>
 /slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_dff59f346431a74ce36e50b1b461b49b.png 400w,
 /slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_1f84e09ea7c68db032e277337b47f0f0.png 760w,
 /slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_1200x1200_fit_lanczos_3.png 1200w"
-src="https://haziqj.github.io/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_dff59f346431a74ce36e50b1b461b49b.png"
+src="https://haziqj.ml/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_dff59f346431a74ce36e50b1b461b49b.png"
 width="672"
 height="480"
 loading="lazy" data-zoomable />&lt;/div>
@@ -342,7 +342,7 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img alt=""
-src="https://haziqj.github.io/slides/teach-ds-1/ggplot2-3.gif"
+src="https://haziqj.ml/slides/teach-ds-1/ggplot2-3.gif"
 loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
@@ -563,7 +563,7 @@ color: navy;
 [Ask](https://discourse.gohugo.io)
 [Documentation](https://sourcethemes.com/academic/docs/)
 -->&lt;blockquote>
-&lt;/blockquote></description></item><item><title>Getting started with R</title><link>https://haziqj.github.io/slides/teach-ds-2/</link><pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/slides/teach-ds-2/</guid><description>&lt;h1 id="introductory-data-science-using-r">Introductory Data Science using R&lt;/h1>
+&lt;/blockquote></description></item><item><title>Getting started with R</title><link>https://haziqj.ml/slides/teach-ds-2/</link><pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate><guid>https://haziqj.ml/slides/teach-ds-2/</guid><description>&lt;h1 id="introductory-data-science-using-r">Introductory Data Science using R&lt;/h1>
 &lt;p>R Exercise: The birthday problem&lt;/p>
 &lt;hr>
 &lt;p>In a room of 23 people, what is the probability that at least two people share the same birthday?&lt;/p>
@@ -617,4 +617,4 @@ $$- 23 \log 365 \big\}$$&lt;/p>
 &lt;hr>
 &lt;h3 id="write-this-in-r-1">Write this in R&lt;/h3>
 &lt;p>Write a function that takes a positive integer &lt;code>x&lt;/code> and returns the probability that at least two people share the same birthday.&lt;/p>
-&lt;p>BONUS: Plot it!&lt;/p></description></item><item><title/><link>https://haziqj.github.io/slides/example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://haziqj.github.io/slides/example/</guid><description/></item></channel></rss>
+&lt;p>BONUS: Plot it!&lt;/p></description></item><item><title/><link>https://haziqj.ml/slides/example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://haziqj.ml/slides/example/</guid><description/></item></channel></rss>
