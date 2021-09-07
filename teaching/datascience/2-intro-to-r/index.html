@@ -1,0 +1,717 @@
+<!doctype html><html lang=en-gb>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=generator content="Wowchemy 5.3.0 for Hugo">
+<meta name=author content="Haziq Jamil">
+<meta name=description content="Key ideas Objects R works on objects. All objects have the following properties (referred to as intrinsic attributes):
+ mode: tells us what kind of thing the object is – possible modes include numeric, complex, logical, character and list.">
+<link rel=alternate hreflang=en-gb href=https://haziqj.ml/teaching/datascience/2-intro-to-r/>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<meta name=theme-color content="#479e41">
+<script src=/js/mathjax-config.js></script>
+<link rel=stylesheet href=/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css media=print onload="this.media='all'">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin=anonymous media=print onload="this.media='all'">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css crossorigin=anonymous title=hl-light media=print onload="this.media='all'">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css crossorigin=anonymous title=hl-dark media=print onload="this.media='all'" disabled>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin=anonymous media=print onload="this.media='all'">
+<script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js integrity crossorigin=anonymous async></script>
+<link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media=print onload="this.media='all'">
+<link rel=stylesheet href=/css/wowchemy.a478f05fdaaf1481d25cdfec02745d7b.css>
+<link rel=manifest href=/manifest.webmanifest>
+<link rel=icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_32x32_fill_lanczos_center_3.png>
+<link rel=apple-touch-icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_180x180_fill_lanczos_center_3.png>
+<link rel=canonical href=https://haziqj.ml/teaching/datascience/2-intro-to-r/>
+<meta property="twitter:card" content="summary">
+<meta property="og:site_name" content="Haziq Jamil">
+<meta property="og:url" content="https://haziqj.ml/teaching/datascience/2-intro-to-r/">
+<meta property="og:title" content="Getting Started with R | Haziq Jamil">
+<meta property="og:description" content="Key ideas Objects R works on objects. All objects have the following properties (referred to as intrinsic attributes):
+ mode: tells us what kind of thing the object is – possible modes include numeric, complex, logical, character and list."><meta property="og:image" content="https://haziqj.ml/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png">
+<meta property="twitter:image" content="https://haziqj.ml/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-gb">
+<meta property="article:published_time" content="2019-07-09T00:00:00+08:00">
+<meta property="article:modified_time" content="2021-09-07T17:27:35+08:00">
+<title>Getting Started with R | Haziq Jamil</title>
+</head>
+<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=2b57d90671a2868387173fa0904650e0>
+<script src=/js/wowchemy-init.min.8988fb2a4bba758785868cfcb5244555.js></script>
+<aside class=search-modal id=search>
+<div class=container>
+<section class=search-header>
+<div class="row no-gutters justify-content-between mb-3">
+<div class=col-6>
+<h1>Search</h1>
+</div>
+<div class="col-6 col-search-close">
+<a class=js-search href=# aria-label=Close><i class="fas fa-times-circle text-muted" aria-hidden=true></i></a>
+</div>
+</div>
+<div id=search-box>
+<input name=q id=search-query placeholder=Search... autocapitalize=off autocomplete=off autocorrect=off spellcheck=false type=search class=form-control aria-label=Search...>
+</div>
+</section>
+<section class=section-search-results>
+<div id=search-hits>
+</div>
+</section>
+</div>
+</aside>
+<div class=page-header>
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main>
+<div class=container-xl>
+<div class="d-none d-lg-inline-flex">
+<a class=navbar-brand href=/>Haziq Jamil</a>
+</div>
+<button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar-content aria-expanded=false aria-label="Toggle navigation">
+<span><i class="fas fa-bars"></i></span>
+</button>
+<div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+<a class=navbar-brand href=/>Haziq Jamil</a>
+</div>
+<div class="navbar-collapse main-menu-item collapse justify-content-end" id=navbar-content>
+<ul class="navbar-nav d-md-inline-flex">
+<li class=nav-item>
+<a class=nav-link href=/#01-about><span>Home</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#05-publications><span>Research</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#07-projects><span>Projects</span></a>
+</li>
+<li class=nav-item>
+<a class="nav-link active" href=/teaching><span>Teaching</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#contact><span>Contact</span></a>
+</li>
+</ul>
+</div>
+<ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+<li class=nav-item>
+<a class="nav-link js-search" href=# aria-label=Search><i class="fas fa-search" aria-hidden=true></i></a>
+</li>
+<li class="nav-item dropdown theme-dropdown">
+<a href=# class=nav-link data-toggle=dropdown aria-haspopup=true aria-label="Display preferences">
+<i class="fas fa-moon" aria-hidden=true></i>
+</a>
+<div class=dropdown-menu>
+<a href=# class="dropdown-item js-set-theme-light">
+<span>Light</span>
+</a>
+<a href=# class="dropdown-item js-set-theme-dark">
+<span>Dark</span>
+</a>
+<a href=# class="dropdown-item js-set-theme-auto">
+<span>Automatic</span>
+</a>
+</div>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class=page-body>
+<div class="container-fluid docs">
+<div class="row flex-xl-nowrap">
+<div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+<form class="docs-search d-flex align-items-center">
+<button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type=button data-toggle=collapse data-target=#docs-nav aria-controls=docs-nav aria-expanded=false aria-label="Toggle section navigation">
+<div class=d-flex>
+<span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+Introductory Data Science using R
+</span>
+<span><i class="fas fa-chevron-down"></i></span>
+</div>
+</button>
+<button class="form-control sidebar-search js-search d-none d-md-flex">
+<i class="fas fa-search pr-2"></i>
+<span class=sidebar-search-text>Search...</span>
+<span class=sidebar-search-shortcut>/</span>
+</button>
+</form>
+<nav class="collapse docs-links" id=docs-nav>
+<ul class="nav docs-sidenav">
+<li><a href=/teaching/><i class="fas fa-arrow-left pr-1"></i>Teaching</a></li>
+</ul>
+<div class=docs-toc-item>
+<a class=docs-toc-link href=/teaching/datascience/>Introductory Data Science using R</a>
+<ul class="nav docs-sidenav">
+<li><a href=/teaching/datascience/1-intro/>Data Science Framework</a></li>
+<li class=active><a href=/teaching/datascience/2-intro-to-r/>Getting Started with R</a></li>
+<li><a href=/teaching/datascience/3-r4ds/>R data science functions</a></li>
+<li><a href=/teaching/datascience/4-assignment/>Assignment</a></li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 docs-toc">
+<ul class="nav toc-top">
+<li><a href=# id=back_to_top class=docs-toc-title>Contents</a></li>
+</ul>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#objects>Objects</a></li>
+<li><a href=#functions-arguments-and-return-values>Functions, arguments and return values</a></li>
+<li><a href=#workspace-and-working-directories>Workspace and working directories</a></li>
+</ul>
+<ul>
+<li><a href=#starting-up>Starting up</a></li>
+<li><a href=#using-r-as-a-calculator>Using R as a calculator</a></li>
+<li><a href=#vectors-and-assignment>Vectors and assignment</a>
+<ul>
+<li><a href=#example-sheep-weight>Example: sheep weight</a></li>
+</ul>
+</li>
+<li><a href=#matrices>Matrices</a></li>
+<li><a href=#data-frames>Data frames</a>
+<ul>
+<li><a href=#example-sheep-again>Example: sheep again</a></li>
+</ul>
+</li>
+<li><a href=#lists>Lists</a></li>
+<li><a href=#subsetting>Subsetting</a></li>
+</ul>
+<ul>
+<li><a href=#the-r-help-system>The R help system</a></li>
+<li><a href=#session-management-and-visibility>Session management and visibility</a></li>
+<li><a href=#writing-your-own-functions>Writing your own functions</a></li>
+<li><a href=#installing-packages>Installing packages</a></li>
+<li><a href=#loading-packages-to-be-used>Loading packages to be used</a></li>
+</ul>
+</nav>
+</div>
+<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role=main>
+<article class=article>
+<div class=docs-article-container>
+<nav class="d-none d-md-flex" aria-label=breadcrumb>
+<ol class=breadcrumb>
+<li class=breadcrumb-item>
+<a href=/>
+Home
+</a>
+</li>
+<li class=breadcrumb-item>
+<a href=/teaching/>
+Teaching
+</a>
+</li>
+<li class=breadcrumb-item>
+<a href=/teaching/datascience/>
+Introductory Data Science using R
+</a>
+</li>
+<li class="breadcrumb-item active" aria-current=page>
+Getting Started with R
+</li>
+</ol>
+</nav>
+<h1>Getting Started with R</h1>
+<div class=article-style>
+<h1 id=key-ideas>Key ideas</h1>
+<h2 id=objects>Objects</h2>
+<p>R works on objects.
+All objects have the following properties (referred to as intrinsic attributes):</p>
+<ul>
+<li><code>mode</code>: tells us what kind of thing the object is – possible modes include numeric, complex, logical, character and list.</li>
+<li><code>length</code>: is the number of components that make up the object.</li>
+</ul>
+<p>At the simplest level, an object is a convenient way to store information.
+In statistics, we need to store observations of a variable of interest.
+This is done using a numeric vector.
+Note that there are no scalars in R; a number is just a numeric vector of length 1.
+Vectors are referred to as atomic structures; all of their components have the same mode.</p>
+<p>If an object stores information, we need to name it so that we can refer to it later (and thus recover the information that it contains).
+The term used for the name of an object is identifier.
+An identifier is something that we choose. Identifiers can be chosen fairly freely in R.
+The points below are a few simple rules to bear in mind.</p>
+<ul>
+<li>In general any combination of letters, digits and the dot character can be used although it is obviously sensible to choose names that are reasonably descriptive.</li>
+<li>You cannot start an identifier with a digit or a dot so <code>moonbase3.sample</code> is acceptable but <code>3moons.samplebase</code> and <code>.sample3basemoon</code> are not.</li>
+<li>Identifiers are CASE SENSITIVE so <code>moon.sample</code> is different from <code>moon.Sample</code>. It is easy to get caught out by this.</li>
+<li>Some characters are already assigned values. These include <code>c</code>, <code>q</code>, <code>t</code>, <code>C</code>, <code>D</code>, <code>F</code>, <code>I</code> and <code>T</code>. Avoid using these as identifiers.</li>
+</ul>
+<p>Typically we are interested in data sets that consist of several variables.
+In R, data sets are represented by an object known as a <em>data frame</em>.
+As with all objects, a data frame has the intrinsic attributes mode and length; data frames are of mode <code>list</code> and the length of a data frame is the number of variables that is contains.
+In common with many larger objects, a data frame has other attributes in addition to mode and length.
+The non-intrinsic attributes of a data frame are:</p>
+<ul>
+<li><code>names</code>: these are the names of the variables that make up the data set;</li>
+<li><code>row.names</code>: these are the names of the individuals on whom the observations are made;</li>
+<li><code>class</code>: this attribute can be thought of as a detailed specification of the kind of thing the object is; in this case the class is <code>data.frame</code>.</li>
+</ul>
+<p>The class attribute tells certain functions (generic functions) how to deal with the object.
+For example, objects of class &ldquo;data.frame&rdquo; are displayed on screen in a particular way.</p>
+<h2 id=functions-arguments-and-return-values>Functions, arguments and return values</h2>
+<p>R works by calling functions.
+The notion of a function is a familiar one; a function takes a collection of inputs and maps them to a single output. In R, inputs and output are objects.
+The inputs are referred to as <em>arguments</em> and the output is referred to as the <em>return value</em>.
+Many useful functions are part of the standard R setup. Others are available via the inclusion of packages.
+One of the key advantages of R is the ease with which users can define their own functions.
+Functions are also objects; the mode of a function is <code>function</code> (sensibly enough).
+In computing, functions have <em>side-effects</em>.
+For example, calling a function may cause a graph to be drawn.
+In many instances, it is the side-effect that is important rather than the return value.</p>
+<h2 id=workspace-and-working-directories>Workspace and working directories</h2>
+<p>During an R session, a number of objects will be generated; for example we may generate vectors, data frames and functions.
+For the duration of the session, these objects are stored in an area of memory referred to as the workspace.
+If we want to save the objects for future use, we instruct R to write them to a file in our current working directory (directory is just another name for a folder).
+Note the distinction: things in memory are temporary (they will be lost when we log out); files are more permanent (they are stored on disk and the information they contain can be loaded into memory during our next session).
+Managing objects and files is an important part of using R effectively.</p>
+<h1 id=a-new-r-session>A new R session</h1>
+<h2 id=starting-up>Starting up</h2>
+<p>If you haven&rsquo;t already, download R and RStudio based on your operating system.
+R can actually be run in the terminal (type <code>r</code> in your terminal) or the original R program itself.<br>
+We will be working in RStudio, which is a user-friendly integrated development environment (IDE).</p>
+<p>It is recommended to create a project, which automatically configures the working directory.
+To do this, go to $\text{File} \rightarrow \text{New project&mldr;}$.
+If your files are already in a folder, select $\text{Existing Directory}$; otherwise select $\text{New Directory}$.
+Don&rsquo;t select $\text{Version Control}$ for now.</p>
+<h2 id=using-r-as-a-calculator>Using R as a calculator</h2>
+<p>The simplest thing that R can do is evaluate arithmetic expressions.</p>
+<pre><code class=language-r>1 + 1
+## [1] 2
+
+1 + 4.23
+## [1] 5.23
+
+1 + 1/2 * 9 - 3.14
+## [1] 2.36
+
+# Note the order in which operations are performed in the final calculation
+</code></pre>
+<blockquote>
+<p><strong>Comments in R</strong>. R ignores anything after a # sign in a command.
+We will follow this convention. Anything after a # in a set of R commands is a comment.</p>
+</blockquote>
+<h2 id=vectors-and-assignment>Vectors and assignment</h2>
+<p>We can create vectors at the command prompt using the concatenation function <code>c(...). c(object1,object2,...)</code>.</p>
+<p>This function takes arguments of the same mode and returns a vector containing these values.</p>
+<pre><code class=language-r>c(1,2,3)
+## [1] 1 2 3
+
+c(&quot;Alpha&quot;, &quot;Bravo&quot;, &quot;Charlie&quot;)
+## [1] &quot;Alpha&quot;   &quot;Bravo&quot;   &quot;Charlie&quot;
+</code></pre>
+<p>In order to make use of vectors, we need identifiers for them (we do not want to have to write vectors from scratch every time we use them).
+This is done using the assignment operator <code>&lt;-</code> via <code>name &lt;- expression</code>.
+<code>name</code> now refers to an object whose value is the result of evaluating expression.</p>
+<pre><code class=language-r>numbers &lt;- c(1,2,3)
+people &lt;- c(&quot;Alpha&quot;, &quot;Bravo&quot;, &quot;Charlie&quot;)
+
+numbers
+## [1] 1 2 3
+
+people
+## [1] &quot;Alpha&quot;   &quot;Bravo&quot;   &quot;Charlie&quot;
+
+# Typing an object’s identifier causes R to print the contents of the object
+</code></pre>
+<p>Simple arithmetic operations can be performed with vectors.</p>
+<pre><code class=language-r>1:3 + c(4, 5, 6)
+## [1] 5 7 9
+
+numbers + numbers
+## [1] 2 4 6
+
+numbers - c(8, 7.5, -2)
+## [1] -7.0 -5.5  5.0
+
+rep(12, 3) / numbers
+## [1] 12  6  4
+</code></pre>
+<p>Note in the above example that multiplication and division are done element by element.</p>
+<blockquote>
+<p><strong>Reusing commands</strong>. If you want to bring back a command which you have used earlier in the session, press the up arrow key ↑. This allows you to go back through the commands until you find the one you want. The commands reappear at the command line and can be edited and then run by pressing return.</p>
+</blockquote>
+<p>The outcome of an arithmetic calculation can be given an identifier for later use.</p>
+<pre><code class=language-r>calc1 &lt;- numbers + c(8, 7.5, -2)
+calc2 &lt;- calc1 * calc1
+calc1
+## [1] 9.0 9.5 1.0
+calc2
+## [1] 81.00 90.25  1.00
+
+(calc1 &lt;- calc1 + calc2)
+## [1] 90.00 99.75  2.00
+calc1
+## [1] 90.00 99.75  2.00
+calc2
+## [1] 81.00 90.25  1.00
+
+# Note: in the final step we have update the value of calc1 by adding calc2 to
+# the old value; calc1 changes but calc2 is unchanged
+</code></pre>
+<p>If we try to add together vectors of different lengths, R uses a recycling rule; the smaller vector is repeated until the dimensions match.</p>
+<pre><code class=language-r>1:5 + 1
+## [1] 2 3 4 5 6
+
+small &lt;- c(1, 2)
+large &lt;- c(0, 0, 0, 0, 0, 0)
+large + small
+## [1] 1 2 1 2 1 2
+</code></pre>
+<blockquote>
+<p><strong>Where have all the objects gone?</strong> We have defined a lot of variables so far. Inspect the &lsquo;Environment&rsquo; tab to inspect all objects saved in the workspace.</p>
+</blockquote>
+<h3 id=example-sheep-weight>Example: sheep weight</h3>
+<p>We have taken a random sample of the weight of 5 sheep in the UK.
+The weights (kg) are 84.5, 72.6, 75.7, 94.8, and 71.3.
+We are going to put these values in a vector and illustrate some standard procedures.</p>
+<pre><code class=language-r>weight &lt;- c(84.5, 72.6, 75.7, 94.8, 71.3)
+weight
+## [1] 84.5 72.6 75.7 94.8 71.3
+
+total &lt;- sum(weight)
+numobs &lt;- length(weight)
+meanweight &lt;- total / numobs
+meanweight
+## [1] 79.78
+
+# We have worked out the mean the hard way.  There is a quick way...
+mean(weight)
+## [1] 79.78
+</code></pre>
+<h2 id=matrices>Matrices</h2>
+<p>Another form of data in <code>R</code> are matrices. A matrix is formed using the <code>matrix()</code> function, which takes in a vector argument, plus the number of rows and number of columns the matrix should be. For example, to create a $4 \times 3$ matrix, one types</p>
+<pre><code class=language-r>mat &lt;- matrix(1:12, nrow = 4, ncol = 3)
+mat
+##      [,1] [,2] [,3]
+## [1,]    1    5    9
+## [2,]    2    6   10
+## [3,]    3    7   11
+## [4,]    4    8   12
+</code></pre>
+<p>Notice that the matrix is built column by column. If we wish to specify that the matrix be built by filling in the rows first, we use the option <code>byrow = TRUE</code>.</p>
+<pre><code class=language-r>mat &lt;- matrix(1:12, nrow = 4, byrow = TRUE)
+mat
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9
+## [4,]   10   11   12
+</code></pre>
+<p>In the above, we skipped the <code>ncol</code> argument as it is not needed. If it is unambiguous enough, then you can skip one of <code>nrow</code> or <code>ncol</code>, but it is certainly good practice to specify both in order to avoid silly mistakes.</p>
+<p>Remember, <code>R</code> practices the recycling rule, and this applies even to matrices. The following code will not given an error, but it may not have the intended result.</p>
+<pre><code class=language-r>mat &lt;- matrix(1:3, nrow = 10, ncol = 3, byrow = TRUE)
+mat
+##       [,1] [,2] [,3]
+##  [1,]    1    2    3
+##  [2,]    1    2    3
+##  [3,]    1    2    3
+##  [4,]    1    2    3
+##  [5,]    1    2    3
+##  [6,]    1    2    3
+##  [7,]    1    2    3
+##  [8,]    1    2    3
+##  [9,]    1    2    3
+## [10,]    1    2    3
+</code></pre>
+<p>A very useful class of matrices that you would often encounter is diagonal matrices. These are built using the <code>diag()</code> function in <code>R</code>.</p>
+<pre><code class=language-r>diag(3)  # the 3 x3 identity matrix
+##      [,1] [,2] [,3]
+## [1,]    1    0    0
+## [2,]    0    1    0
+## [3,]    0    0    1
+diag(1:5)  # a diagonal matrix with diagonal entries 1, 2, ..., 5
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    0    0    0    0
+## [2,]    0    2    0    0    0
+## [3,]    0    0    3    0    0
+## [4,]    0    0    0    4    0
+## [5,]    0    0    0    0    5
+</code></pre>
+<h2 id=data-frames>Data frames</h2>
+<p>A data frame is an R object that can be thought of as representing a data set.
+A data frame consists of variables (columns vectors) of the same length with each row corresponding to an experimental unit.
+The general syntax for setting up a data frame is <code>name &lt;- data.frame(variable1, variable2, ...)</code>.</p>
+<p>Individual variables in a data frame are accessed using the $ notation: <code>name$variable</code>.</p>
+<p>Once a data frame has been created we can view and edit it in a spreadsheet format using the command <code>fix(...)</code> (or equivalently <code>data.entry(...)</code>).
+New variables can be added to an existing data frame by assignment.</p>
+<h3 id=example-sheep-again>Example: sheep again</h3>
+<p>Suppose that, for each of the sheep weighed in the example above, we also measure the height at the shoulder. The heights (cm) are 86.5, 71.8, 77.2, 84.9, and 75.4.
+We will set up another variable for height. We would also like to have a single structure in which the association between weight and height (that is, that they are two measurements of the same sheep) is made explicit.
+This is done by adding each variable to a dataframe.
+We will call the data frame sheep and view it using <code>fix(sheep)</code>.</p>
+<pre><code class=language-r>height &lt;- c(86.5, 71.8, 77.2, 84.9, 75.4)
+sheep &lt;- data.frame(weight, height)
+mean(sheep$height)
+## [1] 79.16
+## 
+## fix(sheep)
+</code></pre>
+<p>Suppose that a third variable consisting of measurements of the length of the sheeps’ backs becomes available. The values (in cm) are 130.4, 100.2, 109.4, 140.6, and 101.4.
+We can include a new variable in the data frame using assignment. Suppose we choose the identifier <code>backlength</code> for this new variable:</p>
+<pre><code class=language-r>sheep$backlength &lt;- c(130.4, 100.2, 109.4, 140.6, 101.4)
+</code></pre>
+<p>Look at the data in spreadsheet format to check what has happened.</p>
+<h2 id=lists>Lists</h2>
+<p>Lists in <code>R</code> are objects which can hold various kinds of objects together in one list. The easiest way to explain this is to construct a list:</p>
+<pre><code class=language-r>my_list &lt;- list(
+  a = 1,
+  b = diag(1:3),
+  c = lm(rnorm(100) ~ 1 + rt(100, 1)),
+  d = plot(rnorm(10), ),
+  e = sheep
+)
+str(my_list)
+## List of 5
+##  $ a: num 1
+##  $ b: int [1:3, 1:3] 1 0 0 0 2 0 0 0 3
+##  $ c:List of 12
+##   ..$ coefficients : Named num [1:2] -0.13641 0.00289
+##   .. ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;(Intercept)&quot; &quot;rt(100, 1)&quot;
+##   ..$ residuals    : Named num [1:100] 1.814 -0.203 0.631 -0.449 -2.427 ...
+##   .. ..- attr(*, &quot;names&quot;)= chr [1:100] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   ..$ effects      : Named num [1:100] 1.389 1.013 0.465 -0.614 -2.592 ...
+##   .. ..- attr(*, &quot;names&quot;)= chr [1:100] &quot;(Intercept)&quot; &quot;rt(100, 1)&quot; &quot;&quot; &quot;&quot; ...
+##   ..$ rank         : int 2
+##   ..$ fitted.values: Named num [1:100] -0.136 -0.139 -0.135 -0.138 -0.137 ...
+##   .. ..- attr(*, &quot;names&quot;)= chr [1:100] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   ..$ assign       : int [1:2] 0 1
+##   ..$ qr           :List of 5
+##   .. ..$ qr   : num [1:100, 1:2] -10 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 ...
+##   .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. ..$ : chr [1:100] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   .. .. .. ..$ : chr [1:2] &quot;(Intercept)&quot; &quot;rt(100, 1)&quot;
+##   .. .. ..- attr(*, &quot;assign&quot;)= int [1:2] 0 1
+##   .. ..$ qraux: num [1:2] 1.1 1
+##   .. ..$ pivot: int [1:2] 1 2
+##   .. ..$ tol  : num 1e-07
+##   .. ..$ rank : int 2
+##   .. ..- attr(*, &quot;class&quot;)= chr &quot;qr&quot;
+##   ..$ df.residual  : int 98
+##   ..$ xlevels      : Named list()
+##   ..$ call         : language lm(formula = rnorm(100) ~ 1 + rt(100, 1))
+##   ..$ terms        :Classes 'terms', 'formula'  language rnorm(100) ~ 1 + rt(100, 1)
+##   .. .. ..- attr(*, &quot;variables&quot;)= language list(rnorm(100), rt(100, 1))
+##   .. .. ..- attr(*, &quot;factors&quot;)= int [1:2, 1] 0 1
+##   .. .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. .. ..$ : chr [1:2] &quot;rnorm(100)&quot; &quot;rt(100, 1)&quot;
+##   .. .. .. .. ..$ : chr &quot;rt(100, 1)&quot;
+##   .. .. ..- attr(*, &quot;term.labels&quot;)= chr &quot;rt(100, 1)&quot;
+##   .. .. ..- attr(*, &quot;order&quot;)= int 1
+##   .. .. ..- attr(*, &quot;intercept&quot;)= int 1
+##   .. .. ..- attr(*, &quot;response&quot;)= int 1
+##   .. .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_GlobalEnv&gt; 
+##   .. .. ..- attr(*, &quot;predvars&quot;)= language list(rnorm(100), rt(100, 1))
+##   .. .. ..- attr(*, &quot;dataClasses&quot;)= Named chr [1:2] &quot;numeric&quot; &quot;numeric&quot;
+##   .. .. .. ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;rnorm(100)&quot; &quot;rt(100, 1)&quot;
+##   ..$ model        :'data.frame':	100 obs. of  2 variables:
+##   .. ..$ rnorm(100): num [1:100] 1.678 -0.343 0.497 -0.586 -2.564 ...
+##   .. ..$ rt(100, 1): num [1:100] 0.157 -1.019 0.578 -0.404 -0.263 ...
+##   .. ..- attr(*, &quot;terms&quot;)=Classes 'terms', 'formula'  language rnorm(100) ~ 1 + rt(100, 1)
+##   .. .. .. ..- attr(*, &quot;variables&quot;)= language list(rnorm(100), rt(100, 1))
+##   .. .. .. ..- attr(*, &quot;factors&quot;)= int [1:2, 1] 0 1
+##   .. .. .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. .. .. ..$ : chr [1:2] &quot;rnorm(100)&quot; &quot;rt(100, 1)&quot;
+##   .. .. .. .. .. ..$ : chr &quot;rt(100, 1)&quot;
+##   .. .. .. ..- attr(*, &quot;term.labels&quot;)= chr &quot;rt(100, 1)&quot;
+##   .. .. .. ..- attr(*, &quot;order&quot;)= int 1
+##   .. .. .. ..- attr(*, &quot;intercept&quot;)= int 1
+##   .. .. .. ..- attr(*, &quot;response&quot;)= int 1
+##   .. .. .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_GlobalEnv&gt; 
+##   .. .. .. ..- attr(*, &quot;predvars&quot;)= language list(rnorm(100), rt(100, 1))
+##   .. .. .. ..- attr(*, &quot;dataClasses&quot;)= Named chr [1:2] &quot;numeric&quot; &quot;numeric&quot;
+##   .. .. .. .. ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;rnorm(100)&quot; &quot;rt(100, 1)&quot;
+##   ..- attr(*, &quot;class&quot;)= chr &quot;lm&quot;
+##  $ d: NULL
+##  $ e:'data.frame':	5 obs. of  3 variables:
+##   ..$ weight    : num [1:5] 84.5 72.6 75.7 94.8 71.3
+##   ..$ height    : num [1:5] 86.5 71.8 77.2 84.9 75.4
+##   ..$ backlength: num [1:5] 130 100 109 141 101
+</code></pre>
+<p>In the above example, <code>my_list</code> is an <code>R</code> list which contains 5 entries. The first entry called <code>a</code> is simply a number (or a vector of length 1). The second entry called <code>b</code> is a matrix. The third entry called <code>c</code> is a linear model. The fourth entry called <code>d</code> is a plot. Finally the fifth entry called <code>e</code> is a data frame. A list may be named (e.g. <code>a</code> to <code>e</code> above), or they need not be named.</p>
+<p>What is clear is that a list is able to hold not just one type of object, but various kinds of objects. This makes it useful to hold information or results for retrieval later, or for saving. Complex functions usually output a list rather than just singular objects.</p>
+<h2 id=subsetting>Subsetting</h2>
+<p>In <code>R</code>, subsetting is done using square brackets:</p>
+<pre><code class=language-r>a &lt;- 1:10
+a[3]  # subset the 3rd element in the vector
+## [1] 3
+a[1:5]  # subset the first 5 elements
+## [1] 1 2 3 4 5
+a[a %% 2 == 0]  # subset even elements only (note: the '%%' operator gives the remainder)
+## [1]  2  4  6  8 10
+</code></pre>
+<p>It is also possible to index matrices and dataframes</p>
+<pre><code class=language-r>mat[2, 3]  # get the (2,3) element from the matrix
+## [1] 3
+sheep[1, 2]  # get the first element in the 2nd column
+## [1] 86.5
+</code></pre>
+<p>For data frames, you&rsquo;ve seen that it is possible to use the <code>$</code> symbol to get the columns. From this, it is vectorised so it&rsquo;s further possible to subset using <code>[]</code>.</p>
+<pre><code class=language-r>sheep$height[1]  # the first sheep's height
+## [1] 86.5
+</code></pre>
+<h1 id=r-management>R management</h1>
+<h2 id=the-r-help-system>The R help system</h2>
+<p>There are a number of different ways of getting help in R.</p>
+<ul>
+<li>If you have a query about a specific function then typing ? and then the functions name at the prompt will bring up the relevant help page.</li>
+<li>If your problem is of a more general nature, then typing help.start() will open up a window which allows you to browse for the information you want. The search engine on this page is very helpful for finding context specific information.</li>
+</ul>
+<p>Alternatively, click on the &lsquo;Help&rsquo; tab and search for a term that you would like help on.</p>
+<h2 id=session-management-and-visibility>Session management and visibility</h2>
+<p>All of the objects created during an R session are stored in a workspace in memory. We can see the objects that are currently in the workspace by using the command <code>objects()</code>.
+Notice the <code>()</code>, these are vital for the command to work.</p>
+<pre><code class=language-r>objects()
+##  [1] &quot;a&quot;            &quot;calc1&quot;        &quot;calc2&quot;        &quot;delete_files&quot; &quot;height&quot;      
+##  [6] &quot;large&quot;        &quot;mat&quot;          &quot;meanweight&quot;   &quot;my_list&quot;      &quot;numbers&quot;     
+## [11] &quot;numobs&quot;       &quot;people&quot;       &quot;sheep&quot;        &quot;small&quot;        &quot;total&quot;       
+## [16] &quot;weight&quot;
+</code></pre>
+<p>The information in the variables height and weight is currently encapsulated in the data frame sheep.
+We can tidy up our workspace by removing the height and weight variables (and various others that we are no longer interested in) using the <code>rm()</code> function.
+Do this and then check what is left.</p>
+<pre><code class=language-r>rm(height, weight, meanweight, numobs, total)
+objects()
+##  [1] &quot;a&quot;            &quot;calc1&quot;        &quot;calc2&quot;        &quot;delete_files&quot; &quot;large&quot;       
+##  [6] &quot;mat&quot;          &quot;my_list&quot;      &quot;numbers&quot;      &quot;people&quot;       &quot;sheep&quot;       
+## [11] &quot;small&quot;
+</code></pre>
+<p>The height and weight variables are now only accessible via the sheep data frame.</p>
+<pre><code class=language-r>## weight  # should get an error message
+sheep$weight
+## [1] 84.5 72.6 75.7 94.8 71.3
+</code></pre>
+<p>We can save the current workspace to file at any time.
+The command to do so is <code>save.image()</code>.
+However, RStudio makes it simple to save the current workspace.
+Since we have created a project, workspace saving is handled for us, and we are prompted to save when we quit RStudio or close the project.</p>
+<p>To inspect our working directory, use the <code>dir()</code> command.
+We can also look at the files under the &lsquo;Files&rsquo; tab.</p>
+<h2 id=writing-your-own-functions>Writing your own functions</h2>
+<p>Every function in R has three basic parts: a name, a body of code, and a set of arguments.
+To make your own function, you need to replicate these parts and store them in an R object, which you can do with the <code>function()</code> function. To do this, call <code>function()</code> and follow it with a pair of braces, <code>{}</code>:</p>
+<pre><code class=language-r>my_fun &lt;- function(what.to.print = NULL) {
+  if (is.null(what.to.print)) {
+    print(&quot;Hello world!&quot;)
+  } else {
+    print(what.to.print)
+  }
+}
+</code></pre>
+<p>Here is a simple function to print some text to the R console.
+Try it out:</p>
+<pre><code class=language-r>my_fun()
+</code></pre>
+<pre><code>## [1] &quot;Hello world!&quot;
+</code></pre>
+<pre><code class=language-r>my_fun(&quot;All your base are belong to us&quot;)
+</code></pre>
+<pre><code>## [1] &quot;All your base are belong to us&quot;
+</code></pre>
+<h2 id=installing-packages>Installing packages</h2>
+<p>R has a very diverse user-contributed package repository called the Comprehensive R Archive Network (CRAN).
+Packages are nothing more than a collection of user-written functions that serve a particular purpose.
+For example, there are packages for extending the graphics capabilities of R (<code>ggplot2</code>), random-effects modelling (<code>lme4</code>), latent variable modelling (<code>lavaan</code>), adn so on.
+These aim to supplement base R with additional functionality.</p>
+<p>&ldquo;Official&rdquo; packages are downloaded from CRAN and installed by users all over the world.
+Packages that go are published on CRAN have gone through the necessary checks to ensure that they do not break when installed by R users.</p>
+<p>To install packages from CRAN, the command is <code>install.packages()</code>.
+It is much easier, however, to use the GUI in RStudio to install packages.
+Hit the &lsquo;Packages&rsquo; tab, click install, then search for the package that you want.</p>
+<p>Packages do not necessarily have to be installed from CRAN.
+You can create an R package yourself and distributed either in compressed form via e-mail or USB stick, or host it on a version-control software development site like GitHub.
+If you would like to know more about creating your own packages, read this <a href=http://r-pkgs.had.co.nz target=_blank rel=noopener>book</a> (R Packages by Hadley Wickham).</p>
+<h2 id=loading-packages-to-be-used>Loading packages to be used</h2>
+<p>Installing packages makes them available for use, but does not load them when you start R.
+Every time you quit an R session and you start it back up again, you would have to load packages that you need all over again.</p>
+<p>The command to load packages is <code>library(&lt;pkg name>)</code>.
+For example</p>
+<pre><code class=language-r>library(tidyverse)
+</code></pre>
+<pre><code>## ── Attaching packages ───────────────────────────────────────────────────────────── tidyverse 1.3.0 ──
+</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.3     ✓ dplyr   1.0.0
+## ✓ tidyr   1.1.0     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0
+</code></pre>
+<pre><code>## ── Conflicts ──────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+</code></pre>
+</div>
+<div class=article-widget>
+<div class=post-nav>
+<div class=post-nav-item>
+<div class=meta-nav>Previous</div>
+<a href=/teaching/datascience/1-intro/ rel=next>Data Science Framework</a>
+</div>
+<div class=post-nav-item>
+<div class=meta-nav>Next</div>
+<a href=/teaching/datascience/3-r4ds/ rel=prev>Useful data science functions in R</a>
+</div>
+</div>
+</div>
+</div>
+<div class=body-footer>
+<p>Last updated on 7 Sep 2021</p>
+</div>
+</article>
+<footer class=site-footer>
+<p class=powered-by>
+© 2021 Haziq Jamil
+</p>
+<p class=powered-by>
+Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target=_blank rel=noopener>Wowchemy</a> — the free, <a href=https://github.com/wowchemy/wowchemy-hugo-modules target=_blank rel=noopener>open source</a> website builder that empowers creators.
+</p>
+</footer>
+</main>
+</div>
+</div>
+</div>
+<div class=page-footer>
+</div>
+<div id=modal class="modal fade" role=dialog>
+<div class=modal-dialog>
+<div class=modal-content>
+<div class=modal-header>
+<h5 class=modal-title>Cite</h5>
+<button type=button class=close data-dismiss=modal aria-label=Close>
+<span aria-hidden=true>&#215;</span>
+</button>
+</div>
+<div class=modal-body>
+<pre><code class="tex hljs"></code></pre>
+</div>
+<div class=modal-footer>
+<a class="btn btn-outline-primary my-1 js-copy-cite" href=# target=_blank>
+<i class="fas fa-copy"></i> Copy
+</a>
+<a class="btn btn-outline-primary my-1 js-download-cite" href=# target=_blank>
+<i class="fas fa-download"></i> Download
+</a>
+<div id=modal-error></div>
+</div>
+</div>
+</div>
+</div>
+<script src=/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin=anonymous></script>
+<script>anchors.add()</script>
+<script id=search-hit-fuse-template type=text/x-template>
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin=anonymous></script>
+<script src=/en/js/wowchemy.min.d68ecd57c0ec1f1f61d65fd568f1c3a0.js></script>
+</body>
+</html>
