@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Machine Learning | Haziq Jamil</title><link>https://haziqj.ml/tag/machine-learning/</link><atom:link href="https://haziqj.ml/tag/machine-learning/index.xml" rel="self" type="application/rss+xml"/><description>Machine Learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><copyright>© 2021 Haziq Jamil</copyright><lastBuildDate>Sat, 09 Mar 2019 00:00:00 +0000</lastBuildDate><image><url>https://haziqj.ml/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png</url><title>Machine Learning</title><link>https://haziqj.ml/tag/machine-learning/</link></image><item><title>Spatio-temporal analysis of Brunei data</title><link>https://haziqj.ml/future-project/spatio-temporal-brunei/</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>https://haziqj.ml/future-project/spatio-temporal-brunei/</guid><description>&lt;p>For my PhD project, I modelled the probabilities of farm houses contracting a particular type of bovine tuberculosis (BTB) over time in Cornwall, UK.
+I thought something similar could be done specifically for Bruneian data, but not necessarily BTB data of course.
+Some ideas include, but are not limited to:&lt;/p>
+&lt;ol>
+&lt;li>Economic data (income, unemployment, etc.)&lt;/li>
+&lt;li>Educattional data (student-teach ratio, percentage passes in exams, etc.)&lt;/li>
+&lt;li>Demographic data (fertility rate, mortality rate, etc.)&lt;/li>
+&lt;li>Business data (number of coffee shops, land prices, etc.)&lt;/li>
+&lt;/ol>
+&lt;p>The challenge here firstly would be first to acquire data for analysis, which is not readily available.
+There are official sources for some of these data, but for unstructured data which may be scattered all over the internet and social media, it would be interesting to come up with a device that can scrape these types of data automatically.&lt;/p>
+&lt;p>Secondly, at a minimum, this project involves visualisation of the data set.
+Since these are also temporal data (over time), animations play a vital role here.&lt;/p>
+&lt;p>Thirdly, appropriate models are to be constructed for prediction of future time values or spatial points for which we have no data on.
+I would propose looking at some machine learning techniques for this part.&lt;/p></description></item></channel></rss>
