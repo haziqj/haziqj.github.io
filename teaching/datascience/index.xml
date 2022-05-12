@@ -60,144 +60,148 @@ If your files are already in a folder, select $\text{Existing Directory}$; other
 Don&amp;rsquo;t select $\text{Version Control}$ for now.&lt;/p>
 &lt;h2 id="using-r-as-a-calculator">Using R as a calculator&lt;/h2>
 &lt;p>The simplest thing that R can do is evaluate arithmetic expressions.&lt;/p>
-&lt;pre>&lt;code class="language-r">1 + 1
-## [1] 2
-1 + 4.23
-## [1] 5.23
-1 + 1/2 * 9 - 3.14
-## [1] 2.36
-# Note the order in which operations are performed in the final calculation
-&lt;/code>&lt;/pre>
-&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="m">1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="m">1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="m">4.23&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 5.23&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="m">1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="m">2&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="m">9&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="m">3.14&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 2.36&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Note the order in which operations are performed in the final calculation&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>&lt;strong>Comments in R&lt;/strong>. R ignores anything after a # sign in a command.
 We will follow this convention. Anything after a # in a set of R commands is a comment.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="vectors-and-assignment">Vectors and assignment&lt;/h2>
 &lt;p>We can create vectors at the command prompt using the concatenation function &lt;code>c(...). c(object1,object2,...)&lt;/code>.&lt;/p>
 &lt;p>This function takes arguments of the same mode and returns a vector containing these values.&lt;/p>
-&lt;pre>&lt;code class="language-r">c(1,2,3)
-## [1] 1 2 3
-c(&amp;quot;Alpha&amp;quot;, &amp;quot;Bravo&amp;quot;, &amp;quot;Charlie&amp;quot;)
-## [1] &amp;quot;Alpha&amp;quot; &amp;quot;Bravo&amp;quot; &amp;quot;Charlie&amp;quot;
-&lt;/code>&lt;/pre>
-&lt;p>In order to make use of vectors, we need identifiers for them (we do not want to have to write vectors from scratch every time we use them).
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">2&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Alpha&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Bravo&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Charlie&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] &amp;#34;Alpha&amp;#34; &amp;#34;Bravo&amp;#34; &amp;#34;Charlie&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In order to make use of vectors, we need identifiers for them (we do not want to have to write vectors from scratch every time we use them).
 This is done using the assignment operator &lt;code>&amp;lt;-&lt;/code> via &lt;code>name &amp;lt;- expression&lt;/code>.
 &lt;code>name&lt;/code> now refers to an object whose value is the result of evaluating expression.&lt;/p>
-&lt;pre>&lt;code class="language-r">numbers &amp;lt;- c(1,2,3)
-people &amp;lt;- c(&amp;quot;Alpha&amp;quot;, &amp;quot;Bravo&amp;quot;, &amp;quot;Charlie&amp;quot;)
-numbers
-## [1] 1 2 3
-people
-## [1] &amp;quot;Alpha&amp;quot; &amp;quot;Bravo&amp;quot; &amp;quot;Charlie&amp;quot;
-# Typing an object’s identifier causes R to print the contents of the object
-&lt;/code>&lt;/pre>
-&lt;p>Simple arithmetic operations can be performed with vectors.&lt;/p>
-&lt;pre>&lt;code class="language-r">1:3 + c(4, 5, 6)
-## [1] 5 7 9
-numbers + numbers
-## [1] 2 4 6
-numbers - c(8, 7.5, -2)
-## [1] -7.0 -5.5 5.0
-rep(12, 3) / numbers
-## [1] 12 6 4
-&lt;/code>&lt;/pre>
-&lt;p>Note in the above example that multiplication and division are done element by element.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">numbers&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">2&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">people&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Alpha&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Bravo&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Charlie&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">numbers&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">people&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] &amp;#34;Alpha&amp;#34; &amp;#34;Bravo&amp;#34; &amp;#34;Charlie&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Typing an object’s identifier causes R to print the contents of the object&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Simple arithmetic operations can be performed with vectors.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="m">3&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">6&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 5 7 9&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">numbers&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">numbers&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 2 4 6&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">numbers&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">8&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">7.5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">-2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] -7.0 -5.5 5.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">rep&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">12&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">3&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="n">numbers&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 12 6 4&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note in the above example that multiplication and division are done element by element.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Reusing commands&lt;/strong>. If you want to bring back a command which you have used earlier in the session, press the up arrow key ↑. This allows you to go back through the commands until you find the one you want. The commands reappear at the command line and can be edited and then run by pressing return.&lt;/p>
 &lt;/blockquote>
 &lt;p>The outcome of an arithmetic calculation can be given an identifier for later use.&lt;/p>
-&lt;pre>&lt;code class="language-r">calc1 &amp;lt;- numbers + c(8, 7.5, -2)
-calc2 &amp;lt;- calc1 * calc1
-calc1
-## [1] 9.0 9.5 1.0
-calc2
-## [1] 81.00 90.25 1.00
-(calc1 &amp;lt;- calc1 + calc2)
-## [1] 90.00 99.75 2.00
-calc1
-## [1] 90.00 99.75 2.00
-calc2
-## [1] 81.00 90.25 1.00
-# Note: in the final step we have update the value of calc1 by adding calc2 to
-# the old value; calc1 changes but calc2 is unchanged
-&lt;/code>&lt;/pre>
-&lt;p>If we try to add together vectors of different lengths, R uses a recycling rule; the smaller vector is repeated until the dimensions match.&lt;/p>
-&lt;pre>&lt;code class="language-r">1:5 + 1
-## [1] 2 3 4 5 6
-small &amp;lt;- c(1, 2)
-large &amp;lt;- c(0, 0, 0, 0, 0, 0)
-large + small
-## [1] 1 2 1 2 1 2
-&lt;/code>&lt;/pre>
-&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">calc1&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">numbers&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">8&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">7.5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">-2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">calc2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">calc1&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">calc1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">calc1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 9.0 9.5 1.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">calc2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 81.00 90.25 1.00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">(&lt;/span>&lt;span class="n">calc1&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">calc1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">calc2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 90.00 99.75 2.00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">calc1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 90.00 99.75 2.00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">calc2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 81.00 90.25 1.00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Note: in the final step we have update the value of calc1 by adding calc2 to&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># the old value; calc1 changes but calc2 is unchanged&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If we try to add together vectors of different lengths, R uses a recycling rule; the smaller vector is repeated until the dimensions match.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="m">5&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 2 3 4 5 6&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">small&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">large&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">large&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">small&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 1 2 1 2 1 2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>&lt;strong>Where have all the objects gone?&lt;/strong> We have defined a lot of variables so far. Inspect the &amp;lsquo;Environment&amp;rsquo; tab to inspect all objects saved in the workspace.&lt;/p>
 &lt;/blockquote>
 &lt;h3 id="example-sheep-weight">Example: sheep weight&lt;/h3>
 &lt;p>We have taken a random sample of the weight of 5 sheep in the UK.
 The weights (kg) are 84.5, 72.6, 75.7, 94.8, and 71.3.
 We are going to put these values in a vector and illustrate some standard procedures.&lt;/p>
-&lt;pre>&lt;code class="language-r">weight &amp;lt;- c(84.5, 72.6, 75.7, 94.8, 71.3)
-weight
-## [1] 84.5 72.6 75.7 94.8 71.3
-total &amp;lt;- sum(weight)
-numobs &amp;lt;- length(weight)
-meanweight &amp;lt;- total / numobs
-meanweight
-## [1] 79.78
-# We have worked out the mean the hard way. There is a quick way...
-mean(weight)
-## [1] 79.78
-&lt;/code>&lt;/pre>
-&lt;h2 id="matrices">Matrices&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">weight&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">84.5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">72.6&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">75.7&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">94.8&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">71.3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">weight&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 84.5 72.6 75.7 94.8 71.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">total&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">weight&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">numobs&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">length&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">weight&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">meanweight&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">total&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="n">numobs&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">meanweight&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 79.78&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># We have worked out the mean the hard way. There is a quick way...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">mean&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">weight&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 79.78&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="matrices">Matrices&lt;/h2>
 &lt;p>Another form of data in &lt;code>R&lt;/code> are matrices. A matrix is formed using the &lt;code>matrix()&lt;/code> function, which takes in a vector argument, plus the number of rows and number of columns the matrix should be. For example, to create a $4 \times 3$ matrix, one types&lt;/p>
-&lt;pre>&lt;code class="language-r">mat &amp;lt;- matrix(1:12, nrow = 4, ncol = 3)
-mat
-## [,1] [,2] [,3]
-## [1,] 1 5 9
-## [2,] 2 6 10
-## [3,] 3 7 11
-## [4,] 4 8 12
-&lt;/code>&lt;/pre>
-&lt;p>Notice that the matrix is built column by column. If we wish to specify that the matrix be built by filling in the rows first, we use the option &lt;code>byrow = TRUE&lt;/code>.&lt;/p>
-&lt;pre>&lt;code class="language-r">mat &amp;lt;- matrix(1:12, nrow = 4, byrow = TRUE)
-mat
-## [,1] [,2] [,3]
-## [1,] 1 2 3
-## [2,] 4 5 6
-## [3,] 7 8 9
-## [4,] 10 11 12
-&lt;/code>&lt;/pre>
-&lt;p>In the above, we skipped the &lt;code>ncol&lt;/code> argument as it is not needed. If it is unambiguous enough, then you can skip one of &lt;code>nrow&lt;/code> or &lt;code>ncol&lt;/code>, but it is certainly good practice to specify both in order to avoid silly mistakes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">mat&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">matrix&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="m">12&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">nrow&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">ncol&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">mat&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [,1] [,2] [,3]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1,] 1 5 9&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [2,] 2 6 10&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [3,] 3 7 11&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [4,] 4 8 12&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Notice that the matrix is built column by column. If we wish to specify that the matrix be built by filling in the rows first, we use the option &lt;code>byrow = TRUE&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">mat&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">matrix&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="m">12&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">nrow&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">byrow&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">mat&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [,1] [,2] [,3]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1,] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [2,] 4 5 6&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [3,] 7 8 9&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [4,] 10 11 12&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In the above, we skipped the &lt;code>ncol&lt;/code> argument as it is not needed. If it is unambiguous enough, then you can skip one of &lt;code>nrow&lt;/code> or &lt;code>ncol&lt;/code>, but it is certainly good practice to specify both in order to avoid silly mistakes.&lt;/p>
 &lt;p>Remember, &lt;code>R&lt;/code> practices the recycling rule, and this applies even to matrices. The following code will not given an error, but it may not have the intended result.&lt;/p>
-&lt;pre>&lt;code class="language-r">mat &amp;lt;- matrix(1:3, nrow = 10, ncol = 3, byrow = TRUE)
-mat
-## [,1] [,2] [,3]
-## [1,] 1 2 3
-## [2,] 1 2 3
-## [3,] 1 2 3
-## [4,] 1 2 3
-## [5,] 1 2 3
-## [6,] 1 2 3
-## [7,] 1 2 3
-## [8,] 1 2 3
-## [9,] 1 2 3
-## [10,] 1 2 3
-&lt;/code>&lt;/pre>
-&lt;p>A very useful class of matrices that you would often encounter is diagonal matrices. These are built using the &lt;code>diag()&lt;/code> function in &lt;code>R&lt;/code>.&lt;/p>
-&lt;pre>&lt;code class="language-r">diag(3) # the 3 x3 identity matrix
-## [,1] [,2] [,3]
-## [1,] 1 0 0
-## [2,] 0 1 0
-## [3,] 0 0 1
-diag(1:5) # a diagonal matrix with diagonal entries 1, 2, ..., 5
-## [,1] [,2] [,3] [,4] [,5]
-## [1,] 1 0 0 0 0
-## [2,] 0 2 0 0 0
-## [3,] 0 0 3 0 0
-## [4,] 0 0 0 4 0
-## [5,] 0 0 0 0 5
-&lt;/code>&lt;/pre>
-&lt;h2 id="data-frames">Data frames&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">mat&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">matrix&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="m">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">nrow&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">10&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">ncol&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">byrow&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">mat&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [,1] [,2] [,3]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1,] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [2,] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [3,] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [4,] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [5,] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [6,] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [7,] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [8,] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [9,] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [10,] 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>A very useful class of matrices that you would often encounter is diagonal matrices. These are built using the &lt;code>diag()&lt;/code> function in &lt;code>R&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">diag&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">3&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># the 3 x3 identity matrix&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [,1] [,2] [,3]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1,] 1 0 0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [2,] 0 1 0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [3,] 0 0 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">diag&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="m">5&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># a diagonal matrix with diagonal entries 1, 2, ..., 5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [,1] [,2] [,3] [,4] [,5]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1,] 1 0 0 0 0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [2,] 0 2 0 0 0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [3,] 0 0 3 0 0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [4,] 0 0 0 4 0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [5,] 0 0 0 0 5&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="data-frames">Data frames&lt;/h2>
 &lt;p>A data frame is an R object that can be thought of as representing a data set.
 A data frame consists of variables (columns vectors) of the same length with each row corresponding to an experimental unit.
 The general syntax for setting up a data frame is &lt;code>name &amp;lt;- data.frame(variable1, variable2, ...)&lt;/code>.&lt;/p>
@@ -209,117 +213,111 @@ New variables can be added to an existing data frame by assignment.&lt;/p>
 We will set up another variable for height. We would also like to have a single structure in which the association between weight and height (that is, that they are two measurements of the same sheep) is made explicit.
 This is done by adding each variable to a dataframe.
 We will call the data frame sheep and view it using &lt;code>fix(sheep)&lt;/code>.&lt;/p>
-&lt;pre>&lt;code class="language-r">height &amp;lt;- c(86.5, 71.8, 77.2, 84.9, 75.4)
-sheep &amp;lt;- data.frame(weight, height)
-mean(sheep$height)
-## [1] 79.16
-##
-## fix(sheep)
-&lt;/code>&lt;/pre>
-&lt;p>Suppose that a third variable consisting of measurements of the length of the sheeps’ backs becomes available. The values (in cm) are 130.4, 100.2, 109.4, 140.6, and 101.4.
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">height&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">86.5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">71.8&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">77.2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">84.9&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">75.4&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">sheep&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">data.frame&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">weight&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">height&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">mean&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sheep&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">height&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 79.16&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## fix(sheep)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Suppose that a third variable consisting of measurements of the length of the sheeps’ backs becomes available. The values (in cm) are 130.4, 100.2, 109.4, 140.6, and 101.4.
 We can include a new variable in the data frame using assignment. Suppose we choose the identifier &lt;code>backlength&lt;/code> for this new variable:&lt;/p>
-&lt;pre>&lt;code class="language-r">sheep$backlength &amp;lt;- c(130.4, 100.2, 109.4, 140.6, 101.4)
-&lt;/code>&lt;/pre>
-&lt;p>Look at the data in spreadsheet format to check what has happened.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">sheep&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">backlength&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">130.4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">100.2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">109.4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">140.6&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">101.4&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Look at the data in spreadsheet format to check what has happened.&lt;/p>
 &lt;h2 id="lists">Lists&lt;/h2>
 &lt;p>Lists in &lt;code>R&lt;/code> are objects which can hold various kinds of objects together in one list. The easiest way to explain this is to construct a list:&lt;/p>
-&lt;pre>&lt;code class="language-r">my_list &amp;lt;- list(
-a = 1,
-b = diag(1:3),
-c = lm(rnorm(100) ~ 1 + rt(100, 1)),
-d = plot(rnorm(10), ),
-e = sheep
-)
-str(my_list)
-## List of 5
-## $ a: num 1
-## $ b: int [1:3, 1:3] 1 0 0 0 2 0 0 0 3
-## $ c:List of 12
-## ..$ coefficients : Named num [1:2] -0.13641 0.00289
-## .. ..- attr(*, &amp;quot;names&amp;quot;)= chr [1:2] &amp;quot;(Intercept)&amp;quot; &amp;quot;rt(100, 1)&amp;quot;
-## ..$ residuals : Named num [1:100] 1.814 -0.203 0.631 -0.449 -2.427 ...
-## .. ..- attr(*, &amp;quot;names&amp;quot;)= chr [1:100] &amp;quot;1&amp;quot; &amp;quot;2&amp;quot; &amp;quot;3&amp;quot; &amp;quot;4&amp;quot; ...
-## ..$ effects : Named num [1:100] 1.389 1.013 0.465 -0.614 -2.592 ...
-## .. ..- attr(*, &amp;quot;names&amp;quot;)= chr [1:100] &amp;quot;(Intercept)&amp;quot; &amp;quot;rt(100, 1)&amp;quot; &amp;quot;&amp;quot; &amp;quot;&amp;quot; ...
-## ..$ rank : int 2
-## ..$ fitted.values: Named num [1:100] -0.136 -0.139 -0.135 -0.138 -0.137 ...
-## .. ..- attr(*, &amp;quot;names&amp;quot;)= chr [1:100] &amp;quot;1&amp;quot; &amp;quot;2&amp;quot; &amp;quot;3&amp;quot; &amp;quot;4&amp;quot; ...
-## ..$ assign : int [1:2] 0 1
-## ..$ qr :List of 5
-## .. ..$ qr : num [1:100, 1:2] -10 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 ...
-## .. .. ..- attr(*, &amp;quot;dimnames&amp;quot;)=List of 2
-## .. .. .. ..$ : chr [1:100] &amp;quot;1&amp;quot; &amp;quot;2&amp;quot; &amp;quot;3&amp;quot; &amp;quot;4&amp;quot; ...
-## .. .. .. ..$ : chr [1:2] &amp;quot;(Intercept)&amp;quot; &amp;quot;rt(100, 1)&amp;quot;
-## .. .. ..- attr(*, &amp;quot;assign&amp;quot;)= int [1:2] 0 1
-## .. ..$ qraux: num [1:2] 1.1 1
-## .. ..$ pivot: int [1:2] 1 2
-## .. ..$ tol : num 1e-07
-## .. ..$ rank : int 2
-## .. ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;qr&amp;quot;
-## ..$ df.residual : int 98
-## ..$ xlevels : Named list()
-## ..$ call : language lm(formula = rnorm(100) ~ 1 + rt(100, 1))
-## ..$ terms :Classes 'terms', 'formula' language rnorm(100) ~ 1 + rt(100, 1)
-## .. .. ..- attr(*, &amp;quot;variables&amp;quot;)= language list(rnorm(100), rt(100, 1))
-## .. .. ..- attr(*, &amp;quot;factors&amp;quot;)= int [1:2, 1] 0 1
-## .. .. .. ..- attr(*, &amp;quot;dimnames&amp;quot;)=List of 2
-## .. .. .. .. ..$ : chr [1:2] &amp;quot;rnorm(100)&amp;quot; &amp;quot;rt(100, 1)&amp;quot;
-## .. .. .. .. ..$ : chr &amp;quot;rt(100, 1)&amp;quot;
-## .. .. ..- attr(*, &amp;quot;term.labels&amp;quot;)= chr &amp;quot;rt(100, 1)&amp;quot;
-## .. .. ..- attr(*, &amp;quot;order&amp;quot;)= int 1
-## .. .. ..- attr(*, &amp;quot;intercept&amp;quot;)= int 1
-## .. .. ..- attr(*, &amp;quot;response&amp;quot;)= int 1
-## .. .. ..- attr(*, &amp;quot;.Environment&amp;quot;)=&amp;lt;environment: R_GlobalEnv&amp;gt;
-## .. .. ..- attr(*, &amp;quot;predvars&amp;quot;)= language list(rnorm(100), rt(100, 1))
-## .. .. ..- attr(*, &amp;quot;dataClasses&amp;quot;)= Named chr [1:2] &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot;
-## .. .. .. ..- attr(*, &amp;quot;names&amp;quot;)= chr [1:2] &amp;quot;rnorm(100)&amp;quot; &amp;quot;rt(100, 1)&amp;quot;
-## ..$ model :'data.frame': 100 obs. of 2 variables:
-## .. ..$ rnorm(100): num [1:100] 1.678 -0.343 0.497 -0.586 -2.564 ...
-## .. ..$ rt(100, 1): num [1:100] 0.157 -1.019 0.578 -0.404 -0.263 ...
-## .. ..- attr(*, &amp;quot;terms&amp;quot;)=Classes 'terms', 'formula' language rnorm(100) ~ 1 + rt(100, 1)
-## .. .. .. ..- attr(*, &amp;quot;variables&amp;quot;)= language list(rnorm(100), rt(100, 1))
-## .. .. .. ..- attr(*, &amp;quot;factors&amp;quot;)= int [1:2, 1] 0 1
-## .. .. .. .. ..- attr(*, &amp;quot;dimnames&amp;quot;)=List of 2
-## .. .. .. .. .. ..$ : chr [1:2] &amp;quot;rnorm(100)&amp;quot; &amp;quot;rt(100, 1)&amp;quot;
-## .. .. .. .. .. ..$ : chr &amp;quot;rt(100, 1)&amp;quot;
-## .. .. .. ..- attr(*, &amp;quot;term.labels&amp;quot;)= chr &amp;quot;rt(100, 1)&amp;quot;
-## .. .. .. ..- attr(*, &amp;quot;order&amp;quot;)= int 1
-## .. .. .. ..- attr(*, &amp;quot;intercept&amp;quot;)= int 1
-## .. .. .. ..- attr(*, &amp;quot;response&amp;quot;)= int 1
-## .. .. .. ..- attr(*, &amp;quot;.Environment&amp;quot;)=&amp;lt;environment: R_GlobalEnv&amp;gt;
-## .. .. .. ..- attr(*, &amp;quot;predvars&amp;quot;)= language list(rnorm(100), rt(100, 1))
-## .. .. .. ..- attr(*, &amp;quot;dataClasses&amp;quot;)= Named chr [1:2] &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot;
-## .. .. .. .. ..- attr(*, &amp;quot;names&amp;quot;)= chr [1:2] &amp;quot;rnorm(100)&amp;quot; &amp;quot;rt(100, 1)&amp;quot;
-## ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;lm&amp;quot;
-## $ d: NULL
-## $ e:'data.frame': 5 obs. of 3 variables:
-## ..$ weight : num [1:5] 84.5 72.6 75.7 94.8 71.3
-## ..$ height : num [1:5] 86.5 71.8 77.2 84.9 75.4
-## ..$ backlength: num [1:5] 130 100 109 141 101
-&lt;/code>&lt;/pre>
-&lt;p>In the above example, &lt;code>my_list&lt;/code> is an &lt;code>R&lt;/code> list which contains 5 entries. The first entry called &lt;code>a&lt;/code> is simply a number (or a vector of length 1). The second entry called &lt;code>b&lt;/code> is a matrix. The third entry called &lt;code>c&lt;/code> is a linear model. The fourth entry called &lt;code>d&lt;/code> is a plot. Finally the fifth entry called &lt;code>e&lt;/code> is a data frame. A list may be named (e.g. &lt;code>a&lt;/code> to &lt;code>e&lt;/code> above), or they need not be named.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">my_list&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">list&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">a&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">b&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">diag&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="m">3&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">c&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">lm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">rnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">100&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="m">1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nf">rt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">100&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="p">)),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">d&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">plot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">rnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">10&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">e&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">sheep&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">my_list&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## List of 5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## $ a: num 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## $ b: int [1:3, 1:3] 1 0 0 0 2 0 0 0 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## $ c:List of 12&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ coefficients : Named num [1:2] -0.13641 0.00289&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..- attr(*, &amp;#34;names&amp;#34;)= chr [1:2] &amp;#34;(Intercept)&amp;#34; &amp;#34;rt(100, 1)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ residuals : Named num [1:100] 1.814 -0.203 0.631 -0.449 -2.427 ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..- attr(*, &amp;#34;names&amp;#34;)= chr [1:100] &amp;#34;1&amp;#34; &amp;#34;2&amp;#34; &amp;#34;3&amp;#34; &amp;#34;4&amp;#34; ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ effects : Named num [1:100] 1.389 1.013 0.465 -0.614 -2.592 ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..- attr(*, &amp;#34;names&amp;#34;)= chr [1:100] &amp;#34;(Intercept)&amp;#34; &amp;#34;rt(100, 1)&amp;#34; &amp;#34;&amp;#34; &amp;#34;&amp;#34; ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ rank : int 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ fitted.values: Named num [1:100] -0.136 -0.139 -0.135 -0.138 -0.137 ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..- attr(*, &amp;#34;names&amp;#34;)= chr [1:100] &amp;#34;1&amp;#34; &amp;#34;2&amp;#34; &amp;#34;3&amp;#34; &amp;#34;4&amp;#34; ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ assign : int [1:2] 0 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ qr :List of 5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..$ qr : num [1:100, 1:2] -10 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. ..- attr(*, &amp;#34;dimnames&amp;#34;)=List of 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..$ : chr [1:100] &amp;#34;1&amp;#34; &amp;#34;2&amp;#34; &amp;#34;3&amp;#34; &amp;#34;4&amp;#34; ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..$ : chr [1:2] &amp;#34;(Intercept)&amp;#34; &amp;#34;rt(100, 1)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. ..- attr(*, &amp;#34;assign&amp;#34;)= int [1:2] 0 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..$ qraux: num [1:2] 1.1 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..$ pivot: int [1:2] 1 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..$ tol : num 1e-07&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..$ rank : int 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..- attr(*, &amp;#34;class&amp;#34;)= chr &amp;#34;qr&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ df.residual : int 98&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ xlevels : Named list()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ call : language lm(formula = rnorm(100) ~ 1 + rt(100, 1))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ terms :Classes &amp;#39;terms&amp;#39;, &amp;#39;formula&amp;#39; language rnorm(100) ~ 1 + rt(100, 1)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. ..- attr(*, &amp;#34;variables&amp;#34;)= language list(rnorm(100), rt(100, 1))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. ..- attr(*, &amp;#34;factors&amp;#34;)= int [1:2, 1] 0 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..- attr(*, &amp;#34;dimnames&amp;#34;)=List of 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. .. ..$ : chr [1:2] &amp;#34;rnorm(100)&amp;#34; &amp;#34;rt(100, 1)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. .. ..$ : chr &amp;#34;rt(100, 1)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. ..- attr(*, &amp;#34;term.labels&amp;#34;)= chr &amp;#34;rt(100, 1)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. ..- attr(*, &amp;#34;order&amp;#34;)= int 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. ..- attr(*, &amp;#34;intercept&amp;#34;)= int 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. ..- attr(*, &amp;#34;response&amp;#34;)= int 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. ..- attr(*, &amp;#34;.Environment&amp;#34;)=&amp;lt;environment: R_GlobalEnv&amp;gt; &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. ..- attr(*, &amp;#34;predvars&amp;#34;)= language list(rnorm(100), rt(100, 1))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. ..- attr(*, &amp;#34;dataClasses&amp;#34;)= Named chr [1:2] &amp;#34;numeric&amp;#34; &amp;#34;numeric&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..- attr(*, &amp;#34;names&amp;#34;)= chr [1:2] &amp;#34;rnorm(100)&amp;#34; &amp;#34;rt(100, 1)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ model :&amp;#39;data.frame&amp;#39;: 100 obs. of 2 variables:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..$ rnorm(100): num [1:100] 1.678 -0.343 0.497 -0.586 -2.564 ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..$ rt(100, 1): num [1:100] 0.157 -1.019 0.578 -0.404 -0.263 ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. ..- attr(*, &amp;#34;terms&amp;#34;)=Classes &amp;#39;terms&amp;#39;, &amp;#39;formula&amp;#39; language rnorm(100) ~ 1 + rt(100, 1)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..- attr(*, &amp;#34;variables&amp;#34;)= language list(rnorm(100), rt(100, 1))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..- attr(*, &amp;#34;factors&amp;#34;)= int [1:2, 1] 0 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. .. ..- attr(*, &amp;#34;dimnames&amp;#34;)=List of 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. .. .. ..$ : chr [1:2] &amp;#34;rnorm(100)&amp;#34; &amp;#34;rt(100, 1)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. .. .. ..$ : chr &amp;#34;rt(100, 1)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..- attr(*, &amp;#34;term.labels&amp;#34;)= chr &amp;#34;rt(100, 1)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..- attr(*, &amp;#34;order&amp;#34;)= int 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..- attr(*, &amp;#34;intercept&amp;#34;)= int 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..- attr(*, &amp;#34;response&amp;#34;)= int 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..- attr(*, &amp;#34;.Environment&amp;#34;)=&amp;lt;environment: R_GlobalEnv&amp;gt; &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..- attr(*, &amp;#34;predvars&amp;#34;)= language list(rnorm(100), rt(100, 1))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. ..- attr(*, &amp;#34;dataClasses&amp;#34;)= Named chr [1:2] &amp;#34;numeric&amp;#34; &amp;#34;numeric&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## .. .. .. .. ..- attr(*, &amp;#34;names&amp;#34;)= chr [1:2] &amp;#34;rnorm(100)&amp;#34; &amp;#34;rt(100, 1)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..- attr(*, &amp;#34;class&amp;#34;)= chr &amp;#34;lm&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## $ d: NULL&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## $ e:&amp;#39;data.frame&amp;#39;: 5 obs. of 3 variables:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ weight : num [1:5] 84.5 72.6 75.7 94.8 71.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ height : num [1:5] 86.5 71.8 77.2 84.9 75.4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## ..$ backlength: num [1:5] 130 100 109 141 101&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In the above example, &lt;code>my_list&lt;/code> is an &lt;code>R&lt;/code> list which contains 5 entries. The first entry called &lt;code>a&lt;/code> is simply a number (or a vector of length 1). The second entry called &lt;code>b&lt;/code> is a matrix. The third entry called &lt;code>c&lt;/code> is a linear model. The fourth entry called &lt;code>d&lt;/code> is a plot. Finally the fifth entry called &lt;code>e&lt;/code> is a data frame. A list may be named (e.g. &lt;code>a&lt;/code> to &lt;code>e&lt;/code> above), or they need not be named.&lt;/p>
 &lt;p>What is clear is that a list is able to hold not just one type of object, but various kinds of objects. This makes it useful to hold information or results for retrieval later, or for saving. Complex functions usually output a list rather than just singular objects.&lt;/p>
 &lt;h2 id="subsetting">Subsetting&lt;/h2>
 &lt;p>In &lt;code>R&lt;/code>, subsetting is done using square brackets:&lt;/p>
-&lt;pre>&lt;code class="language-r">a &amp;lt;- 1:10
-a[3] # subset the 3rd element in the vector
-## [1] 3
-a[1:5] # subset the first 5 elements
-## [1] 1 2 3 4 5
-a[a %% 2 == 0] # subset even elements only (note: the '%%' operator gives the remainder)
-## [1] 2 4 6 8 10
-&lt;/code>&lt;/pre>
-&lt;p>It is also possible to index matrices and dataframes&lt;/p>
-&lt;pre>&lt;code class="language-r">mat[2, 3] # get the (2,3) element from the matrix
-## [1] 3
-sheep[1, 2] # get the first element in the 2nd column
-## [1] 86.5
-&lt;/code>&lt;/pre>
-&lt;p>For data frames, you&amp;rsquo;ve seen that it is possible to use the &lt;code>$&lt;/code> symbol to get the columns. From this, it is vectorised so it&amp;rsquo;s further possible to subset using &lt;code>[]&lt;/code>.&lt;/p>
-&lt;pre>&lt;code class="language-r">sheep$height[1] # the first sheep's height
-## [1] 86.5
-&lt;/code>&lt;/pre>
-&lt;h1 id="r-management">R management&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">a&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="m">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">a[3]&lt;/span> &lt;span class="c1"># subset the 3rd element in the vector&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">a[1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="m">5&lt;/span>&lt;span class="n">]&lt;/span> &lt;span class="c1"># subset the first 5 elements&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 1 2 3 4 5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">a[a&lt;/span> &lt;span class="o">%%&lt;/span> &lt;span class="m">2&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="m">0&lt;/span>&lt;span class="n">]&lt;/span> &lt;span class="c1"># subset even elements only (note: the &amp;#39;%%&amp;#39; operator gives the remainder)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 2 4 6 8 10&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is also possible to index matrices and dataframes&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">mat[2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">3&lt;/span>&lt;span class="n">]&lt;/span> &lt;span class="c1"># get the (2,3) element from the matrix&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">sheep[1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="n">]&lt;/span> &lt;span class="c1"># get the first element in the 2nd column&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 86.5&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For data frames, you&amp;rsquo;ve seen that it is possible to use the &lt;code>$&lt;/code> symbol to get the columns. From this, it is vectorised so it&amp;rsquo;s further possible to subset using &lt;code>[]&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">sheep&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">height[1]&lt;/span> &lt;span class="c1"># the first sheep&amp;#39;s height&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 86.5&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="r-management">R management&lt;/h1>
 &lt;h2 id="the-r-help-system">The R help system&lt;/h2>
 &lt;p>There are a number of different ways of getting help in R.&lt;/p>
 &lt;ul>
@@ -330,27 +328,24 @@ sheep[1, 2] # get the first element in the 2nd column
 &lt;h2 id="session-management-and-visibility">Session management and visibility&lt;/h2>
 &lt;p>All of the objects created during an R session are stored in a workspace in memory. We can see the objects that are currently in the workspace by using the command &lt;code>objects()&lt;/code>.
 Notice the &lt;code>()&lt;/code>, these are vital for the command to work.&lt;/p>
-&lt;pre>&lt;code class="language-r">objects()
-## [1] &amp;quot;a&amp;quot; &amp;quot;calc1&amp;quot; &amp;quot;calc2&amp;quot; &amp;quot;delete_files&amp;quot; &amp;quot;height&amp;quot;
-## [6] &amp;quot;large&amp;quot; &amp;quot;mat&amp;quot; &amp;quot;meanweight&amp;quot; &amp;quot;my_list&amp;quot; &amp;quot;numbers&amp;quot;
-## [11] &amp;quot;numobs&amp;quot; &amp;quot;people&amp;quot; &amp;quot;sheep&amp;quot; &amp;quot;small&amp;quot; &amp;quot;total&amp;quot;
-## [16] &amp;quot;weight&amp;quot;
-&lt;/code>&lt;/pre>
-&lt;p>The information in the variables height and weight is currently encapsulated in the data frame sheep.
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">objects&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] &amp;#34;a&amp;#34; &amp;#34;calc1&amp;#34; &amp;#34;calc2&amp;#34; &amp;#34;delete_files&amp;#34; &amp;#34;height&amp;#34; &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [6] &amp;#34;large&amp;#34; &amp;#34;mat&amp;#34; &amp;#34;meanweight&amp;#34; &amp;#34;my_list&amp;#34; &amp;#34;numbers&amp;#34; &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [11] &amp;#34;numobs&amp;#34; &amp;#34;people&amp;#34; &amp;#34;sheep&amp;#34; &amp;#34;small&amp;#34; &amp;#34;total&amp;#34; &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [16] &amp;#34;weight&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The information in the variables height and weight is currently encapsulated in the data frame sheep.
 We can tidy up our workspace by removing the height and weight variables (and various others that we are no longer interested in) using the &lt;code>rm()&lt;/code> function.
 Do this and then check what is left.&lt;/p>
-&lt;pre>&lt;code class="language-r">rm(height, weight, meanweight, numobs, total)
-objects()
-## [1] &amp;quot;a&amp;quot; &amp;quot;calc1&amp;quot; &amp;quot;calc2&amp;quot; &amp;quot;delete_files&amp;quot; &amp;quot;large&amp;quot;
-## [6] &amp;quot;mat&amp;quot; &amp;quot;my_list&amp;quot; &amp;quot;numbers&amp;quot; &amp;quot;people&amp;quot; &amp;quot;sheep&amp;quot;
-## [11] &amp;quot;small&amp;quot;
-&lt;/code>&lt;/pre>
-&lt;p>The height and weight variables are now only accessible via the sheep data frame.&lt;/p>
-&lt;pre>&lt;code class="language-r">## weight # should get an error message
-sheep$weight
-## [1] 84.5 72.6 75.7 94.8 71.3
-&lt;/code>&lt;/pre>
-&lt;p>We can save the current workspace to file at any time.
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">rm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">height&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">weight&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">meanweight&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">numobs&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">total&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">objects&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] &amp;#34;a&amp;#34; &amp;#34;calc1&amp;#34; &amp;#34;calc2&amp;#34; &amp;#34;delete_files&amp;#34; &amp;#34;large&amp;#34; &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [6] &amp;#34;mat&amp;#34; &amp;#34;my_list&amp;#34; &amp;#34;numbers&amp;#34; &amp;#34;people&amp;#34; &amp;#34;sheep&amp;#34; &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [11] &amp;#34;small&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The height and weight variables are now only accessible via the sheep data frame.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## weight # should get an error message&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">sheep&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">weight&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 84.5 72.6 75.7 94.8 71.3&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We can save the current workspace to file at any time.
 The command to do so is &lt;code>save.image()&lt;/code>.
 However, RStudio makes it simple to save the current workspace.
 Since we have created a project, workspace saving is handled for us, and we are prompted to save when we quit RStudio or close the project.&lt;/p>
@@ -376,25 +371,20 @@ We can also look at the files under the &amp;lsquo;Files&amp;rsquo; tab.&lt;/p>
 &lt;h2 id="writing-your-own-functions">Writing your own functions&lt;/h2>
 &lt;p>Every function in R has three basic parts: a name, a body of code, and a set of arguments.
 To make your own function, you need to replicate these parts and store them in an R object, which you can do with the &lt;code>function()&lt;/code> function. To do this, call &lt;code>function()&lt;/code> and follow it with a pair of braces, &lt;code>{}&lt;/code>:&lt;/p>
-&lt;pre>&lt;code class="language-r">my_fun &amp;lt;- function(what.to.print = NULL) {
-if (is.null(what.to.print)) {
-print(&amp;quot;Hello world!&amp;quot;)
-} else {
-print(what.to.print)
-}
-}
-&lt;/code>&lt;/pre>
-&lt;p>Here is a simple function to print some text to the R console.
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">my_fun&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">what.to.print&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">NULL&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">if &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">is.null&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">what.to.print&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Hello world!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="n">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">what.to.print&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here is a simple function to print some text to the R console.
 Try it out:&lt;/p>
-&lt;pre>&lt;code class="language-r">my_fun()
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## [1] &amp;quot;Hello world!&amp;quot;
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code class="language-r">my_fun(&amp;quot;All your base are belong to us&amp;quot;)
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## [1] &amp;quot;All your base are belong to us&amp;quot;
-&lt;/code>&lt;/pre>
-&lt;h2 id="installing-packages">Installing packages&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">my_fun&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>## [1] &amp;#34;Hello world!&amp;#34;
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">my_fun&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;All your base are belong to us&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>## [1] &amp;#34;All your base are belong to us&amp;#34;
+&lt;/code>&lt;/pre>&lt;h2 id="installing-packages">Installing packages&lt;/h2>
 &lt;p>R has a very diverse user-contributed package repository called the Comprehensive R Archive Network (CRAN).
 Packages are nothing more than a collection of user-written functions that serve a particular purpose.
 For example, there are packages for extending the graphics capabilities of R (&lt;code>ggplot2&lt;/code>), random-effects modelling (&lt;code>lme4&lt;/code>), latent variable modelling (&lt;code>lavaan&lt;/code>), adn so on.
@@ -412,42 +402,33 @@ If you would like to know more about creating your own packages, read this &lt;a
 Every time you quit an R session and you start it back up again, you would have to load packages that you need all over again.&lt;/p>
 &lt;p>The command to load packages is &lt;code>library(&amp;lt;pkg name&amp;gt;)&lt;/code>.
 For example&lt;/p>
-&lt;pre>&lt;code class="language-r">library(tidyverse)
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## ── Attaching packages ───────────────────────────────────────────────────────────── tidyverse 1.3.0 ──
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## ✓ ggplot2 3.3.2 ✓ purrr 0.3.4
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tidyverse&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>## ── Attaching packages ───────────────────────────────────────────────────────────── tidyverse 1.3.0 ──
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>## ✓ ggplot2 3.3.2 ✓ purrr 0.3.4
 ## ✓ tibble 3.0.3 ✓ dplyr 1.0.0
 ## ✓ tidyr 1.1.0 ✓ stringr 1.4.0
 ## ✓ readr 1.3.1 ✓ forcats 0.5.0
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## ── Conflicts ──────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>## ── Conflicts ──────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag() masks stats::lag()
 &lt;/code>&lt;/pre></description></item><item><title>Useful data science functions in R</title><link>https://haziqj.ml/teaching/datascience/3-r4ds/</link><pubDate>Wed, 17 Jul 2019 00:00:00 +0800</pubDate><guid>https://haziqj.ml/teaching/datascience/3-r4ds/</guid><description>&lt;p>As usual, before starting, load all the packages you need.&lt;/p>
-&lt;pre>&lt;code class="language-r">library(tidyverse)
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## ✓ ggplot2 3.3.5 ✓ purrr 0.3.4
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tidyverse&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>## ✓ ggplot2 3.3.5 ✓ purrr 0.3.4
 ## ✓ tibble 3.1.4 ✓ dplyr 1.0.7
 ## ✓ tidyr 1.1.3 ✓ stringr 1.4.0
 ## ✓ readr 2.0.1 ✓ forcats 0.5.1
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag() masks stats::lag()
-&lt;/code>&lt;/pre>
-&lt;h1 id="data-management">Data management&lt;/h1>
+&lt;/code>&lt;/pre>&lt;h1 id="data-management">Data management&lt;/h1>
 &lt;h2 id="importing-data-sets">Importing data sets&lt;/h2>
 &lt;p>Data can be imported by going to $\text{File}\rightarrow\text{Import Dataset}$.
 Alternatively, the code is&lt;/p>
-&lt;pre>&lt;code class="language-r"># code for importing data
-&lt;/code>&lt;/pre>
-&lt;h2 id="converting-to-tibbles">Converting to tibbles&lt;/h2>
-&lt;pre>&lt;code class="language-r">as_tibble(iris)
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## # A tibble: 150 × 5
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># code for importing data&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="converting-to-tibbles">Converting to tibbles&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">as_tibble&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">iris&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>## # A tibble: 150 × 5
 ## Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt;
 ## 1 5.1 3.5 1.4 0.2 setosa
@@ -461,12 +442,10 @@ Alternatively, the code is&lt;/p>
 ## 9 4.4 2.9 1.4 0.2 setosa
 ## 10 4.9 3.1 1.5 0.1 setosa
 ## # … with 140 more rows
-&lt;/code>&lt;/pre>
-&lt;h2 id="subsetting">Subsetting&lt;/h2>
+&lt;/code>&lt;/pre>&lt;h2 id="subsetting">Subsetting&lt;/h2>
 &lt;p>To extract columns, use the &lt;code>$&lt;/code> symbol.&lt;/p>
-&lt;pre>&lt;code class="language-r">iris$Sepal.Length
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">iris&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">Sepal.Length&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>## [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1
 ## [19] 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0
 ## [37] 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
 ## [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1
@@ -475,12 +454,10 @@ Alternatively, the code is&lt;/p>
 ## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2
 ## [127] 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8
 ## [145] 6.7 6.7 6.3 6.5 6.2 5.9
-&lt;/code>&lt;/pre>
-&lt;h2 id="reshaping">Reshaping&lt;/h2>
-&lt;pre>&lt;code class="language-r">reshape2::melt(table(diamonds$cut, diamonds$color),
-var = c(&amp;quot;cut&amp;quot;, &amp;quot;color&amp;quot;))
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## cut color value
+&lt;/code>&lt;/pre>&lt;h2 id="reshaping">Reshaping&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">reshape2&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">melt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">table&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">diamonds&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">cut&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">diamonds&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">color&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">var&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;cut&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;color&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>## cut color value
 ## 1 Fair D 163
 ## 2 Good D 662
 ## 3 Very Good D 1513
@@ -516,13 +493,11 @@ var = c(&amp;quot;cut&amp;quot;, &amp;quot;color&amp;quot;))
 ## 33 Very Good J 678
 ## 34 Premium J 808
 ## 35 Ideal J 896
-&lt;/code>&lt;/pre>
-&lt;h1 id="variation">Variation&lt;/h1>
+&lt;/code>&lt;/pre>&lt;h1 id="variation">Variation&lt;/h1>
 &lt;h2 id="continuous-variables">Continuous variables&lt;/h2>
 &lt;h3 id="5-point-summaries">5-point summaries&lt;/h3>
-&lt;pre>&lt;code class="language-r">summary(iris)
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## Sepal.Length Sepal.Width Petal.Length Petal.Width
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">summary&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">iris&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>## Sepal.Length Sepal.Width Petal.Length Petal.Width
 ## Min. :4.300 Min. :2.000 Min. :1.000 Min. :0.100
 ## 1st Qu.:5.100 1st Qu.:2.800 1st Qu.:1.600 1st Qu.:0.300
 ## Median :5.800 Median :3.000 Median :4.350 Median :1.300
@@ -536,13 +511,10 @@ var = c(&amp;quot;cut&amp;quot;, &amp;quot;color&amp;quot;))
 ##
 ##
 ##
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code class="language-r">ggplot(reshape2::melt(iris), aes(x = variable, y = value)) +
-geom_boxplot()
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## Using Species as id variables
-&lt;/code>&lt;/pre>
-&lt;p>
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">reshape2&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">melt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">iris&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">variable&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">geom_boxplot&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>## Using Species as id variables
+&lt;/code>&lt;/pre>&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="unnamed-chunk-7-1.png" alt="" loading="lazy" data-zoomable />&lt;/div>
@@ -551,22 +523,19 @@ geom_boxplot()
 &lt;p>Note: in the above code, we used the &lt;code>melt()&lt;/code> function in &lt;code>reshape2&lt;/code> package to aggregate the data.
 Explore what &lt;code>melt()&lt;/code> does by running it in the console.&lt;/p>
 &lt;h3 id="histograms">Histograms&lt;/h3>
-&lt;pre>&lt;code class="language-r">ggplot(iris, aes(x = Sepal.Length)) +
-geom_histogram()
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-&lt;/code>&lt;/pre>
-&lt;p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">iris&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Sepal.Length&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">geom_histogram&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+&lt;/code>&lt;/pre>&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="unnamed-chunk-8-1.png" alt="" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;!-- -->&lt;/p>
 &lt;h3 id="density-plots">Density plots&lt;/h3>
-&lt;pre>&lt;code class="language-r">ggplot(iris, aes(x = Sepal.Length)) +
-geom_density(fill = &amp;quot;blue&amp;quot;)
-&lt;/code>&lt;/pre>
-&lt;p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">iris&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Sepal.Length&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">geom_density&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">fill&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;blue&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="unnamed-chunk-9-1.png" alt="" loading="lazy" data-zoomable />&lt;/div>
@@ -574,24 +543,19 @@ geom_density(fill = &amp;quot;blue&amp;quot;)
 &lt;!-- -->&lt;/p>
 &lt;h2 id="discrete-variables">Discrete variables&lt;/h2>
 &lt;h3 id="frequency-tables">Frequency tables&lt;/h3>
-&lt;pre>&lt;code class="language-r">table(mpg$class)
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>##
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">table&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mpg&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">class&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>##
 ## 2seater compact midsize minivan pickup subcompact suv
 ## 5 47 41 11 33 35 62
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code class="language-r">prop.table(table(mpg$class))
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>##
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">prop.table&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">table&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mpg&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">class&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>##
 ## 2seater compact midsize minivan pickup subcompact suv
 ## 0.02136752 0.20085470 0.17521368 0.04700855 0.14102564 0.14957265 0.26495726
-&lt;/code>&lt;/pre>
-&lt;h3 id="barplots">Barplots&lt;/h3>
-&lt;pre>&lt;code class="language-r">ggplot(mpg, aes(x = reorder(class, class, FUN = length))) +
-geom_bar() +
-labs(x = &amp;quot;Class&amp;quot;)
-&lt;/code>&lt;/pre>
-&lt;p>
+&lt;/code>&lt;/pre>&lt;h3 id="barplots">Barplots&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mpg&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">reorder&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">class&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">class&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">FUN&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">length&lt;/span>&lt;span class="p">)))&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">geom_bar&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">labs&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;Class&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="unnamed-chunk-11-1.png" alt="" loading="lazy" data-zoomable />&lt;/div>
@@ -601,32 +565,28 @@ labs(x = &amp;quot;Class&amp;quot;)
 &lt;h1 id="covariation">Covariation&lt;/h1>
 &lt;h2 id="continuous-variables-1">Continuous variables&lt;/h2>
 &lt;h3 id="scatter-plots">Scatter plots&lt;/h3>
-&lt;pre>&lt;code class="language-r">ggplot(mpg, aes(x = displ, y = hwy)) +
-geom_point()
-&lt;/code>&lt;/pre>
-&lt;p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mpg&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">displ&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hwy&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">geom_point&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="unnamed-chunk-12-1.png" alt="" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;!-- -->&lt;/p>
 &lt;h3 id="smooth-lines">Smooth lines&lt;/h3>
-&lt;pre>&lt;code class="language-r">ggplot(mpg, aes(x = displ, y = hwy)) +
-geom_smooth()
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
-&lt;/code>&lt;/pre>
-&lt;p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mpg&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">displ&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hwy&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">geom_smooth&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>## `geom_smooth()` using method = &amp;#39;loess&amp;#39; and formula &amp;#39;y ~ x&amp;#39;
+&lt;/code>&lt;/pre>&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="unnamed-chunk-13-1.png" alt="" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;!-- -->&lt;/p>
 &lt;h3 id="binning">Binning&lt;/h3>
-&lt;pre>&lt;code class="language-r">ggplot(mpg, aes(x = displ, y = hwy)) +
-geom_boxplot(aes(group = cut_width(displ, 0.5)))
-&lt;/code>&lt;/pre>
-&lt;p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mpg&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">displ&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hwy&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">geom_boxplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">group&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">cut_width&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">displ&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">0.5&lt;/span>&lt;span class="p">)))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="unnamed-chunk-14-1.png" alt="" loading="lazy" data-zoomable />&lt;/div>
@@ -634,19 +594,16 @@ geom_boxplot(aes(group = cut_width(displ, 0.5)))
 &lt;!-- -->&lt;/p>
 &lt;h2 id="discrete-variables-1">Discrete variables&lt;/h2>
 &lt;h3 id="contingency-tables">Contingency tables&lt;/h3>
-&lt;pre>&lt;code class="language-r">table(diamonds$cut, diamonds$color)
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>##
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">table&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">diamonds&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">cut&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">diamonds&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">color&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>##
 ## D E F G H I J
 ## Fair 163 224 312 314 303 175 119
 ## Good 662 933 909 871 702 522 307
 ## Very Good 1513 2400 2164 2299 1824 1204 678
 ## Premium 1603 2337 2331 2924 2360 1428 808
 ## Ideal 2834 3903 3826 4884 3115 2093 896
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code class="language-r">t(table(diamonds$cut, diamonds$color))
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code>##
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">t&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">table&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">diamonds&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">cut&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">diamonds&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">color&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>##
 ## Fair Good Very Good Premium Ideal
 ## D 163 662 1513 1603 2834
 ## E 224 933 2400 2337 3903
@@ -655,24 +612,21 @@ geom_boxplot(aes(group = cut_width(displ, 0.5)))
 ## H 303 702 1824 2360 3115
 ## I 175 522 1204 1428 2093
 ## J 119 307 678 808 896
-&lt;/code>&lt;/pre>
-&lt;h3 id="count-plots">Count plots&lt;/h3>
-&lt;pre>&lt;code class="language-r">ggplot(data = diamonds) +
-geom_count(mapping = aes(x = cut, y = color))
-&lt;/code>&lt;/pre>
-&lt;p>
+&lt;/code>&lt;/pre>&lt;h3 id="count-plots">Count plots&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">diamonds&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">geom_count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mapping&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">cut&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">color&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="unnamed-chunk-16-1.png" alt="" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;!-- -->&lt;/p>
 &lt;h3 id="heat-maps">Heat maps&lt;/h3>
-&lt;pre>&lt;code class="language-r">dat &amp;lt;- reshape2::melt(table(diamonds$cut, diamonds$color),
-var = c(&amp;quot;cut&amp;quot;, &amp;quot;color&amp;quot;))
-ggplot(dat, aes(x = color, y = cut)) +
-geom_tile(mapping = aes(fill = value))
-&lt;/code>&lt;/pre>
-&lt;p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">dat&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">reshape2&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">melt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">table&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">diamonds&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">cut&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">diamonds&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">color&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">var&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;cut&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;color&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dat&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">color&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">cut&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">geom_tile&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mapping&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">fill&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="unnamed-chunk-17-1.png" alt="" loading="lazy" data-zoomable />&lt;/div>
@@ -680,21 +634,19 @@ geom_tile(mapping = aes(fill = value))
 &lt;!-- -->&lt;/p>
 &lt;h2 id="continuous-x-discrete">Continuous x discrete&lt;/h2>
 &lt;h3 id="faceting">Faceting&lt;/h3>
-&lt;pre>&lt;code class="language-r">ggplot(mpg, aes(x = displ, y = hwy)) +
-geom_point() +
-facet_wrap(~ class, nrow = 2)
-&lt;/code>&lt;/pre>
-&lt;p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mpg&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">displ&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hwy&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">geom_point&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">facet_wrap&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">~&lt;/span> &lt;span class="n">class&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">nrow&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="unnamed-chunk-18-1.png" alt="" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;!-- -->&lt;/p>
 &lt;h3 id="adding-additional-aesthetics">Adding additional aesthetics&lt;/h3>
-&lt;pre>&lt;code class="language-r">ggplot(mpg, aes(x = displ, y = hwy, col = class)) +
-geom_point()
-&lt;/code>&lt;/pre>
-&lt;p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mpg&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">displ&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">hwy&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">col&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">class&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">geom_point&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="unnamed-chunk-19-1.png" alt="" loading="lazy" data-zoomable />&lt;/div>

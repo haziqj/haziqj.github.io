@@ -1,97 +1,15 @@
-<!doctype html><html lang=en-gb>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=generator content="Wowchemy 5.3.0 for Hugo">
-<link rel=manifest href=/index.webmanifest>
-<link rel=icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_32x32_fill_lanczos_center_3.png>
-<link rel=apple-touch-icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_192x192_fill_lanczos_center_3.png>
-<link rel=canonical href=https://haziqj.ml/slides/teach-ds-2/>
-<title>Getting started with R | Haziq Jamil</title>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/white.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css crossorigin=anonymous id=highlight-theme>
-<link rel=stylesheet href=/css/reveal_custom.min.css>
-</head>
-<body>
-<div class=reveal>
-<div class=slides>
-<section>
-<h1 id=introductory-data-science-using-r>Introductory Data Science using R</h1>
-<p>R Exercise: The birthday problem</p>
-</section>
-<section>
-<p>In a room of 23 people, what is the probability that at least two people share the same birthday?</p>
-</section>
-<section>
-<h3 id=lets-count>Let&rsquo;s count</h3>
-<p>First, some assumptions:</p>
-<ul>
-<li>There are only 365 days in a year</li>
-<li>Every day is equally likely to be a birthday</li>
-<li>Everyone&rsquo;s birthday is independent of each other</li>
-</ul>
-<p><span class=fragment>
-<strong>Strategy:</strong> It&rsquo;s easier to figure out the probability of the complementary event. $$P(A) = 1 - P(A^c)$$
-</span></p>
-</section>
-<section>
-<h3 id=whats-the-complement>What&rsquo;s the complement?</h3>
-<ul>
-<li>Let $A$ = At least two people share the same birthday</li>
-<li>Then $A^c$ = Nobody shares any birthday (all birthdays are different)</li>
-<li>Label the individuals from $1,\dots,23$</li>
-<li>How many possible birthdays can person 1 have? 365 out of 365</li>
-<li>How many possible birthdays can person 2 have? 364 out of 365</li>
-<li>&mldr;</li>
-</ul>
-</section>
-<section>
-<h3 id=whats-the-complement-1>What&rsquo;s the complement?</h3>
-<ul>
-<li>Since all events are independent,
+<!doctype html><html lang=en-gb><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Wowchemy 5.5.0 for Hugo"><link rel=manifest href=/manifest.webmanifest><link rel=icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_32x32_fill_lanczos_center_3.png><link rel=apple-touch-icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_192x192_fill_lanczos_center_3.png><link rel=canonical href=https://haziqj.ml/slides/teach-ds-2/><title>Getting started with R | Haziq Jamil</title><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/dist/reveal.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/dist/theme/white.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css crossorigin=anonymous id=highlight-theme><link rel=stylesheet href=/css/reveal_custom.min.css></head><body><div class=reveal><div class=slides><section><h1 id=introductory-data-science-using-r>Introductory Data Science using R</h1><p>R Exercise: The birthday problem</p></section><section><p>In a room of 23 people, what is the probability that at least two people share the same birthday?</p></section><section><h3 id=lets-count>Let&rsquo;s count</h3><p>First, some assumptions:</p><ul><li>There are only 365 days in a year</li><li>Every day is equally likely to be a birthday</li><li>Everyone&rsquo;s birthday is independent of each other</li></ul><span class=fragment><strong>Strategy:</strong> It&rsquo;s easier to figure out the probability of the complementary event. $$P(A) = 1 - P(A^c)$$</span></section><section><h3 id=whats-the-complement>What&rsquo;s the complement?</h3><ul><li>Let $A$ = At least two people share the same birthday</li><li>Then $A^c$ = Nobody shares any birthday (all birthdays are different)</li><li>Label the individuals from $1,\dots,23$</li><li>How many possible birthdays can person 1 have? 365 out of 365</li><li>How many possible birthdays can person 2 have? 364 out of 365</li><li>&mldr;</li></ul></section><section><h3 id=whats-the-complement-1>What&rsquo;s the complement?</h3><ul><li>Since all events are independent,
 $$P(A^c) = \frac{365}{365} \times \frac{364}{365} \times \cdots \times \frac{365-23+1}{365}$$
-$$= \frac{365!}{(365-23)!365^{23}}$$</li>
-<li>Thus,
-$$P(A) = 1 - \frac{365!}{(365-23)!365^{23}}$$</li>
-</ul>
-</section>
-<section>
-<h3 id=logarithms>Logarithms</h3>
-<p>Factorials are often too large to compute and can cause memory overflow.
-Adopt the alternative formula</p>
-<p>$$P(A) = 1 - \exp \big\{ \log(365!) - \log((365-23)!) $$
-$$- 23 \log 365 \big\}$$</p>
-</section>
-<section>
-<h3 id=write-this-in-r>Write this in R</h3>
-<p>Functions that you need:</p>
-<ul>
-<li><code>factorial()</code> to compute factorials</li>
-<li><code>lfactorial()</code> to compute log factorials</li>
-<li><code>exp()</code> to compute exponentials</li>
-</ul>
-</section>
-<section>
-<h2 id=new-question>New question</h2>
-<p>In a room of $x$ people, what is the probability that at least two people share the same birthday?</p>
-</section>
-<section>
-<h3 id=write-this-in-r-1>Write this in R</h3>
-<p>Write a function that takes a positive integer <code>x</code> and returns the probability that at least two people share the same birthday.</p>
-<p>BONUS: Plot it!</p>
-</section>
-</div>
-</div>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.js integrity="sha512-Xu/cezKABTI81MGnaBm64vdiS7XkttHeYGOgr2Mdga0bTplSBGongLq2lhK2HwL79wefKM0u4uTCLD0ha1sRzQ==" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js integrity="sha512-eZZqO4ECmVvGhCt+6VZ7ian2bCu4S6yrjSFH9fXLY1zTokpAWsxAxQwM4x6+7G+G4ha5tFIe0jY0XjpBUqS49Q==" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js integrity="sha512-NA5UCab7xDKQPXGsmIp8iEuId5BAKGPiqHZsZQcBuySfp1n3dZrwBDKpPNL23Db5upay1nULxU14JV1ggFOD2A==" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js integrity="sha512-FYeeQscKqibmYKr0+nE2+fN5prBsFwgjsBVwkrA88O6mN2+ai6EvRkSi6txuhXlWsyK1MUfoV+94+q6HLouJSQ==" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/search/search.min.js integrity="sha512-2yh3Y2gEdboEnZb9d0QZP05N3e0jTkcjhbG9xYL97mbnZ53IXzF5R2TCTmSrtuspDyJ5FWBSh+8izjiGjVdLWw==" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/math/math.min.js integrity="sha512-FUzQmRJDLL111zqJg/vN1YzQFQtZNWfBH2VaOiv30dXRXgaTRn3F/Ibda92klSAVjfz3Q9UqS88R4RF4Ip01fQ==" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/zoom/zoom.min.js integrity="sha512-zPYOPjR7Hg9BPUYkfNlvVtrC37QlYwq/7mI42VTuXKTcNBp7QvMfuqUTMesOf74OrZ3AEdxJGndGSrJG9O2j5Q==" crossorigin=anonymous></script>
+$$= \frac{365!}{(365-23)!365^{23}}$$</li><li>Thus,
+$$P(A) = 1 - \frac{365!}{(365-23)!365^{23}}$$</li></ul></section><section><h3 id=logarithms>Logarithms</h3><p>Factorials are often too large to compute and can cause memory overflow.
+Adopt the alternative formula</p><p>$$P(A) = 1 - \exp \big\{ \log(365!) - \log((365-23)!) $$
+$$- 23 \log 365 \big\}$$</p></section><section><h3 id=write-this-in-r>Write this in R</h3><p>Functions that you need:</p><ul><li><code>factorial()</code> to compute factorials</li><li><code>lfactorial()</code> to compute log factorials</li><li><code>exp()</code> to compute exponentials</li></ul></section><section><h2 id=new-question>New question</h2><p>In a room of $x$ people, what is the probability that at least two people share the same birthday?</p></section><section><h3 id=write-this-in-r-1>Write this in R</h3><p>Write a function that takes a positive integer <code>x</code> and returns the probability that at least two people share the same birthday.</p><p>BONUS: Plot it!</p></section></div></div><script src=https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/dist/reveal.min.js crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/plugin/markdown/markdown.min.js crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/plugin/highlight/highlight.min.js crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/plugin/notes/notes.min.js crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/plugin/search/search.min.js crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/plugin/math/math.min.js crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/plugin/zoom/zoom.min.js crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/plugin.js integrity="sha256-M6JwAjnRAWmi+sbXURR/yAhWZKYhAw7YXnnLvIxrdGs=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js integrity="sha256-l14dklFcW5mWar6w/9KaW0fWVerf3mYr7Wt0+rXzFAA=" crossorigin=anonymous></script>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.css integrity="sha256-0fU8HKLaTjgzfaV9CgSqbsN8ilA3zo6zK1M6rlgULd8=" crossorigin=anonymous>
-<script src=/js/wowchemy-slides.js></script>
-</body>
-</html>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.css integrity="sha256-0fU8HKLaTjgzfaV9CgSqbsN8ilA3zo6zK1M6rlgULd8=" crossorigin=anonymous><script src=/js/wowchemy-slides.js></script></body></html>

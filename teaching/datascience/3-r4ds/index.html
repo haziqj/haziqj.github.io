@@ -1,254 +1,26 @@
-<!doctype html><html lang=en-gb>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=generator content="Wowchemy 5.3.0 for Hugo">
-<meta name=author content="Haziq Jamil">
-<meta name=description content="As usual, before starting, load all the packages you need.
-library(tidyverse)  ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──  ## ✓ ggplot2 3.3.5 ✓ purrr 0.3.4 ## ✓ tibble 3.">
-<link rel=alternate hreflang=en-gb href=https://haziqj.ml/teaching/datascience/3-r4ds/>
-<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
-<meta name=theme-color content="#479e41">
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin=anonymous media=print onload="this.media='all'">
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin=anonymous media=print onload="this.media='all'">
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css crossorigin=anonymous title=hl-light media=print onload="this.media='all'">
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css crossorigin=anonymous title=hl-dark media=print onload="this.media='all'" disabled>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin=anonymous media=print onload="this.media='all'">
-<link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
-<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media=print onload="this.media='all'">
-<link rel=stylesheet href=/css/wowchemy.ae4030a06ad95d64cc8c4f1fb961848a.css>
-<link rel=manifest href=/manifest.webmanifest>
-<link rel=icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_32x32_fill_lanczos_center_3.png>
-<link rel=apple-touch-icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_180x180_fill_lanczos_center_3.png>
-<link rel=canonical href=https://haziqj.ml/teaching/datascience/3-r4ds/>
-<meta property="twitter:card" content="summary">
-<meta property="og:site_name" content="Haziq Jamil">
-<meta property="og:url" content="https://haziqj.ml/teaching/datascience/3-r4ds/">
-<meta property="og:title" content="Useful data science functions in R | Haziq Jamil">
-<meta property="og:description" content="As usual, before starting, load all the packages you need.
-library(tidyverse)  ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──  ## ✓ ggplot2 3.3.5 ✓ purrr 0.3.4 ## ✓ tibble 3."><meta property="og:image" content="https://haziqj.ml/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png">
-<meta property="twitter:image" content="https://haziqj.ml/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-gb">
-<meta property="article:published_time" content="2019-07-17T00:00:00+08:00">
-<meta property="article:modified_time" content="2022-04-12T22:09:26+08:00">
-<title>Useful data science functions in R | Haziq Jamil</title>
-</head>
-<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=bf04761d520cce441a24f994d051ea45>
-<script src=/js/wowchemy-init.min.8988fb2a4bba758785868cfcb5244555.js></script>
-<aside class=search-modal id=search>
-<div class=container>
-<section class=search-header>
-<div class="row no-gutters justify-content-between mb-3">
-<div class=col-6>
-<h1>Search</h1>
-</div>
-<div class="col-6 col-search-close">
-<a class=js-search href=# aria-label=Close><i class="fas fa-times-circle text-muted" aria-hidden=true></i></a>
-</div>
-</div>
-<div id=search-box>
-<input name=q id=search-query placeholder=Search... autocapitalize=off autocomplete=off autocorrect=off spellcheck=false type=search class=form-control aria-label=Search...>
-</div>
-</section>
-<section class=section-search-results>
-<div id=search-hits>
-</div>
-</section>
-</div>
-</aside>
-<div class=page-header>
-<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main>
-<div class=container-xl>
-<div class="d-none d-lg-inline-flex">
-<a class=navbar-brand href=/>Haziq Jamil</a>
-</div>
-<button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar-content aria-expanded=false aria-label="Toggle navigation">
-<span><i class="fas fa-bars"></i></span>
-</button>
-<div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-<a class=navbar-brand href=/>Haziq Jamil</a>
-</div>
-<div class="navbar-collapse main-menu-item collapse justify-content-end" id=navbar-content>
-<ul class="navbar-nav d-md-inline-flex">
-<li class=nav-item>
-<a class=nav-link href=/#01-about><span>Home</span></a>
-</li>
-<li class=nav-item>
-<a class=nav-link href=/#05-publications><span>Research</span></a>
-</li>
-<li class=nav-item>
-<a class=nav-link href=/#07-projects><span>Projects</span></a>
-</li>
-<li class=nav-item>
-<a class="nav-link active" href=/teaching><span>Teaching</span></a>
-</li>
-<li class=nav-item>
-<a class=nav-link href=/#contact><span>Contact</span></a>
-</li>
-<li class=nav-item>
-<a class=nav-link href=/cv><span>CV</span></a>
-</li>
-</ul>
-</div>
-<ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-<li class=nav-item>
-<a class="nav-link js-search" href=# aria-label=Search><i class="fas fa-search" aria-hidden=true></i></a>
-</li>
-<li class="nav-item dropdown theme-dropdown">
-<a href=# class=nav-link data-toggle=dropdown aria-haspopup=true aria-label="Display preferences">
-<i class="fas fa-moon" aria-hidden=true></i>
-</a>
-<div class=dropdown-menu>
-<a href=# class="dropdown-item js-set-theme-light">
-<span>Light</span>
-</a>
-<a href=# class="dropdown-item js-set-theme-dark">
-<span>Dark</span>
-</a>
-<a href=# class="dropdown-item js-set-theme-auto">
-<span>Automatic</span>
-</a>
-</div>
-</li>
-</ul>
-</div>
-</nav>
-</div>
-<div class=page-body>
-<div class="container-fluid docs">
-<div class="row flex-xl-nowrap">
-<div class="col-12 col-md-3 col-xl-2 docs-sidebar">
-<form class="docs-search d-flex align-items-center">
-<button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type=button data-toggle=collapse data-target=#docs-nav aria-controls=docs-nav aria-expanded=false aria-label="Toggle section navigation">
-<div class=d-flex>
-<span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
-Introductory Data Science using R
-</span>
-<span><i class="fas fa-chevron-down"></i></span>
-</div>
-</button>
+<!doctype html><html lang=en-gb><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Wowchemy 5.5.0 for Hugo"><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media=print onload='this.media="all"'><meta name=author content="Haziq Jamil"><meta name=description content="As usual, before starting, load all the packages you need.
+library(tidyverse) ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ── ## ✓ ggplot2 3.3.5 ✓ purrr 0.3.4 ## ✓ tibble 3.1.4 ✓ dplyr 1."><link rel=alternate hreflang=en-gb href=https://haziqj.ml/teaching/datascience/3-r4ds/><meta name=theme-color content="#1565c0"><link rel=stylesheet href=/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css media=print onload='this.media="all"'><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin=anonymous media=print onload='this.media="all"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css crossorigin=anonymous title=hl-light media=print onload='this.media="all"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css crossorigin=anonymous title=hl-dark media=print onload='this.media="all"' disabled><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css integrity crossorigin=anonymous media=print onload='this.media="all"'><link rel=stylesheet href=/css/wowchemy.95d53890c5839471cef2375b6c449b9f.css><link rel=manifest href=/manifest.webmanifest><link rel=icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_32x32_fill_lanczos_center_3.png><link rel=apple-touch-icon type=image/png href=/media/icon_hu4b886e67ce091368601699b05489f639_45390_180x180_fill_lanczos_center_3.png><link rel=canonical href=https://haziqj.ml/teaching/datascience/3-r4ds/><meta property="twitter:card" content="summary"><meta property="twitter:site" content="@hajiq"><meta property="twitter:creator" content="@hajiq"><meta property="og:site_name" content="Haziq Jamil"><meta property="og:url" content="https://haziqj.ml/teaching/datascience/3-r4ds/"><meta property="og:title" content="Useful data science functions in R | Haziq Jamil"><meta property="og:description" content="As usual, before starting, load all the packages you need.
+library(tidyverse) ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ── ## ✓ ggplot2 3.3.5 ✓ purrr 0.3.4 ## ✓ tibble 3.1.4 ✓ dplyr 1."><meta property="og:image" content="https://haziqj.ml/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png"><meta property="twitter:image" content="https://haziqj.ml/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-gb"><meta property="article:published_time" content="2019-07-17T00:00:00+08:00"><meta property="article:modified_time" content="2022-05-12T11:54:07+08:00"><title>Useful data science functions in R | Haziq Jamil</title></head><body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=bf04761d520cce441a24f994d051ea45><script src=/js/wowchemy-init.min.e22a2a20712150175b9cd707be2d0584.js></script><aside class=search-modal id=search><div class=container><section class=search-header><div class="row no-gutters justify-content-between mb-3"><div class=col-6><h1>Search</h1></div><div class="col-6 col-search-close"><a class=js-search href=# aria-label=Close><i class="fas fa-times-circle text-muted" aria-hidden=true></i></a></div></div><div id=search-box><input name=q id=search-query placeholder=Search... autocapitalize=off autocomplete=off autocorrect=off spellcheck=false type=search class=form-control aria-label=Search...></div></section><section class=section-search-results><div id=search-hits></div></section></div></aside><div class=page-header><header class=header--fixed><nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main><div class=container-xl><div class="d-none d-lg-inline-flex"><a class=navbar-brand href=/>Haziq Jamil</a></div><button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar-content aria-expanded=false aria-label="Toggle navigation">
+<span><i class="fas fa-bars"></i></span></button><div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none"><a class=navbar-brand href=/>Haziq Jamil</a></div><div class="navbar-collapse main-menu-item collapse justify-content-end" id=navbar-content><ul class="navbar-nav d-md-inline-flex"><li class=nav-item><a class=nav-link href=/#01-about><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#05-publications><span>Research</span></a></li><li class=nav-item><a class=nav-link href=/#07-projects><span>Projects</span></a></li><li class=nav-item><a class="nav-link active" href=/teaching><span>Teaching</span></a></li><li class=nav-item><a class=nav-link href=/#contact><span>Contact</span></a></li><li class=nav-item><a class=nav-link href=/cv><span>CV</span></a></li></ul></div><ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2"><li class=nav-item><a class="nav-link js-search" href=# aria-label=Search><i class="fas fa-search" aria-hidden=true></i></a></li><li class="nav-item dropdown theme-dropdown"><a href=# class=nav-link data-toggle=dropdown aria-haspopup=true aria-label="Display preferences"><i class="fas fa-moon" aria-hidden=true></i></a><div class=dropdown-menu><a href=# class="dropdown-item js-set-theme-light"><span>Light</span></a>
+<a href=# class="dropdown-item js-set-theme-dark"><span>Dark</span></a>
+<a href=# class="dropdown-item js-set-theme-auto"><span>Automatic</span></a></div></li></ul></div></nav></header></div><div class=page-body><div class="container-fluid docs"><div class="row flex-xl-nowrap"><div class="col-12 col-md-3 col-xl-2 docs-sidebar"><form class="docs-search d-flex align-items-center"><button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type=button data-toggle=collapse data-target=#docs-nav aria-controls=docs-nav aria-expanded=false aria-label="Toggle section navigation"><div class=d-flex><span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">Introductory Data Science using R</span>
+<span><i class="fas fa-chevron-down"></i></span></div></button>
 <button class="form-control sidebar-search js-search d-none d-md-flex">
 <i class="fas fa-search pr-2"></i>
 <span class=sidebar-search-text>Search...</span>
-<span class=sidebar-search-shortcut>/</span>
-</button>
-</form>
-<nav class="collapse docs-links" id=docs-nav>
-<ul class="nav docs-sidenav">
-<li><a href=/teaching/><i class="fas fa-arrow-left pr-1"></i>Teaching</a></li>
-</ul>
-<div class=docs-toc-item>
-<a class=docs-toc-link href=/teaching/datascience/>Introductory Data Science using R</a>
-<ul class="nav docs-sidenav">
-<li><a href=/teaching/datascience/1-intro/>Data Science Framework</a></li>
-<li><a href=/teaching/datascience/2-intro-to-r/>Getting Started with R</a></li>
-<li class=active><a href=/teaching/datascience/3-r4ds/>R data science functions</a></li>
-<li><a href=/teaching/datascience/4-assignment/>Assignment</a></li>
-</ul>
-</div>
-</nav>
-</div>
-<div class="d-none d-xl-block col-xl-2 docs-toc">
-<ul class="nav toc-top">
-<li><a href=# id=back_to_top class=docs-toc-title>Contents</a></li>
-</ul>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#importing-data-sets>Importing data sets</a></li>
-<li><a href=#converting-to-tibbles>Converting to tibbles</a></li>
-<li><a href=#subsetting>Subsetting</a></li>
-<li><a href=#reshaping>Reshaping</a></li>
-</ul>
-<ul>
-<li><a href=#continuous-variables>Continuous variables</a>
-<ul>
-<li><a href=#5-point-summaries>5-point summaries</a></li>
-<li><a href=#histograms>Histograms</a></li>
-<li><a href=#density-plots>Density plots</a></li>
-</ul>
-</li>
-<li><a href=#discrete-variables>Discrete variables</a>
-<ul>
-<li><a href=#frequency-tables>Frequency tables</a></li>
-<li><a href=#barplots>Barplots</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><a href=#continuous-variables-1>Continuous variables</a>
-<ul>
-<li><a href=#scatter-plots>Scatter plots</a></li>
-<li><a href=#smooth-lines>Smooth lines</a></li>
-<li><a href=#binning>Binning</a></li>
-</ul>
-</li>
-<li><a href=#discrete-variables-1>Discrete variables</a>
-<ul>
-<li><a href=#contingency-tables>Contingency tables</a></li>
-<li><a href=#count-plots>Count plots</a></li>
-<li><a href=#heat-maps>Heat maps</a></li>
-</ul>
-</li>
-<li><a href=#continuous-x-discrete>Continuous x discrete</a>
-<ul>
-<li><a href=#faceting>Faceting</a></li>
-<li><a href=#adding-additional-aesthetics>Adding additional aesthetics</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role=main>
-<article class=article>
-<div class=docs-article-container>
-<nav class="d-none d-md-flex" aria-label=breadcrumb>
-<ol class=breadcrumb>
-<li class=breadcrumb-item>
-<a href=/>
-Home
-</a>
-</li>
-<li class=breadcrumb-item>
-<a href=/teaching/>
-Teaching
-</a>
-</li>
-<li class=breadcrumb-item>
-<a href=/teaching/datascience/>
-Introductory Data Science using R
-</a>
-</li>
-<li class="breadcrumb-item active" aria-current=page>
-R data science functions
-</li>
-</ol>
-</nav>
-<h1>Useful data science functions in R</h1>
-<div class=article-style>
-<p>As usual, before starting, load all the packages you need.</p>
-<pre><code class=language-r>library(tidyverse)
-</code></pre>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
-</code></pre>
-<pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+<span class=sidebar-search-shortcut>/</span></button></form><nav class="collapse docs-links" id=docs-nav><ul class="nav docs-sidenav"><li><a href=/teaching/><i class="fas fa-arrow-left pr-1"></i>Teaching</a></li></ul><div class=docs-toc-item><a class=docs-toc-link href=/teaching/datascience/>Introductory Data Science using R</a><ul class="nav docs-sidenav"><li><a href=/teaching/datascience/1-intro/>Data Science Framework</a></li><li><a href=/teaching/datascience/2-intro-to-r/>Getting Started with R</a></li><li class=active><a href=/teaching/datascience/3-r4ds/>R data science functions</a></li><li><a href=/teaching/datascience/4-assignment/>Assignment</a></li></ul></div></nav></div><div class="d-none d-xl-block col-xl-2 docs-toc"><ul class="nav toc-top"><li><a href=# id=back_to_top class=docs-toc-title>Contents</a></li></ul><nav id=TableOfContents><ul><li><a href=#importing-data-sets>Importing data sets</a></li><li><a href=#converting-to-tibbles>Converting to tibbles</a></li><li><a href=#subsetting>Subsetting</a></li><li><a href=#reshaping>Reshaping</a></li></ul><ul><li><a href=#continuous-variables>Continuous variables</a><ul><li><a href=#5-point-summaries>5-point summaries</a></li><li><a href=#histograms>Histograms</a></li><li><a href=#density-plots>Density plots</a></li></ul></li><li><a href=#discrete-variables>Discrete variables</a><ul><li><a href=#frequency-tables>Frequency tables</a></li><li><a href=#barplots>Barplots</a></li></ul></li></ul><ul><li><a href=#continuous-variables-1>Continuous variables</a><ul><li><a href=#scatter-plots>Scatter plots</a></li><li><a href=#smooth-lines>Smooth lines</a></li><li><a href=#binning>Binning</a></li></ul></li><li><a href=#discrete-variables-1>Discrete variables</a><ul><li><a href=#contingency-tables>Contingency tables</a></li><li><a href=#count-plots>Count plots</a></li><li><a href=#heat-maps>Heat maps</a></li></ul></li><li><a href=#continuous-x-discrete>Continuous x discrete</a><ul><li><a href=#faceting>Faceting</a></li><li><a href=#adding-additional-aesthetics>Adding additional aesthetics</a></li></ul></li></ul></nav></div><main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role=main><article class=article><div class=docs-article-container><h1>Useful data science functions in R</h1><div class=article-style><p>As usual, before starting, load all the packages you need.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>library</span><span class=p>(</span><span class=n>tidyverse</span><span class=p>)</span>
+</span></span></code></pre></div><pre tabindex=0><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+</code></pre><pre tabindex=0><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
 ## ✓ tibble  3.1.4     ✓ dplyr   1.0.7
 ## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
 ## ✓ readr   2.0.1     ✓ forcats 0.5.1
-</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+</code></pre><pre tabindex=0><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()
-</code></pre>
-<h1 id=data-management>Data management</h1>
-<h2 id=importing-data-sets>Importing data sets</h2>
-<p>Data can be imported by going to $\text{File}\rightarrow\text{Import Dataset}$.
-Alternatively, the code is</p>
-<pre><code class=language-r># code for importing data
-</code></pre>
-<h2 id=converting-to-tibbles>Converting to tibbles</h2>
-<pre><code class=language-r>as_tibble(iris)
-</code></pre>
-<pre><code>## # A tibble: 150 × 5
+</code></pre><h1 id=data-management>Data management</h1><h2 id=importing-data-sets>Importing data sets</h2><p>Data can be imported by going to $\text{File}\rightarrow\text{Import Dataset}$.
+Alternatively, the code is</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=c1># code for importing data</span>
+</span></span></code></pre></div><h2 id=converting-to-tibbles>Converting to tibbles</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>as_tibble</span><span class=p>(</span><span class=n>iris</span><span class=p>)</span>
+</span></span></code></pre></div><pre tabindex=0><code>## # A tibble: 150 × 5
 ##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
 ##  1          5.1         3.5          1.4         0.2 setosa 
@@ -262,12 +34,8 @@ Alternatively, the code is</p>
 ##  9          4.4         2.9          1.4         0.2 setosa 
 ## 10          4.9         3.1          1.5         0.1 setosa 
 ## # … with 140 more rows
-</code></pre>
-<h2 id=subsetting>Subsetting</h2>
-<p>To extract columns, use the <code>$</code> symbol.</p>
-<pre><code class=language-r>iris$Sepal.Length
-</code></pre>
-<pre><code>##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1
+</code></pre><h2 id=subsetting>Subsetting</h2><p>To extract columns, use the <code>$</code> symbol.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=n>iris</span><span class=o>$</span><span class=n>Sepal.Length</span>
+</span></span></code></pre></div><pre tabindex=0><code>##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1
 ##  [19] 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0
 ##  [37] 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
 ##  [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1
@@ -276,12 +44,9 @@ Alternatively, the code is</p>
 ## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2
 ## [127] 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8
 ## [145] 6.7 6.7 6.3 6.5 6.2 5.9
-</code></pre>
-<h2 id=reshaping>Reshaping</h2>
-<pre><code class=language-r>reshape2::melt(table(diamonds$cut, diamonds$color), 
-                      var = c(&quot;cut&quot;, &quot;color&quot;))
-</code></pre>
-<pre><code>##          cut color value
+</code></pre><h2 id=reshaping>Reshaping</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=n>reshape2</span><span class=o>::</span><span class=nf>melt</span><span class=p>(</span><span class=nf>table</span><span class=p>(</span><span class=n>diamonds</span><span class=o>$</span><span class=n>cut</span><span class=p>,</span> <span class=n>diamonds</span><span class=o>$</span><span class=n>color</span><span class=p>),</span> 
+</span></span><span class=line><span class=cl>                      <span class=n>var</span> <span class=o>=</span> <span class=nf>c</span><span class=p>(</span><span class=s>&#34;cut&#34;</span><span class=p>,</span> <span class=s>&#34;color&#34;</span><span class=p>))</span>
+</span></span></code></pre></div><pre tabindex=0><code>##          cut color value
 ## 1       Fair     D   163
 ## 2       Good     D   662
 ## 3  Very Good     D  1513
@@ -317,13 +82,8 @@ Alternatively, the code is</p>
 ## 33 Very Good     J   678
 ## 34   Premium     J   808
 ## 35     Ideal     J   896
-</code></pre>
-<h1 id=variation>Variation</h1>
-<h2 id=continuous-variables>Continuous variables</h2>
-<h3 id=5-point-summaries>5-point summaries</h3>
-<pre><code class=language-r>summary(iris)
-</code></pre>
-<pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+</code></pre><h1 id=variation>Variation</h1><h2 id=continuous-variables>Continuous variables</h2><h3 id=5-point-summaries>5-point summaries</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>summary</span><span class=p>(</span><span class=n>iris</span><span class=p>)</span>
+</span></span></code></pre></div><pre tabindex=0><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
 ##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
 ##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
 ##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
@@ -337,117 +97,43 @@ Alternatively, the code is</p>
 ##                 
 ##                 
 ## 
-</code></pre>
-<pre><code class=language-r>ggplot(reshape2::melt(iris), aes(x = variable, y = value)) +
-  geom_boxplot()
-</code></pre>
-<pre><code>## Using Species as id variables
-</code></pre>
-<p>
-<figure>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=unnamed-chunk-7-1.png alt loading=lazy data-zoomable></div>
-</div></figure>
-</p>
-<p>Note: in the above code, we used the <code>melt()</code> function in <code>reshape2</code> package to aggregate the data.
-Explore what <code>melt()</code> does by running it in the console.</p>
-<h3 id=histograms>Histograms</h3>
-<pre><code class=language-r>ggplot(iris, aes(x = Sepal.Length)) +
-  geom_histogram()
-</code></pre>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-</code></pre>
-<p>
-<figure>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=unnamed-chunk-8-1.png alt loading=lazy data-zoomable></div>
-</div></figure>
-</p>
-<h3 id=density-plots>Density plots</h3>
-<pre><code class=language-r>ggplot(iris, aes(x = Sepal.Length)) +
-  geom_density(fill = &quot;blue&quot;)
-</code></pre>
-<p>
-<figure>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=unnamed-chunk-9-1.png alt loading=lazy data-zoomable></div>
-</div></figure>
-</p>
-<h2 id=discrete-variables>Discrete variables</h2>
-<h3 id=frequency-tables>Frequency tables</h3>
-<pre><code class=language-r>table(mpg$class)
-</code></pre>
-<pre><code>## 
+</code></pre><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>ggplot</span><span class=p>(</span><span class=n>reshape2</span><span class=o>::</span><span class=nf>melt</span><span class=p>(</span><span class=n>iris</span><span class=p>),</span> <span class=nf>aes</span><span class=p>(</span><span class=n>x</span> <span class=o>=</span> <span class=n>variable</span><span class=p>,</span> <span class=n>y</span> <span class=o>=</span> <span class=n>value</span><span class=p>))</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>  <span class=nf>geom_boxplot</span><span class=p>()</span>
+</span></span></code></pre></div><pre tabindex=0><code>## Using Species as id variables
+</code></pre><p><figure><div class="d-flex justify-content-center"><div class=w-100><img src=unnamed-chunk-7-1.png alt loading=lazy data-zoomable></div></div></figure></p><p>Note: in the above code, we used the <code>melt()</code> function in <code>reshape2</code> package to aggregate the data.
+Explore what <code>melt()</code> does by running it in the console.</p><h3 id=histograms>Histograms</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>ggplot</span><span class=p>(</span><span class=n>iris</span><span class=p>,</span> <span class=nf>aes</span><span class=p>(</span><span class=n>x</span> <span class=o>=</span> <span class=n>Sepal.Length</span><span class=p>))</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>  <span class=nf>geom_histogram</span><span class=p>()</span>
+</span></span></code></pre></div><pre tabindex=0><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+</code></pre><p><figure><div class="d-flex justify-content-center"><div class=w-100><img src=unnamed-chunk-8-1.png alt loading=lazy data-zoomable></div></div></figure></p><h3 id=density-plots>Density plots</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>ggplot</span><span class=p>(</span><span class=n>iris</span><span class=p>,</span> <span class=nf>aes</span><span class=p>(</span><span class=n>x</span> <span class=o>=</span> <span class=n>Sepal.Length</span><span class=p>))</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>  <span class=nf>geom_density</span><span class=p>(</span><span class=n>fill</span> <span class=o>=</span> <span class=s>&#34;blue&#34;</span><span class=p>)</span>
+</span></span></code></pre></div><p><figure><div class="d-flex justify-content-center"><div class=w-100><img src=unnamed-chunk-9-1.png alt loading=lazy data-zoomable></div></div></figure></p><h2 id=discrete-variables>Discrete variables</h2><h3 id=frequency-tables>Frequency tables</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>table</span><span class=p>(</span><span class=n>mpg</span><span class=o>$</span><span class=n>class</span><span class=p>)</span>
+</span></span></code></pre></div><pre tabindex=0><code>## 
 ##    2seater    compact    midsize    minivan     pickup subcompact        suv 
 ##          5         47         41         11         33         35         62
-</code></pre>
-<pre><code class=language-r>prop.table(table(mpg$class))
-</code></pre>
-<pre><code>## 
+</code></pre><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>prop.table</span><span class=p>(</span><span class=nf>table</span><span class=p>(</span><span class=n>mpg</span><span class=o>$</span><span class=n>class</span><span class=p>))</span>
+</span></span></code></pre></div><pre tabindex=0><code>## 
 ##    2seater    compact    midsize    minivan     pickup subcompact        suv 
 ## 0.02136752 0.20085470 0.17521368 0.04700855 0.14102564 0.14957265 0.26495726
-</code></pre>
-<h3 id=barplots>Barplots</h3>
-<pre><code class=language-r>ggplot(mpg, aes(x = reorder(class, class, FUN = length))) +
-  geom_bar() +
-  labs(x = &quot;Class&quot;)
-</code></pre>
-<p>
-<figure>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=unnamed-chunk-11-1.png alt loading=lazy data-zoomable></div>
-</div></figure>
-</p>
-<p>Note: The <code>reorder()</code> function sorts the bars&mldr; the syntax is a bit tricky to understand, so take it as is for now.</p>
-<h1 id=covariation>Covariation</h1>
-<h2 id=continuous-variables-1>Continuous variables</h2>
-<h3 id=scatter-plots>Scatter plots</h3>
-<pre><code class=language-r>ggplot(mpg, aes(x = displ, y = hwy)) +
-  geom_point() 
-</code></pre>
-<p>
-<figure>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=unnamed-chunk-12-1.png alt loading=lazy data-zoomable></div>
-</div></figure>
-</p>
-<h3 id=smooth-lines>Smooth lines</h3>
-<pre><code class=language-r>ggplot(mpg, aes(x = displ, y = hwy)) +
-  geom_smooth() 
-</code></pre>
-<pre><code>## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
-</code></pre>
-<p>
-<figure>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=unnamed-chunk-13-1.png alt loading=lazy data-zoomable></div>
-</div></figure>
-</p>
-<h3 id=binning>Binning</h3>
-<pre><code class=language-r>ggplot(mpg, aes(x = displ, y = hwy)) + 
-  geom_boxplot(aes(group = cut_width(displ, 0.5)))
-</code></pre>
-<p>
-<figure>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=unnamed-chunk-14-1.png alt loading=lazy data-zoomable></div>
-</div></figure>
-</p>
-<h2 id=discrete-variables-1>Discrete variables</h2>
-<h3 id=contingency-tables>Contingency tables</h3>
-<pre><code class=language-r>table(diamonds$cut, diamonds$color)
-</code></pre>
-<pre><code>##            
+</code></pre><h3 id=barplots>Barplots</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>ggplot</span><span class=p>(</span><span class=n>mpg</span><span class=p>,</span> <span class=nf>aes</span><span class=p>(</span><span class=n>x</span> <span class=o>=</span> <span class=nf>reorder</span><span class=p>(</span><span class=n>class</span><span class=p>,</span> <span class=n>class</span><span class=p>,</span> <span class=n>FUN</span> <span class=o>=</span> <span class=n>length</span><span class=p>)))</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>  <span class=nf>geom_bar</span><span class=p>()</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>  <span class=nf>labs</span><span class=p>(</span><span class=n>x</span> <span class=o>=</span> <span class=s>&#34;Class&#34;</span><span class=p>)</span>
+</span></span></code></pre></div><p><figure><div class="d-flex justify-content-center"><div class=w-100><img src=unnamed-chunk-11-1.png alt loading=lazy data-zoomable></div></div></figure></p><p>Note: The <code>reorder()</code> function sorts the bars&mldr; the syntax is a bit tricky to understand, so take it as is for now.</p><h1 id=covariation>Covariation</h1><h2 id=continuous-variables-1>Continuous variables</h2><h3 id=scatter-plots>Scatter plots</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>ggplot</span><span class=p>(</span><span class=n>mpg</span><span class=p>,</span> <span class=nf>aes</span><span class=p>(</span><span class=n>x</span> <span class=o>=</span> <span class=n>displ</span><span class=p>,</span> <span class=n>y</span> <span class=o>=</span> <span class=n>hwy</span><span class=p>))</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>  <span class=nf>geom_point</span><span class=p>()</span> 
+</span></span></code></pre></div><p><figure><div class="d-flex justify-content-center"><div class=w-100><img src=unnamed-chunk-12-1.png alt loading=lazy data-zoomable></div></div></figure></p><h3 id=smooth-lines>Smooth lines</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>ggplot</span><span class=p>(</span><span class=n>mpg</span><span class=p>,</span> <span class=nf>aes</span><span class=p>(</span><span class=n>x</span> <span class=o>=</span> <span class=n>displ</span><span class=p>,</span> <span class=n>y</span> <span class=o>=</span> <span class=n>hwy</span><span class=p>))</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>  <span class=nf>geom_smooth</span><span class=p>()</span> 
+</span></span></code></pre></div><pre tabindex=0><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+</code></pre><p><figure><div class="d-flex justify-content-center"><div class=w-100><img src=unnamed-chunk-13-1.png alt loading=lazy data-zoomable></div></div></figure></p><h3 id=binning>Binning</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>ggplot</span><span class=p>(</span><span class=n>mpg</span><span class=p>,</span> <span class=nf>aes</span><span class=p>(</span><span class=n>x</span> <span class=o>=</span> <span class=n>displ</span><span class=p>,</span> <span class=n>y</span> <span class=o>=</span> <span class=n>hwy</span><span class=p>))</span> <span class=o>+</span> 
+</span></span><span class=line><span class=cl>  <span class=nf>geom_boxplot</span><span class=p>(</span><span class=nf>aes</span><span class=p>(</span><span class=n>group</span> <span class=o>=</span> <span class=nf>cut_width</span><span class=p>(</span><span class=n>displ</span><span class=p>,</span> <span class=m>0.5</span><span class=p>)))</span>
+</span></span></code></pre></div><p><figure><div class="d-flex justify-content-center"><div class=w-100><img src=unnamed-chunk-14-1.png alt loading=lazy data-zoomable></div></div></figure></p><h2 id=discrete-variables-1>Discrete variables</h2><h3 id=contingency-tables>Contingency tables</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>table</span><span class=p>(</span><span class=n>diamonds</span><span class=o>$</span><span class=n>cut</span><span class=p>,</span> <span class=n>diamonds</span><span class=o>$</span><span class=n>color</span><span class=p>)</span>
+</span></span></code></pre></div><pre tabindex=0><code>##            
 ##                D    E    F    G    H    I    J
 ##   Fair       163  224  312  314  303  175  119
 ##   Good       662  933  909  871  702  522  307
 ##   Very Good 1513 2400 2164 2299 1824 1204  678
 ##   Premium   1603 2337 2331 2924 2360 1428  808
 ##   Ideal     2834 3903 3826 4884 3115 2093  896
-</code></pre>
-<pre><code class=language-r>t(table(diamonds$cut, diamonds$color))
-</code></pre>
-<pre><code>##    
+</code></pre><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>t</span><span class=p>(</span><span class=nf>table</span><span class=p>(</span><span class=n>diamonds</span><span class=o>$</span><span class=n>cut</span><span class=p>,</span> <span class=n>diamonds</span><span class=o>$</span><span class=n>color</span><span class=p>))</span>
+</span></span></code></pre></div><pre tabindex=0><code>##    
 ##     Fair Good Very Good Premium Ideal
 ##   D  163  662      1513    1603  2834
 ##   E  224  933      2400    2337  3903
@@ -456,117 +142,27 @@ Explore what <code>melt()</code> does by running it in the console.</p>
 ##   H  303  702      1824    2360  3115
 ##   I  175  522      1204    1428  2093
 ##   J  119  307       678     808   896
-</code></pre>
-<h3 id=count-plots>Count plots</h3>
-<pre><code class=language-r>ggplot(data = diamonds) +
-  geom_count(mapping = aes(x = cut, y = color))
-</code></pre>
-<p>
-<figure>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=unnamed-chunk-16-1.png alt loading=lazy data-zoomable></div>
-</div></figure>
-</p>
-<h3 id=heat-maps>Heat maps</h3>
-<pre><code class=language-r>dat &lt;- reshape2::melt(table(diamonds$cut, diamonds$color), 
-                      var = c(&quot;cut&quot;, &quot;color&quot;))
-ggplot(dat, aes(x = color, y = cut)) +
-    geom_tile(mapping = aes(fill = value))
-</code></pre>
-<p>
-<figure>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=unnamed-chunk-17-1.png alt loading=lazy data-zoomable></div>
-</div></figure>
-</p>
-<h2 id=continuous-x-discrete>Continuous x discrete</h2>
-<h3 id=faceting>Faceting</h3>
-<pre><code class=language-r>ggplot(mpg, aes(x = displ, y = hwy)) +
-  geom_point() +
-  facet_wrap(~ class, nrow = 2)
-</code></pre>
-<p>
-<figure>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=unnamed-chunk-18-1.png alt loading=lazy data-zoomable></div>
-</div></figure>
-</p>
-<h3 id=adding-additional-aesthetics>Adding additional aesthetics</h3>
-<pre><code class=language-r>ggplot(mpg, aes(x = displ, y = hwy, col = class)) +
-  geom_point() 
-</code></pre>
-<p>
-<figure>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=unnamed-chunk-19-1.png alt loading=lazy data-zoomable></div>
-</div></figure>
-</p>
-</div>
-<div class=article-widget>
-<div class=post-nav>
-<div class=post-nav-item>
-<div class=meta-nav>Previous</div>
-<a href=/teaching/datascience/2-intro-to-r/ rel=next>Getting Started with R</a>
-</div>
-<div class=post-nav-item>
-<div class=meta-nav>Next</div>
-<a href=/teaching/datascience/4-assignment/ rel=prev>Kiva.org assignment</a>
-</div>
-</div>
-</div>
-</div>
-<div class=body-footer>
-<p>Last updated on 12 Apr 2022</p>
-</div>
-</article>
-<footer class=site-footer>
-<p class=powered-by>
-© 2022 Haziq Jamil
-</p>
-<p class=powered-by>
-Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target=_blank rel=noopener>Wowchemy</a> — the free, <a href=https://github.com/wowchemy/wowchemy-hugo-modules target=_blank rel=noopener>open source</a> website builder that empowers creators.
-</p>
-</footer>
-</main>
-</div>
-</div>
-</div>
-<div class=page-footer>
-</div>
-<div id=modal class="modal fade" role=dialog>
-<div class=modal-dialog>
-<div class=modal-content>
-<div class=modal-header>
-<h5 class=modal-title>Cite</h5>
-<button type=button class=close data-dismiss=modal aria-label=Close>
-<span aria-hidden=true>&#215;</span>
-</button>
-</div>
-<div class=modal-body>
-<pre><code class="tex hljs"></code></pre>
-</div>
-<div class=modal-footer>
-<a class="btn btn-outline-primary my-1 js-copy-cite" href=# target=_blank>
-<i class="fas fa-copy"></i> Copy
-</a>
-<a class="btn btn-outline-primary my-1 js-download-cite" href=# target=_blank>
-<i class="fas fa-download"></i> Download
-</a>
-<div id=modal-error></div>
-</div>
-</div>
-</div>
-</div>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin=anonymous></script>
-<script>anchors.add()</script>
-<script id=search-hit-fuse-template type=text/x-template>
+</code></pre><h3 id=count-plots>Count plots</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>ggplot</span><span class=p>(</span><span class=n>data</span> <span class=o>=</span> <span class=n>diamonds</span><span class=p>)</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>  <span class=nf>geom_count</span><span class=p>(</span><span class=n>mapping</span> <span class=o>=</span> <span class=nf>aes</span><span class=p>(</span><span class=n>x</span> <span class=o>=</span> <span class=n>cut</span><span class=p>,</span> <span class=n>y</span> <span class=o>=</span> <span class=n>color</span><span class=p>))</span>
+</span></span></code></pre></div><p><figure><div class="d-flex justify-content-center"><div class=w-100><img src=unnamed-chunk-16-1.png alt loading=lazy data-zoomable></div></div></figure></p><h3 id=heat-maps>Heat maps</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=n>dat</span> <span class=o>&lt;-</span> <span class=n>reshape2</span><span class=o>::</span><span class=nf>melt</span><span class=p>(</span><span class=nf>table</span><span class=p>(</span><span class=n>diamonds</span><span class=o>$</span><span class=n>cut</span><span class=p>,</span> <span class=n>diamonds</span><span class=o>$</span><span class=n>color</span><span class=p>),</span> 
+</span></span><span class=line><span class=cl>                      <span class=n>var</span> <span class=o>=</span> <span class=nf>c</span><span class=p>(</span><span class=s>&#34;cut&#34;</span><span class=p>,</span> <span class=s>&#34;color&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nf>ggplot</span><span class=p>(</span><span class=n>dat</span><span class=p>,</span> <span class=nf>aes</span><span class=p>(</span><span class=n>x</span> <span class=o>=</span> <span class=n>color</span><span class=p>,</span> <span class=n>y</span> <span class=o>=</span> <span class=n>cut</span><span class=p>))</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>    <span class=nf>geom_tile</span><span class=p>(</span><span class=n>mapping</span> <span class=o>=</span> <span class=nf>aes</span><span class=p>(</span><span class=n>fill</span> <span class=o>=</span> <span class=n>value</span><span class=p>))</span>
+</span></span></code></pre></div><p><figure><div class="d-flex justify-content-center"><div class=w-100><img src=unnamed-chunk-17-1.png alt loading=lazy data-zoomable></div></div></figure></p><h2 id=continuous-x-discrete>Continuous x discrete</h2><h3 id=faceting>Faceting</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>ggplot</span><span class=p>(</span><span class=n>mpg</span><span class=p>,</span> <span class=nf>aes</span><span class=p>(</span><span class=n>x</span> <span class=o>=</span> <span class=n>displ</span><span class=p>,</span> <span class=n>y</span> <span class=o>=</span> <span class=n>hwy</span><span class=p>))</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>  <span class=nf>geom_point</span><span class=p>()</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>  <span class=nf>facet_wrap</span><span class=p>(</span><span class=o>~</span> <span class=n>class</span><span class=p>,</span> <span class=n>nrow</span> <span class=o>=</span> <span class=m>2</span><span class=p>)</span>
+</span></span></code></pre></div><p><figure><div class="d-flex justify-content-center"><div class=w-100><img src=unnamed-chunk-18-1.png alt loading=lazy data-zoomable></div></div></figure></p><h3 id=adding-additional-aesthetics>Adding additional aesthetics</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>ggplot</span><span class=p>(</span><span class=n>mpg</span><span class=p>,</span> <span class=nf>aes</span><span class=p>(</span><span class=n>x</span> <span class=o>=</span> <span class=n>displ</span><span class=p>,</span> <span class=n>y</span> <span class=o>=</span> <span class=n>hwy</span><span class=p>,</span> <span class=n>col</span> <span class=o>=</span> <span class=n>class</span><span class=p>))</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>  <span class=nf>geom_point</span><span class=p>()</span> 
+</span></span></code></pre></div><p><figure><div class="d-flex justify-content-center"><div class=w-100><img src=unnamed-chunk-19-1.png alt loading=lazy data-zoomable></div></div></figure></p></div><div class=article-widget><div class=post-nav><div class=post-nav-item><div class=meta-nav>Previous</div><a href=/teaching/datascience/2-intro-to-r/ rel=next>Getting Started with R</a></div><div class=post-nav-item><div class=meta-nav>Next</div><a href=/teaching/datascience/4-assignment/ rel=prev>Kiva.org assignment</a></div></div></div></div><div class=body-footer><p>Last updated on 12 May 2022</p></div></article><footer class=site-footer><p class="powered-by copyright-license-text">© 2022 Haziq Jamil. This work is licensed under <a href=https://creativecommons.org/licenses/by-nc-nd/4.0 rel="noopener noreferrer" target=_blank>CC BY NC ND 4.0</a></p><p class="powered-by footer-license-icons"><a href=https://creativecommons.org/licenses/by-nc-nd/4.0 rel="noopener noreferrer" target=_blank aria-label="Creative Commons"><i class="fab fa-creative-commons fa-2x" aria-hidden=true></i>
+<i class="fab fa-creative-commons-by fa-2x" aria-hidden=true></i>
+<i class="fab fa-creative-commons-nc fa-2x" aria-hidden=true></i>
+<i class="fab fa-creative-commons-nd fa-2x" aria-hidden=true></i></a></p><p class=powered-by>Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target=_blank rel=noopener>Wowchemy</a> — the free, <a href=https://github.com/wowchemy/wowchemy-hugo-themes target=_blank rel=noopener>open source</a> website builder that empowers creators.</p></footer></main></div></div></div><div class=page-footer></div><script src=/js/vendor-bundle.min.92d2024afaa4dce0cad42ba360879ce9.js></script>
+<script src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js integrity crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/gh/bryanbraun/anchorjs@4.2.2/anchor.min.js integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin=anonymous></script>
+<script>anchors.add()</script><script id=search-hit-fuse-template type=text/x-template>
         <div class="search-hit" id="summary-{{key}}">
           <div class="search-hit-content">
             <div class="search-hit-name">
@@ -576,10 +172,9 @@ Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target=_bl
             </div>
           </div>
         </div>
-      </script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin=anonymous></script>
-<script src=/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js></script>
-<script src=/en/js/wowchemy.min.d68ecd57c0ec1f1f61d65fd568f1c3a0.js></script>
-</body>
-</html>
+      </script><script src=https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin=anonymous></script>
+<script id=page-data type=application/json>{"use_headroom":false}</script><script src=/en/js/wowchemy.min.de33c90527762392d440555c36739dd9.js></script>
+<script src=/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js type=module></script><div id=modal class="modal fade" role=dialog><div class=modal-dialog><div class=modal-content><div class=modal-header><h5 class=modal-title>Cite</h5><button type=button class=close data-dismiss=modal aria-label=Close>
+<span aria-hidden=true>&#215;</span></button></div><div class=modal-body><pre><code class="tex hljs"></code></pre></div><div class=modal-footer><a class="btn btn-outline-primary my-1 js-copy-cite" href=# target=_blank><i class="fas fa-copy"></i> Copy</a>
+<a class="btn btn-outline-primary my-1 js-download-cite" href=# target=_blank><i class="fas fa-download"></i> Download</a><div id=modal-error></div></div></div></div></div><script src=/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js type=module></script></body></html>

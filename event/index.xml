@@ -13,70 +13,78 @@
 &lt;li>Rabe-Hesketh, S. and A. Skrondal (2008). &lt;em>Multilevel and longitudinal modeling using Stata.&lt;/em> STATA press.&lt;/li>
 &lt;/ul>
 &lt;h2 id="sample-code-in-jags">Sample code in JAGS&lt;/h2>
-&lt;pre>&lt;code class="language-r">model{
-for (i in 1:N) {
-for (k in 1:p_phy) { # Physical
-y_phy[i,k] ~ dnorm(a_phy[k] + b_phy[k] * Phy[i], 1/v_phy[k])
-}
-for (k in 1:p_cgn) { # Cognitive
-y_cgn[i,k] ~ dnorm(a_cgn[k] + b_cgn[k] * Cgn[i], 1/v_cgn[k])
-}
-for (k in 1:p_cmb) { # Combatant
-y_cmb[i,k] ~ dnorm(a_cmb[k] + b_cmb[k] * Cmb[i], 1/v_cmb[k])
-}
-Phy[i] ~ dnorm(a_Phy + b_Phy * Abl[i], 1/v_Phy)
-Cgn[i] ~ dnorm(a_Cgn + b_Cgn * Abl[i], 1/v_Cgn)
-Cmb[i] ~ dnorm(a_Cmb + b_Cmb * Abl[i], 1/v_Cmb)
-Abl[i] ~ dnorm(a_Abl, 1/v_Abl)
-}
-# Priors ---------------------------------------------------------------------
-a_phy[1] ~ dnorm(0,1e-3)
-b_phy[1] &amp;lt;- 1
-for(k in 2:p_phy) {
-a_phy[k] ~ dnorm(0,1e-3)
-b_phy[k] ~ dnorm(0,1e-2)
-}
-for(k in 1:p_phy) {
-sd_phy[k] ~ dgamma(1,.5)
-v_phy[k] &amp;lt;- pow(sd_phy[k],2)
-}
-a_cgn[1] ~ dnorm(0,1e-3)
-b_cgn[1] &amp;lt;- 1
-for(k in 2:p_cgn) {
-a_cgn[k] ~ dnorm(0,1e-3)
-b_cgn[k] ~ dnorm(0,1e-2)
-}
-for(k in 1:p_cgn) {
-sd_cgn[k] ~ dgamma(1,.5)
-v_cgn[k] &amp;lt;- pow(sd_cgn[k],2)
-}
-a_cmb[1] ~ dnorm(0,1e-3)
-b_cmb[1] &amp;lt;- 1
-for(k in 2:p_cmb) {
-a_cmb[k] ~ dnorm(0,1e-3)
-b_cmb[k] ~ dnorm(0,1e-2)
-}
-for(k in 1:p_cmb) {
-sd_cmb[k] ~ dgamma(1,.5)
-v_cmb[k] &amp;lt;- pow(sd_cmb[k],2)
-}
-a_Phy &amp;lt;- 0
-a_Cgn &amp;lt;- 0
-a_Cmb &amp;lt;- 0
-a_Abl &amp;lt;- 0
-b_Phy &amp;lt;- 1
-b_Cgn ~ dnorm(0,1e-2)
-b_Cmb ~ dnorm(0,1e-2)
-sd_Phy ~ dgamma(1,.5)
-v_Phy &amp;lt;- pow(sd_Phy,2)
-sd_Cgn ~ dgamma(1,.5)
-v_Cgn &amp;lt;- pow(sd_Cgn,2)
-sd_Cmb ~ dgamma(1,.5)
-v_Cmb &amp;lt;- pow(sd_Cmb,2)
-sd_Abl ~ dgamma(1,.5)
-v_Abl &amp;lt;- pow(sd_Abl,2)
-}
-&lt;/code>&lt;/pre></description></item><item><title>Investigating the effect of load carriage on soldiers’ performances using structural equation models</title><link>https://haziqj.ml/talk/investigating-the-effect-of-load-carriage-on-soldiers-performances-using-structural-equation-models/</link><pubDate>Thu, 28 May 2020 13:00:00 +0000</pubDate><guid>https://haziqj.ml/talk/investigating-the-effect-of-load-carriage-on-soldiers-performances-using-structural-equation-models/</guid><description/></item><item><title>Bayesian Variable Selection for Linear Models</title><link>https://haziqj.ml/talk/bayesian-variable-selection-for-linear-models/</link><pubDate>Wed, 13 Nov 2019 14:00:00 +0000</pubDate><guid>https://haziqj.ml/talk/bayesian-variable-selection-for-linear-models/</guid><description>&lt;!-- &lt;div class="alert alert-note">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">model&lt;/span>&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">for &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">N&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">for &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">k&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">p_phy&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1"># Physical&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">y_phy[i&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">k]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">a_phy[k]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">b_phy[k]&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">Phy[i]&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">v_phy[k]&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">for &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">k&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">p_cgn&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1"># Cognitive&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">y_cgn[i&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">k]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">a_cgn[k]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">b_cgn[k]&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">Cgn[i]&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">v_cgn[k]&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">for &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">k&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">p_cmb&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1"># Combatant&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">y_cmb[i&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">k]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">a_cmb[k]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">b_cmb[k]&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">Cmb[i]&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">v_cmb[k]&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Phy[i]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">a_Phy&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">b_Phy&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">Abl[i]&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">v_Phy&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Cgn[i]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">a_Cgn&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">b_Cgn&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">Abl[i]&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">v_Cgn&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Cmb[i]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">a_Cmb&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">b_Cmb&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">Abl[i]&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">v_Cmb&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Abl[i]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">a_Abl&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">v_Abl&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># Priors ---------------------------------------------------------------------&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">a_phy[1]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">1e-3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">b_phy[1]&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">for&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">k&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">p_phy&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">a_phy[k]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">1e-3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">b_phy[k]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">1e-2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">for&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">k&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">p_phy&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">sd_phy[k]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dgamma&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">.5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v_phy[k]&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">pow&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sd_phy[k]&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">a_cgn[1]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">1e-3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">b_cgn[1]&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">for&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">k&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">p_cgn&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">a_cgn[k]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">1e-3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">b_cgn[k]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">1e-2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">for&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">k&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">p_cgn&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">sd_cgn[k]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dgamma&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">.5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v_cgn[k]&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">pow&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sd_cgn[k]&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">a_cmb[1]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">1e-3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">b_cmb[1]&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">for&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">k&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">p_cmb&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">a_cmb[k]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">1e-3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">b_cmb[k]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">1e-2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">for&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">k&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">p_cmb&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">sd_cmb[k]&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dgamma&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">.5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v_cmb[k]&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">pow&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sd_cmb[k]&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">a_Phy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">a_Cgn&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">a_Cmb&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">a_Abl&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">b_Phy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">b_Cgn&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">1e-2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">b_Cmb&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">1e-2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">sd_Phy&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dgamma&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">.5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v_Phy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">pow&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sd_Phy&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">sd_Cgn&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dgamma&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">.5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v_Cgn&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">pow&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sd_Cgn&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">sd_Cmb&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dgamma&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">.5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v_Cmb&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">pow&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sd_Cmb&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">sd_Abl&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="nf">dgamma&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">.5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v_Abl&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">pow&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sd_Abl&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="m">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Investigating the effect of load carriage on soldiers’ performances using structural equation models</title><link>https://haziqj.ml/talk/investigating-the-effect-of-load-carriage-on-soldiers-performances-using-structural-equation-models/</link><pubDate>Thu, 28 May 2020 13:00:00 +0000</pubDate><guid>https://haziqj.ml/talk/investigating-the-effect-of-load-carriage-on-soldiers-performances-using-structural-equation-models/</guid><description/></item><item><title>Bayesian Variable Selection for Linear Models</title><link>https://haziqj.ml/talk/bayesian-variable-selection-for-linear-models/</link><pubDate>Wed, 13 Nov 2019 14:00:00 +0000</pubDate><guid>https://haziqj.ml/talk/bayesian-variable-selection-for-linear-models/</guid><description>&lt;!-- &lt;div class="alert alert-note">
 &lt;div>
 Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in slides feature.
 &lt;/div>

@@ -9,12 +9,12 @@ It is therefore important that the computational backend for producing these val
 &lt;/ol>
 &lt;p>The main goal for this project is to create an &lt;code>R&lt;/code> package which can be used by other developers and researchers for their specific usage.&lt;/p>
 &lt;p>Work involved: literature review and survey of current methods, identifying bottlenecks in algorithms, propose methodology to overcome such bottlenecks, software design.&lt;/p></description></item><item><title>Scoring individual abilities using multilevel latent variable models</title><link>https://haziqj.ml/future-project/latent-physical/</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>https://haziqj.ml/future-project/latent-physical/</guid><description>&lt;p>Often, key constructs of interest remain elusive in a quantitative study because they are impossible to measure directly.
-Examples from social science studies include individuals' intelligence quotient (IQ), or political tendencies (left or right).
+Examples from social science studies include individuals&amp;rsquo; intelligence quotient (IQ), or political tendencies (left or right).
 However, under a reflective measurement theory, we can propose that these constructs influence the outcome of several tests which can be measured directly (e.g., IQ can be measured by appropriate IQ tests, and political tendencies by appropriate survey questions).&lt;/p>
 &lt;p>Taking this cue from the social sciences, it would be interesting to see this type of methodology being applied to sports and fitness.
 Spefically, this study comes from a performance optimisation standpoint.
 Under what conditions do athletes perform best?
-Athletes' performance can be considered to be latent in nature, but several test items can be constructed to measure the latent variable indirectly.&lt;/p>
+Athletes&amp;rsquo; performance can be considered to be latent in nature, but several test items can be constructed to measure the latent variable indirectly.&lt;/p>
 &lt;p>It would also be interesting to construct a non-parametric relationship between several explanatory variables and the latent variable of interest in the structural part of the model.
 Doing so would allow for better flexibility and predictive abilities.
 One idea would be to include a Gaussian process regression (GPR) in the structural equation model.&lt;/p>

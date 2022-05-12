@@ -21,10 +21,10 @@
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img alt="" srcset="
-/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_863f45dcad49a241872073492c05a206.jpg 400w,
-/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_3f56d9ab3dd142ef89f1578a720477b5.jpg 760w,
-/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_1200x1200_fit_q75_lanczos.jpg 1200w"
-src="https://haziqj.ml/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_863f45dcad49a241872073492c05a206.jpg"
+/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_4465c93d3674e0506c469950f1550c8e.webp 400w,
+/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_fd670a308cd1ee91db9f921da8b55210.webp 760w,
+/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_1200x1200_fit_q75_h2_lanczos.webp 1200w"
+src="https://haziqj.ml/slides/teach-ds-1/scientific-method_hud51f6cb616cec94dfe6bc2a40dbc065e_48497_4465c93d3674e0506c469950f1550c8e.webp"
 width="378"
 height="550"
 loading="lazy" data-zoomable />&lt;/div>
@@ -55,7 +55,7 @@ The scientific method is an empirical method of acquiring knowledge that has cha
 &lt;/ul>
 &lt;/aside>
 &lt;hr>
-&lt;p>&lt;img src="piazzi-1.png" height="450" />&lt;/p>
+&lt;img src="piazzi-1.png" height="450" />
 &lt;p>Giuseppe Piazzi&amp;rsquo;s observations in the Monatliche Correspondenz, September 1801.&lt;/p>
 &lt;aside class="notes">
 &lt;ul>
@@ -64,7 +64,7 @@ The scientific method is an empirical method of acquiring knowledge that has cha
 &lt;/ul>
 &lt;/aside>
 &lt;hr>
-&lt;p>&lt;img src="rct.png" height="450" />&lt;/p>
+&lt;img src="rct.png" height="450" />
 &lt;ul>
 &lt;li>Design of experiments; randomised control trials.&lt;/li>
 &lt;li>Sir Ronald Fisher (1890&amp;ndash;1962).&lt;/li>
@@ -78,7 +78,7 @@ The scientific method is an empirical method of acquiring knowledge that has cha
 &lt;/ul>
 &lt;/aside>
 &lt;hr>
-&lt;p>&lt;img src="big-data-1.jpeg" height="450" />&lt;/p>
+&lt;img src="big-data-1.jpeg" height="450" />
 &lt;p>Data is now available by happenstance, and not just collected by design.&lt;/p>
 &lt;hr>
 &lt;h2 id="big-data">Big Data&lt;/h2>
@@ -111,7 +111,7 @@ The scientific method is an empirical method of acquiring knowledge that has cha
 &lt;/aside>
 &lt;hr>
 &lt;!-- ![](data-science-venn.png) -->
-&lt;p>&lt;img src="data-science-venn.png" height="600" />&lt;/p>
+&lt;img src="data-science-venn.png" height="600" />
 &lt;hr>
 &lt;h3 id="examples-of-data-science-problems">Examples of Data Science problems&lt;/h3>
 &lt;p>Real-world problems from the &lt;a href="https://www.turing.ac.uk" target="_blank" rel="noopener">Alan Turing Institute&lt;/a>&lt;/p>
@@ -136,17 +136,17 @@ The scientific method is an empirical method of acquiring knowledge that has cha
 &lt;li>Improved strength training using smart gym equipment data&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>&lt;img src="data-science-1.png" height="550" />&lt;/p>
+&lt;img src="data-science-1.png" height="550" />
 &lt;hr>
 &lt;h2 id="scope-exploratory">Scope: Exploratory&lt;/h2>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img alt="" srcset="
-/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_190026d8e0708e5a591e1e747dcf4203.png 400w,
-/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_f332c0c439229b600781d578c74ca7c3.png 760w,
-/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_1200x1200_fit_lanczos_3.png 1200w"
-src="https://haziqj.ml/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_190026d8e0708e5a591e1e747dcf4203.png"
+/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_9aecff4073c3a94b360671d2a66b0472.webp 400w,
+/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_e61f2eeca7cf06ecba37161f3deee059.webp 760w,
+/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://haziqj.ml/slides/teach-ds-1/data-science-2_hu580e326a1bf46ab5c01f096d736a10af_14224_9aecff4073c3a94b360671d2a66b0472.webp"
 width="517"
 height="190"
 loading="lazy" data-zoomable />&lt;/div>
@@ -183,7 +183,7 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;hr>
 &lt;h3 id="data-quality-and-readiness">Data Quality and Readiness&lt;/h3>
 &lt;p>There&amp;rsquo;s a sea of data, but most of it is undrinkable&lt;/p>
-&lt;p>&lt;img src="drink-sea-water.jpg" height="300" />&lt;/p>
+&lt;img src="drink-sea-water.jpg" height="300" />
 &lt;p>Data neglect: data cleaning is tedious and complex&lt;/p>
 &lt;hr>
 &lt;h3 id="80-20-rule-of-data-science">80-20 rule of Data Science&lt;/h3>
@@ -297,10 +297,10 @@ $$\epsilon_i \sim \text{N}(0,\sigma^2)$$&lt;/p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img alt="" srcset="
-/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_84380fa0eed6900255d8097bedc03296.jpg 400w,
-/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_ac19f0d423fc584e0430e04e1cbdd4a2.jpg 760w,
-/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_1200x1200_fit_q75_lanczos.jpg 1200w"
-src="https://haziqj.ml/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_84380fa0eed6900255d8097bedc03296.jpg"
+/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_0848ac3ad9e9bc6511864d91fd3250f7.webp 400w,
+/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_25d7622bdc7867b908d7145ad249f187.webp 760w,
+/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_1200x1200_fit_q75_h2_lanczos.webp 1200w"
+src="https://haziqj.ml/slides/teach-ds-1/rstudio_hu97343a7f46d4d1d71bcc14a21acf8339_342515_0848ac3ad9e9bc6511864d91fd3250f7.webp"
 width="760"
 height="449"
 loading="lazy" data-zoomable />&lt;/div>
@@ -312,10 +312,10 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img alt="" srcset="
-/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_9a5861e154fb5e8a976bba8d6acddec3.png 400w,
-/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_256873e3bb6d3d9eccb2181766ed2d8d.png 760w,
-/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_1200x1200_fit_lanczos_3.png 1200w"
-src="https://haziqj.ml/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_9a5861e154fb5e8a976bba8d6acddec3.png"
+/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_6ea58b501b51053a9ddc35d9c09d02bd.webp 400w,
+/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_b8db4eeaaf22e43b466ba621c09bdb19.webp 760w,
+/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://haziqj.ml/slides/teach-ds-1/ggplot2-1_hu39a0d2c56665a8753d44f0daf3899212_20005_6ea58b501b51053a9ddc35d9c09d02bd.webp"
 width="720"
 height="445"
 loading="lazy" data-zoomable />&lt;/div>
@@ -327,10 +327,10 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img alt="" srcset="
-/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_dff59f346431a74ce36e50b1b461b49b.png 400w,
-/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_1f84e09ea7c68db032e277337b47f0f0.png 760w,
-/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_1200x1200_fit_lanczos_3.png 1200w"
-src="https://haziqj.ml/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_dff59f346431a74ce36e50b1b461b49b.png"
+/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_02f116eefdcc598548b09d46dbb588e7.webp 400w,
+/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_91472bc094f429415f78bc9d8adb9dbf.webp 760w,
+/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://haziqj.ml/slides/teach-ds-1/ggplot2-2_hu33d0d0b0433196b01d90247d5332a603_105053_02f116eefdcc598548b09d46dbb588e7.webp"
 width="672"
 height="480"
 loading="lazy" data-zoomable />&lt;/div>
@@ -363,7 +363,7 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;h1 id="supplementary-material">Supplementary material&lt;/h1>
 &lt;hr>
 &lt;h2 id="inference-vs-prediction">Inference vs Prediction&lt;/h2>
-&lt;p>&lt;img src="ml-stats-1.png" height="400" />&lt;/p>
+&lt;img src="ml-stats-1.png" height="400" />
 &lt;p>Source: &lt;a href="https://www.datascienceblog.net/post/commentary/inference-vs-prediction/" target="_blank" rel="noopener">datascienceblog.com&lt;/a>&lt;/p>
 &lt;aside class="notes">
 &lt;ul>
@@ -394,7 +394,7 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;/ul>
 &lt;hr>
 &lt;h3 id="bias-variance-tradeoff">Bias-Variance tradeoff&lt;/h3>
-&lt;p>&lt;img src="bias-variance.png" height="400" />&lt;/p>
+&lt;img src="bias-variance.png" height="400" />
 &lt;p>$$
 E[f(x) - \hat f (x)]^2 = \text{Bias}^2[\hat f(x)] + \text{Var}[\hat f(x)] + \sigma^2
 $$&lt;/p>
@@ -406,7 +406,7 @@ $$&lt;/p>
 &lt;/aside>
 &lt;hr>
 &lt;h3 id="linear-regression">Linear regression&lt;/h3>
-&lt;p>&lt;img src="efw.png" height="450" />&lt;/p>
+&lt;img src="efw.png" height="450" />
 &lt;p>Economic freedom = 2.6 + 0.6 Trade&lt;/p>
 &lt;aside class="notes">
 &lt;ul>
@@ -415,15 +415,15 @@ $$&lt;/p>
 &lt;/aside>
 &lt;hr>
 &lt;h3 id="neural-networks">Neural networks&lt;/h3>
-&lt;p>&lt;img src="neural-network.gif" height="450" />&lt;/p>
+&lt;img src="neural-network.gif" height="450" />
 &lt;p>Source: &lt;a href="https://towardsdatascience.com/everything-you-need-to-know-about-neural-networks-and-backpropagation-machine-learning-made-easy-e5285bc2be3a" target="_blank" rel="noopener">towardsdatascience.com&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h3 id="survey-methodology">Survey Methodology&lt;/h3>
-&lt;p>&lt;img src="survey-methodology.png" height="450" />&lt;/p>
+&lt;img src="survey-methodology.png" height="450" />
 &lt;p>Source: Groves et al. (2009)&lt;/p>
 &lt;hr>
 &lt;h3 id="three-populations">Three populations&lt;/h3>
-&lt;p>&lt;img src="sampling-frame.png" height="450" />&lt;/p>
+&lt;img src="sampling-frame.png" height="450" />
 &lt;hr>
 &lt;h3 id="sampling-design-for-bsa-survey">Sampling design for BSA survey&lt;/h3>
 &lt;ul>
@@ -499,7 +499,7 @@ Press `Space` to play!
 One
 &lt;/span>
 &lt;span class="fragment " >
-**Two**
+&lt;strong>Two&lt;/strong>
 &lt;/span>
 &lt;span class="fragment " >
 Three
@@ -562,8 +562,7 @@ color: navy;
 # Questions?
 [Ask](https://discourse.gohugo.io)
 [Documentation](https://sourcethemes.com/academic/docs/)
--->&lt;blockquote>
-&lt;/blockquote></description></item><item><title>Getting started with R</title><link>https://haziqj.ml/slides/teach-ds-2/</link><pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate><guid>https://haziqj.ml/slides/teach-ds-2/</guid><description>&lt;h1 id="introductory-data-science-using-r">Introductory Data Science using R&lt;/h1>
+--></description></item><item><title>Getting started with R</title><link>https://haziqj.ml/slides/teach-ds-2/</link><pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate><guid>https://haziqj.ml/slides/teach-ds-2/</guid><description>&lt;h1 id="introductory-data-science-using-r">Introductory Data Science using R&lt;/h1>
 &lt;p>R Exercise: The birthday problem&lt;/p>
 &lt;hr>
 &lt;p>In a room of 23 people, what is the probability that at least two people share the same birthday?&lt;/p>
@@ -575,9 +574,9 @@ color: navy;
 &lt;li>Every day is equally likely to be a birthday&lt;/li>
 &lt;li>Everyone&amp;rsquo;s birthday is independent of each other&lt;/li>
 &lt;/ul>
-&lt;p>&lt;span class="fragment " >
+&lt;span class="fragment " >
 &lt;strong>Strategy:&lt;/strong> It&amp;rsquo;s easier to figure out the probability of the complementary event. $$P(A) = 1 - P(A^c)$$
-&lt;/span>&lt;/p>
+&lt;/span>
 &lt;hr>
 &lt;h3 id="whats-the-complement">What&amp;rsquo;s the complement?&lt;/h3>
 &lt;ul>
