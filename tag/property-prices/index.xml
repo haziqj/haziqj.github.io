@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Property Prices | Haziq Jamil</title><link>https://haziqj.ml/tag/property-prices/</link><atom:link href="https://haziqj.ml/tag/property-prices/index.xml" rel="self" type="application/rss+xml"/><description>Property Prices</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><copyright>© 2023 Haziq Jamil</copyright><lastBuildDate>Thu, 02 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://haziqj.ml/media/icon_hu4b886e67ce091368601699b05489f639_45390_512x512_fill_lanczos_center_3.png</url><title>Property Prices</title><link>https://haziqj.ml/tag/property-prices/</link></image><item><title>Statistical modelling of spatio-temporal data: An application to property prices in Brunei</title><link>https://haziqj.ml/future-project/spatial-brunei/</link><pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate><guid>https://haziqj.ml/future-project/spatial-brunei/</guid><description>&lt;h1 id="introduction">Introduction&lt;/h1>
+&lt;p>This project involves the use of quantitative methods and data analysis techniques to examine the relationships between various factors that affect the price of real estate. The importance of property prices as a macroeconomic indicator for a country cannot be overstated, as it has significant implications for the overall health of the economy. Property prices are not only an essential component of household wealth but also influence the spending patterns of consumers, the lending policies of financial institutions, and the investment decisions of businesses. Thus, understanding the dynamics of property prices through statistical modeling is crucial for policymakers, investors, and other stakeholders to make informed decisions that can affect the direction of the economy.&lt;/p>
+&lt;h1 id="research-objectives">Research objectives&lt;/h1>
+&lt;ol>
+&lt;li>
+&lt;p>To conduct an overarching literature review of data analytic techniques and statistical models used in spatio-temporal analyses across various disciplines.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To build a statistical model suitable for both explaining and predicting property prices in Brunei, and offer sociological and economic explanations for the observed phenomena.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To analyse trends of house ownership from an affordability standpoint based on market price data available on alternative sources (e.g. social media), and compare its reliability with oﬀicial statistics. [c.f. &lt;a href="https://www.bdcb.gov.bn/Lists/News/DisplayItem.aspx?ID=430&amp;amp;ContentTypeId=0x01040013E26435B72C28499D11105B93AD3652" target="_blank" rel="noopener">RPPI&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h1 id="knowledge-areas">Knowledge areas&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>Statistical modelling: Generalised linear models, Generalised additive models (GAMs), Gaussian process regression, Spatial autoregressive models.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Model estimation: EM algorithms, MCMC methods, INLA technique, Variational inference.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Economics: Hedonic regression, RPPI as a macroeconomic indicator.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Data analytics: Visualisation of spatial data (GIS and shape file), Automated data scraping.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="projects">Projects&lt;/h1>
+&lt;ol>
+&lt;li>
+&lt;p>Analysis of factors affecting residential property prices in Brunei&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Building the RPPI using alternative sources: A comparative study in Brunei&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Exploring factors affecting rental property prices in Brunei&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Collating socio-demographic spatio-temporal data in Brunei for modelling purposes&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h1 id="members">Members&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>Haziq Jamil [PI]. &lt;em>Assistant Professor in Statistics&lt;/em>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Lutfi Abdul Razak. &lt;em>Lecturer in Economics&lt;/em>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Indira Puteri Kinasih. &lt;em>PhD Mathematics candidate&lt;/em>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Dk Nur Amira Barizah @ Dk Nur Aisyah Pg Noorosmawie. &lt;em>BSc Mathematics candidate&lt;/em>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Nur Husnina Muhammad Zuhairi. &lt;em>BSc Mathematics candidate&lt;/em>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Atikah Farhain Yahya. &lt;em>BSc Mathematics candidate&lt;/em>&lt;/p>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
